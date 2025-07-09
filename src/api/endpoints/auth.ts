@@ -1,12 +1,8 @@
-import {
-  ILoginRequest,
-  ILoginResponse,
-} from 'src/models/interfaces/login.interface';
+import { ILoginRequest, ILoginResponse } from '@/types/login.type';
 import {
   IUserRegistrationRequest,
   IUserRegistrationResponse,
-} from 'src/models/interfaces/userRegistration.interface';
-
+} from '@/types/userRegistration.type';
 import baseApi from '../baseApi';
 import { AuthServiceUrls, UserSessionUrls } from '../types';
 
