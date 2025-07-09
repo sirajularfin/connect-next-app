@@ -6,7 +6,8 @@ interface IApiRequestHeaders {
 }
 
 export const generateHttpHeaders = (): IApiRequestHeaders => {
-  const { accessToken, tokenType } = '';
+  const accessToken = '';
+  const tokenType = '';
 
   const authHeader =
     !isEmpty(accessToken) && !isEmpty(tokenType)
