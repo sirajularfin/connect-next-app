@@ -1,0 +1,26 @@
+.container {
+  min-width: 320px;
+  max-width: 500px;
+  height: 80vh;
+  align-content: center;
+  align-self: center;
+  margin: 0 auto;
+  @media (min-width: 1024px) {
+    .container {
+      width: 70vw;
+    }
+  }
+}
+
+.title {
+  color: var(--white);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  row-gap: 20px;
+}

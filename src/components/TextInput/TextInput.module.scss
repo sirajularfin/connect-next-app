@@ -1,0 +1,13 @@
+.placeholderText {
+  color: var(--black);
+  font-size: px-to-rem(16);
+  font-family: var(--montserrat_regular);
+  line-height: px-to-rem(24);
+  letter-spacing: px-to-rem(0.5);
+}
+
+.rounded {
+  border-width: 0;
+  border-radius: px-to-rem(8);
+  padding: px-to-rem(16) px-to-rem(24);
+}

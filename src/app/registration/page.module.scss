@@ -1,0 +1,19 @@
+.container {
+  width: 90vw;
+  min-width: 320px;
+  height: 80vh;
+  align-content: center;
+  align-self: center;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    width: 70vw;
+  }
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  row-gap: 20px; // Replace 20px with your PixelScale.S_20 value if needed
+}

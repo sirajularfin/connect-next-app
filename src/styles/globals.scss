@@ -1,0 +1,17 @@
+@use './theme.scss' as *;
+
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(90deg, #2f0147 0%, #7302ad 100%);
+}
+
+main {
+  margin: 0 auto;
+  max-width: var(--default-max-width);
+}

@@ -1,0 +1,8 @@
+.container {
+  background-color: var(--purple_a200);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: px-to-rem(12) 0;
+  border-width: 0;
+}
