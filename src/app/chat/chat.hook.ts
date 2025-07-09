@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import useResponsive from '../../hooks/useResponsive';
+// import { useNavigate } from 'react-router-dom';
+// import useResponsive from '../../hooks/useResponsive';
 
-const useChat = () => {
-  const navigate = useNavigate();
-  const isDesktop = useResponsive();
+// const useChat = () => {
+//   const navigate = useNavigate();
+//   const isDesktop = useResponsive();
 
-  return {
-    navigate,
-    isDesktop,
-  };
-};
+//   return {
+//     navigate,
+//     isDesktop,
+//   };
+// };
 
-export default useChat;
+// export default useChat;
