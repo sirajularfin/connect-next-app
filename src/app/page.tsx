@@ -13,10 +13,10 @@ function Home(): React.ReactElement {
           alt="Chat Feature"
           className={classes.image}
         />
-        <Typography as="h1" className={classes.title}>
+        <Typography as="h1" className={classes.title1}>
           Connect <span>Faster.</span>
         </Typography>
-        <Typography as="h2" className={classes.subtitle}>
+        <Typography as="h1" className={classes.title2}>
           Chat <span>Smarter.</span>
         </Typography>
         <Typography className={classes.description}>
