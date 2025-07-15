@@ -40,7 +40,6 @@ function AuthForm(): React.JSX.Element {
           <form onSubmit={handleSubmit} className={classes.authForm}>
             <TextInput
               type="email"
-              name="email"
               placeholder="eg. usernam@domainname.com"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -49,7 +48,6 @@ function AuthForm(): React.JSX.Element {
             />
             <TextInput
               type="password"
-              name="password"
               placeholder="Password"
               onChange={handleChange}
               onBlur={handleBlur}
