@@ -1,31 +1,34 @@
-import Image from 'next/image';
-
 import LandingPageImg from '@/assets/images/landing-page.png';
+import AuthForm from '@/components/AuthForm/AuthForm';
 import Typography from '@/components/Typography/Typography';
+import Image from 'next/image';
 import classes from './page.module.scss';
 
-function Home(): React.ReactElement {
-  return (
-    <main className={classes.container}>
-      <div className={classes.columnLeft}>
-        <Image
-          src={LandingPageImg}
-          alt="Chat Feature"
-          className={classes.image}
-        />
-        <Typography as="h1" className={classes.title1}>
-          Connect <span>Faster.</span>
-        </Typography>
-        <Typography as="h1" className={classes.title2}>
-          Chat <span>Smarter.</span>
-        </Typography>
-        <Typography className={classes.description}>
-          The most intuitive, secure AI-powered chat platform <br /> for{' '}
-          <span>YOU</span>
-        </Typography>
-      </div>
-    </main>
-  );
-}
+const Home = (): React.ReactElement => (
+  <main className={classes.container}>
+    <section className={classes.columnLeft}>
+      <Image
+        src={LandingPageImg}
+        alt="Chat Feature"
+        className={classes.image}
+        priority
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      <Typography as="h1" className={classes.title1}>
+        Connect <span>Faster.</span>
+      </Typography>
+      <Typography as="h1" className={classes.title2}>
+        Chat <span>Smarter.</span>
+      </Typography>
+      <Typography as="p" className={classes.description}>
+        The most intuitive, secure AI-powered chat platform <br />
+        for <span>YOU</span>
+      </Typography>
+    </section>
+    <section className={classes.columnRight} aria-label="Authentication form">
+      <AuthForm />
+    </section>
+  </main>
+);
 
 export default Home;
