@@ -23,13 +23,14 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   loading = false,
   type = 'button',
   variant = 'PRIMARY',
+  titleCase,
   ...props
 }) => {
   return (
     <button
       type={type}
       className={classNames(classes.container, classes[variant], classNames)}
-      style={{ textTransform: props.titleCase }}
+      style={titleCase && { textTransform: titleCase }}
       {...props}
     >
       {loading ? <CircularProgress /> : title ? title : children}
