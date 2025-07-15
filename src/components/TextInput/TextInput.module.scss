@@ -11,6 +11,9 @@
   height: px-to-rem(50);
   line-height: 100%;
   padding: 0 px-to-rem(30);
+  &:focus {
+    outline: px-to-rem(1.5) solid var(--amber-800);
+  }
   &::placeholder {
     font-weight: 300;
     color: var(--grey-600);
