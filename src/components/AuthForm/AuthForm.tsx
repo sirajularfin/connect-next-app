@@ -39,7 +39,9 @@ function AuthForm(): React.JSX.Element {
         }) => (
           <form onSubmit={handleSubmit} className={classes.authForm}>
             <TextInput
+              id="email"
               type="email"
+              name="email"
               placeholder="eg. usernam@domainname.com"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -47,7 +49,9 @@ function AuthForm(): React.JSX.Element {
               error={errors.email && touched.email ? errors.email : undefined}
             />
             <TextInput
+              id="password"
               type="password"
+              name="password"
               placeholder="Password"
               onChange={handleChange}
               onBlur={handleBlur}
