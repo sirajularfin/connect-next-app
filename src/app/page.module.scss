@@ -1,26 +1,63 @@
+@use '@/styles/app.scss' as *;
+
 .container {
-  min-width: 320px;
-  max-width: 500px;
-  height: 80vh;
-  align-content: center;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  min-height: calc(100vh - px-to-rem(76) - px-to-rem(54));
+  gap: px-to-rem(30);
+}
+.columnLeft {
+  margin-top: px-to-rem(30);
+  position: relative;
+}
+.columnRight {
   align-self: center;
-  margin: 0 auto;
-  @media (min-width: 1024px) {
-    .container {
-      width: 70vw;
-    }
+  justify-self: end;
+}
+.image {
+  position: absolute;
+  z-index: -1;
+  width: px-to-rem(450);
+  height: auto;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+.title1 {
+  color: var(--black);
+  font-family: var(--font-dm-sans);
+  font-size: px-to-rem(48);
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+  margin-bottom: px-to-rem(8);
+  & span {
+    color: var(--amber-800);
   }
 }
-
-.title {
-  color: var(--white);
-  text-align: center;
-  text-transform: capitalize;
+.title2 {
+  color: var(--black);
+  font-family: var(--font-dm-sans);
+  font-size: px-to-rem(64);
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+  margin-left: px-to-rem(200);
+  & span {
+    color: var(--amber-900);
+  }
 }
-
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  row-gap: 20px;
+.description {
+  color: var(--grey-800);
+  font-family: var(--font-dm-sans);
+  font-size: px-to-rem(16);
+  font-weight: 300;
+  line-height: 150%;
+  & span {
+    color: var(--amber-900);
+    font-family: var(--font-dm-sans);
+    font-size: px-to-rem(32);
+    font-weight: 600;
+    line-height: 120%;
+  }
 }

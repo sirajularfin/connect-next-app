@@ -1,0 +1,54 @@
+@use '@/styles/app.scss' as *;
+
+.container {
+  background-color: var(--white);
+  border-radius: px-to-rem(20);
+  border: 1px solid var(--grey-400);
+  display: flex;
+  flex-direction: column;
+  min-width: px-to-rem(400);
+  padding: px-to-rem(60) px-to-rem(30);
+  row-gap: px-to-rem(20);
+  & p {
+    text-align: center;
+    font-family: var(--font-dm-sans);
+    font-size: px-to-rem(16);
+    font-weight: 400;
+    color: var(--grey-800);
+  }
+  & h2 {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-dm-sans);
+    font-size: px-to-rem(36);
+    font-weight: 600;
+    color: var(--black);
+  }
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: px-to-rem(30);
+  & p {
+    text-align: center;
+    font-family: var(--font-dm-sans);
+    font-size: px-to-rem(16);
+    font-weight: 400;
+    color: var(--grey-800);
+  }
+}
+
+.divider {
+  align-items: center;
+  column-gap: px-to-rem(10);
+  display: flex;
+  justify-content: center;
+  & p {
+    white-space: nowrap;
+  }
+  & hr {
+    border: 0.5px solid var(--grey-400);
+    width: 100%;
+  }
+}

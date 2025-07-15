@@ -12,7 +12,7 @@ import { ILoginRequest, ILoginResponse } from '@/types/login.type';
 import APP_ROUTES from '@/types/routes';
 import { useDispatch } from 'react-redux';
 
-const useLogin = () => {
+const useAuthForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
 
@@ -46,4 +46,4 @@ const useLogin = () => {
   };
 };
 
-export default useLogin;
+export default useAuthForm;

@@ -8,7 +8,7 @@ p {
 }
 
 body {
-  background: linear-gradient(90deg, #2f0147 0%, #7302ad 100%);
+  background: var(--primary-bg);
 }
 
 main {

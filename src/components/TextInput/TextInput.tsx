@@ -1,27 +1,12 @@
 import React from 'react';
+import classes from './TextInput.module.scss';
 
-type IProps = Partial<
-  Pick<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    'type' | 'name' | 'value' | 'onChange' | 'onBlur' | 'placeholder'
-  > & {
-    variant: 'ROUNDED' | 'SQUARED';
-    error: string | null;
-  }
->;
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: string;
+}
 
-const TextInput: React.FC<IProps> = ({ ...props }) => {
-  return (
-    <>
-      <input
-        type={props.type}
-        name={props.name}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={props.onChange}
-      />
-    </>
-  );
+const TextInput: React.FC<TextInputProps> = ({ ...props }) => {
+  return <input className={classes.container} {...props} />;
 };
 
 export default TextInput;

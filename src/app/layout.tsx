@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import type { Metadata } from 'next';
 import React from 'react';
 
+import Footer from '@/components/Footer/Footer';
 import MainHeader from '@/components/MainHeader/MainHeader';
 import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
@@ -25,6 +26,7 @@ export default function RootLayout({
             <main>
               <MainHeader />
               {children}
+              <Footer />
             </main>
           </ReduxProvider>
         </React.StrictMode>
