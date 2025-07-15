@@ -43,6 +43,7 @@ function AuthForm(): React.JSX.Element {
               type="email"
               name="email"
               placeholder="eg. usernam@domainname.com"
+              autoComplete="email"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
