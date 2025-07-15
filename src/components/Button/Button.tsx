@@ -1,24 +1,35 @@
+import classNames from 'classnames';
 import React, { PropsWithChildren } from 'react';
+
 import classes from './Button.module.scss';
 
-type ButtonProps = Partial<
-  Pick<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'disabled' | 'type'> & {
-    title: string;
-  }
->;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  title?: string;
+  titleCase?:
+    | 'none'
+    | 'capitalize'
+    | 'uppercase'
+    | 'lowercase'
+    | 'initial'
+    | 'inherit';
+  variant?: 'PRIMARY' | 'SECONDARY';
+}
 
 const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   children,
+  title,
+  type = 'button',
+  variant = 'PRIMARY',
   ...props
 }) => {
   return (
     <button
-      disabled={props.disabled}
-      onClick={props.onClick}
-      className={classes.container}
-      type={'submit'}
+      type={type}
+      className={classNames(classes.container, classes[variant], classNames)}
+      style={{ textTransform: props.titleCase }}
+      {...props}
     >
-      {children}
+      {title ?? children}
     </button>
   );
 };
