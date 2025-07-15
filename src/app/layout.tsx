@@ -9,7 +9,7 @@ import '@/styles/globals.scss';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {
-  title: 'BuzzChat',
+  title: 'Connect - Chat Application',
   description: 'A chat application built with Next.js and Redux',
 };
 
