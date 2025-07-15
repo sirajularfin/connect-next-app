@@ -1,13 +1,13 @@
-.placeholderText {
-  color: var(--black);
-  font-size: px-to-rem(16);
-  font-family: var(--montserrat_regular);
-  line-height: px-to-rem(24);
-  letter-spacing: px-to-rem(0.5);
-}
+@use '@/styles/app.scss' as *;
 
-.rounded {
-  border-width: 0;
-  border-radius: px-to-rem(8);
-  padding: px-to-rem(16) px-to-rem(24);
+.container {
+  background: var(--grey-100);
+  border-radius: px-to-rem(100);
+  border: none;
+  color: var(--grey-600);
+  font-family: var(--font-dm-sans);
+  font-size: px-to-rem(14);
+  font-weight: 500;
+  line-height: 100%;
+  padding: px-to-rem(16) px-to-rem(30);
 }
