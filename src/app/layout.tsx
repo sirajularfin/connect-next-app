@@ -9,8 +9,9 @@ import '@/styles/globals.scss';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {
-  title: 'BuzzChat',
-  description: 'A chat application built with Next.js and Redux',
+  title: 'Connect - AI Powered Chat Application',
+  description:
+    'Connect is a modern, full-stack chat application built with Next.js that enables real-time communication between users — enriched with intelligent features like AI-based message translation, typing indicators, and secure authentication. Powered by Gemini or OpenAI, messages can be translated instantly with context-aware generative models, making conversations seamless across languages.',
 };
 
 export default function RootLayout({

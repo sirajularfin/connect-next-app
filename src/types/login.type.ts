@@ -1,7 +1,8 @@
-export interface ILoginRequest {
-  email: string;
-  password: string;
-}
+import z from 'zod';
+
+import { loginFormSchema } from '@/util/validation.util';
+
+export type ILoginRequest = z.infer<typeof loginFormSchema>;
 
 export interface ILoginResponse {
   accessToken: string;
