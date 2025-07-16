@@ -1,5 +1,5 @@
 import LandingPageImg from '@/assets/images/landing-page.png';
-import LoginForm from '@/components/LoginForm/LoginForm';
+import LoginForm from '@/components/Auth/LoginForm/LoginForm';
 import Typography from '@/components/Typography/Typography';
 import Image from 'next/image';
 import classes from './page.module.scss';

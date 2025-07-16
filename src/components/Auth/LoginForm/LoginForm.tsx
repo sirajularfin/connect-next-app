@@ -1,44 +1,51 @@
 'use client';
 
+import { loginAction } from '@/actions/loginActions';
 import GoogleIcon from '@/assets/svg/google-icon';
 import Button from '@/components/Button/Button';
 import { useActionState } from 'react';
-import Form from '../Form/Form';
-import TextInput from '../TextInput/TextInput';
-import Typography from '../Typography/Typography';
-import useLoginForm from './LoginForm.hook';
+import TextInput from '../../TextInput/TextInput';
+import Typography from '../../Typography/Typography';
 import classes from './LoginForm.module.scss';
-import { init } from 'next/dist/compiled/webpack/webpack';
 
 const LoginForm = () => {
-  const { loginAction } = useLoginForm();
-
-  const [state, formAction, isPending] = useActionState(
-    loginAction,
-    {email: '', password: ''},
-  );
+  const [state, formAction, isPending] = useActionState(loginAction, {
+    email: '',
+    password: '',
+    errors: null,
+    success: false,
+  });
 
   return (
     <div className={classes.container}>
       <Typography as="h2">Log In</Typography>
-      <form
-        action={formAction}
-      >
+      <form action={formAction}>
         <TextInput
           id="email"
           type="email"
           name="email"
           placeholder="eg. usernam@domainname.com"
-          value={init.email || ''}
+          defaultValue={state?.email}
+          required
         />
         <TextInput
           id="password"
           type="password"
           name="password"
           placeholder="Password"
+          defaultValue={state?.password}
+          required
         />
         <Typography>Forgot Password ?</Typography>
-      </fo>
+        <Button
+          aria-label="Log In"
+          disabled={isPending}
+          loading={isPending}
+          title="Log In"
+          titleCase="uppercase"
+          type="submit"
+        />
+      </form>
       <div className={classes.divider}>
         <hr />
         <Typography>or continue with</Typography>

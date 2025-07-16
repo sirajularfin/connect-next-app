@@ -14,7 +14,7 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
   return (
     <>
-      <input className={classes.container} {...props} />;
+      <input className={classes.container} {...props} />
       {error && (
         <Typography as="span" className={classes.error}>
           {error}
