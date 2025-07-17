@@ -2,6 +2,7 @@
 
 import GoogleIcon from '@/assets/svg/google-icon';
 import Button from '@/components/Button/Button';
+import { AUTH_MODES } from '@/types/appConstants';
 import { loginAction } from '@/util/formActions.util';
 import { useActionState } from 'react';
 import TextInput from '../../TextInput/TextInput';
@@ -15,7 +16,11 @@ const INITIAL_STATE = {
   success: false,
 };
 
-const LoginForm = () => {
+interface IProps {
+  updateAuthState?: (mode: AUTH_MODES) => void;
+}
+
+const LoginForm: React.FC<IProps> = ({ updateAuthState }) => {
   const [state, formAction, isPending] = useActionState(
     loginAction,
     INITIAL_STATE
@@ -41,9 +46,7 @@ const LoginForm = () => {
           defaultValue={state.password}
           required
         />
-        <div className={classes.forgotPassword}>
-          <Typography>Forgot Password?</Typography>
-        </div>
+        <Typography>Forgot Password?</Typography>
         <Button
           aria-label="Log In"
           disabled={isPending}
@@ -69,9 +72,16 @@ const LoginForm = () => {
         <span>Google</span>
       </Button>
 
-      <div className={classes.signupPrompt}>
-        <Typography>Don’t have an account? Create new account</Typography>
-      </div>
+      <Typography>
+        Don’t have an account?{' '}
+        <Typography
+          as="span"
+          onClick={() => updateAuthState?.(AUTH_MODES.REGISTER)}
+          className={classes.link}
+        >
+          Create new account
+        </Typography>
+      </Typography>
     </div>
   );
 };

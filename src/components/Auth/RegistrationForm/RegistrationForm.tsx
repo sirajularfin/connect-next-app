@@ -4,6 +4,7 @@ import { useActionState } from 'react';
 
 import GoogleIcon from '@/assets/svg/google-icon';
 import Button from '@/components/Button/Button';
+import { AUTH_MODES } from '@/types/appConstants';
 import { registerAction } from '@/util/formActions.util';
 import TextInput from '../../TextInput/TextInput';
 import Typography from '../../Typography/Typography';
@@ -18,7 +19,11 @@ const INITIAL_STATE = {
   success: false,
 };
 
-const RegistrationForm = () => {
+interface IProps {
+  updateAuthState?: (mode: AUTH_MODES) => void;
+}
+
+const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
   const [state, formAction, isPending] = useActionState(
     registerAction,
     INITIAL_STATE
@@ -88,7 +93,15 @@ const RegistrationForm = () => {
         <span>Google</span>
       </Button>
 
-      <Typography>Don’t have an account? Create new account</Typography>
+      <Typography>
+        Already have an account?{' '}
+        <Typography
+          as="span"
+          onClick={() => updateAuthState?.(AUTH_MODES.LOGIN)}
+        >
+          Log In
+        </Typography>
+      </Typography>
     </div>
   );
 };
