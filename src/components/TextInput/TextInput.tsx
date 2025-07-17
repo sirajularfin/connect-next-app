@@ -13,15 +13,17 @@ const TextInput: React.FC<TextInputProps> = ({
   ...props
 }) => {
   return (
-    <>
-      <input className={classes.container} {...props} />
+    <div className={classes.container}>
+      <input className={classes.textInput} {...props} />
       {error && (
         <Typography as="span" className={classes.error}>
           {error}
         </Typography>
       )}
-      {helperText && <Typography>{helperText}</Typography>}
-    </>
+      {helperText && (
+        <Typography className={classes.helperText}>{helperText}</Typography>
+      )}
+    </div>
   );
 };
 

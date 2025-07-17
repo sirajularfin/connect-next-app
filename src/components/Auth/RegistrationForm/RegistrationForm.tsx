@@ -1,15 +1,18 @@
 'use client';
 
+import { useActionState } from 'react';
+
 import GoogleIcon from '@/assets/svg/google-icon';
 import Button from '@/components/Button/Button';
 import { AUTH_MODES } from '@/types/appConstants';
-import { loginAction } from '@/util/formActions.util';
-import { useActionState } from 'react';
+import { registerAction } from '@/util/formActions.util';
 import TextInput from '../../TextInput/TextInput';
 import Typography from '../../Typography/Typography';
-import classes from './LoginForm.module.scss';
+import classes from './RegistrationForm.module.scss';
 
 const INITIAL_STATE = {
+  firstName: '',
+  lastName: '',
   email: '',
   password: '',
   errors: null,
@@ -20,16 +23,34 @@ interface IProps {
   updateAuthState?: (mode: AUTH_MODES) => void;
 }
 
-const LoginForm: React.FC<IProps> = ({ updateAuthState }) => {
+const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
   const [state, formAction, isPending] = useActionState(
-    loginAction,
+    registerAction,
     INITIAL_STATE
   );
 
   return (
     <div className={classes.container}>
-      <Typography as="h2">Log In</Typography>
+      <Typography as="h2">Create Your Account</Typography>
       <form action={formAction} className={classes.form}>
+        <div className={classes.nameFields}>
+          <TextInput
+            id="firstName"
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            defaultValue={state.firstName}
+            required
+          />
+          <TextInput
+            id="lastName"
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            defaultValue={state.lastName}
+            required
+          />
+        </div>
         <TextInput
           id="email"
           type="email"
@@ -44,14 +65,14 @@ const LoginForm: React.FC<IProps> = ({ updateAuthState }) => {
           name="password"
           placeholder="Password"
           defaultValue={state.password}
+          helperText="Create a password with at least 6 characters, including letters and numbers. Avoid common words or easily guessed information."
           required
         />
-        <Typography>Forgot Password?</Typography>
         <Button
-          aria-label="Log In"
+          aria-label="Register"
           disabled={isPending}
           loading={isPending}
-          title="Log In"
+          title="Register"
           titleCase="uppercase"
           type="submit"
         />
@@ -73,17 +94,16 @@ const LoginForm: React.FC<IProps> = ({ updateAuthState }) => {
       </Button>
 
       <Typography>
-        Don’t have an account?{' '}
+        Already have an account?{' '}
         <Typography
           as="span"
-          onClick={() => updateAuthState?.(AUTH_MODES.REGISTER)}
-          className={classes.link}
+          onClick={() => updateAuthState?.(AUTH_MODES.LOGIN)}
         >
-          Create new account
+          Log In
         </Typography>
       </Typography>
     </div>
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;
