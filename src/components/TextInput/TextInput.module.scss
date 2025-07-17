@@ -1,6 +1,12 @@
 @use '@/styles/app.scss' as *;
 
 .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: px-to-rem(8);
+}
+
+.textInput {
   background: var(--grey-100);
   border-radius: px-to-rem(100);
   border: none;
@@ -18,4 +24,12 @@
     font-weight: 300;
     color: var(--grey-600);
   }
+}
+
+.helperText {
+  color: var(--grey-600);
+  font-family: var(--font-dm-sans);
+  font-size: px-to-rem(12);
+  font-weight: 300;
+  margin-left: px-to-rem(20);
 }

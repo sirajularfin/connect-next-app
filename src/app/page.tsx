@@ -1,5 +1,5 @@
 import LandingPageImg from '@/assets/images/landing-page.png';
-import LoginForm from '@/components/Auth/LoginForm/LoginForm';
+import RegistrationForm from '@/components/Auth/RegistrationForm/RegistrationForm';
 import Typography from '@/components/Typography/Typography';
 import Image from 'next/image';
 import classes from './page.module.scss';
@@ -26,7 +26,7 @@ const Home = (): React.ReactElement => (
       </Typography>
     </section>
     <section className={classes.columnRight} aria-label="Authentication form">
-      <LoginForm />
+      <RegistrationForm />
     </section>
   </main>
 );
