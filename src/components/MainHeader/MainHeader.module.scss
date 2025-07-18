@@ -5,4 +5,9 @@
   display: flex;
   justify-content: space-between;
   padding: px-to-rem(15) 0;
+
+  &  a {
+    text-decoration: none;
+    color: var(--white);
+  }
 }

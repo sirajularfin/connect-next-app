@@ -1,6 +1,7 @@
 const APP_ROUTES = {
   HOME: '/',
-  REGISTRATION: '/registration',
+  REGISTER: '/auth/register',
+  LOGIN: '/auth/login',
   CHAT: '/chat',
 };
 

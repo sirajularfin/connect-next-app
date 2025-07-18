@@ -1,14 +1,15 @@
 'use client';
-
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useActionState } from 'react';
 
 import GoogleIcon from '@/assets/svg/google-icon';
 import Button from '@/components/Button/Button';
-import { AUTH_MODES } from '@/types/appConstants';
+import TextInput from '@/components/TextInput/TextInput';
+import Typography from '@/components/Typography/Typography';
+import APP_ROUTES from '@/types/routes';
 import { registerAction } from '@/util/formActions.util';
-import TextInput from '../../TextInput/TextInput';
-import Typography from '../../Typography/Typography';
-import classes from './RegistrationForm.module.scss';
+import classes from './page.module.scss';
 
 const INITIAL_STATE = {
   firstName: '',
@@ -19,11 +20,8 @@ const INITIAL_STATE = {
   success: false,
 };
 
-interface IProps {
-  updateAuthState?: (mode: AUTH_MODES) => void;
-}
-
-const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
+const RegisterForm: React.FC = () => {
+  const t = useTranslations();
   const [state, formAction, isPending] = useActionState(
     registerAction,
     INITIAL_STATE
@@ -31,14 +29,14 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
 
   return (
     <div className={classes.container}>
-      <Typography as="h2">Create Your Account</Typography>
+      <Typography as="h2">{t('register_title')}</Typography>
       <form action={formAction} className={classes.form}>
         <div className={classes.nameFields}>
           <TextInput
             id="firstName"
             type="text"
             name="firstName"
-            placeholder="First Name"
+            placeholder={t('register_placeholder_firstName')}
             defaultValue={state.firstName}
             required
           />
@@ -46,7 +44,7 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
             id="lastName"
             type="text"
             name="lastName"
-            placeholder="Last Name"
+            placeholder={t('register_placeholder_lastName')}
             defaultValue={state.lastName}
             required
           />
@@ -55,7 +53,7 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
           id="email"
           type="email"
           name="email"
-          placeholder="eg. username@domainname.com"
+          placeholder={t('register_placeholder_email')}
           defaultValue={state.email}
           required
         />
@@ -63,16 +61,16 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
           id="password"
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder={t('register_placeholder_password')}
           defaultValue={state.password}
-          helperText="Create a password with at least 6 characters, including letters and numbers. Avoid common words or easily guessed information."
+          helperText={t('register_password_hint')}
           required
         />
         <Button
           aria-label="Register"
           disabled={isPending}
           loading={isPending}
-          title="Register"
+          title={t('button_register')}
           titleCase="uppercase"
           type="submit"
         />
@@ -80,7 +78,7 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
 
       <div className={classes.divider}>
         <hr />
-        <Typography>or continue with</Typography>
+        <Typography>{t('text_continue_with')}</Typography>
         <hr />
       </div>
 
@@ -90,20 +88,17 @@ const RegistrationForm: React.FC<IProps> = ({ updateAuthState }) => {
         variant="SECONDARY"
       >
         <GoogleIcon width={18} height={18} />
-        <span>Google</span>
+        <span>{t('google_sign_in')}</span>
       </Button>
 
       <Typography>
-        Already have an account?{' '}
-        <Typography
-          as="span"
-          onClick={() => updateAuthState?.(AUTH_MODES.LOGIN)}
-        >
-          Log In
-        </Typography>
+        {t('register_already_have_account')}
+        <Link href={APP_ROUTES.LOGIN} className={classes.link}>
+          {t('login_title')}
+        </Link>
       </Typography>
     </div>
   );
 };
 
-export default RegistrationForm;
+export default RegisterForm;
