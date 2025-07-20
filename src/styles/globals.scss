@@ -1,4 +1,5 @@
 @use './theme.scss' as *;
+@use './app.scss' as *;
 
 html,
 body,
@@ -7,11 +8,8 @@ p {
   padding: 0;
 }
 
-body {
-  background: var(--primary-bg);
-}
-
 main {
   margin: 0 auto;
   max-width: var(--default-max-width);
+  min-height: 100vh;
 }

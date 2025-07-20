@@ -1,0 +1,17 @@
+@use '../../styles/app.scss' as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  min-height: calc(100vh - px-to-rem(68) - px-to-rem(54));
+}
+
+.columnLeft {
+  margin-top: px-to-rem(30);
+  position: relative;
+}
+
+.columnRight {
+  align-self: center;
+  justify-self: end;
+}

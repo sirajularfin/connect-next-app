@@ -1,12 +1,15 @@
-import LandingPageImg from '@/assets/images/landing-page.png';
-import Auth from '@/components/Auth/Auth';
-import Typography from '@/components/Typography/Typography';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+
+import LandingPageImg from '@/assets/images/landing-page.png';
+import Typography from '@/components/Typography/Typography';
 import classes from './page.module.scss';
 
-const Home = (): React.ReactElement => (
-  <main className={classes.container}>
-    <section className={classes.columnLeft}>
+const LandingPage: React.FC = () => {
+  const t = useTranslations();
+
+  return (
+    <div className={classes.columnLeft}>
       <Image
         src={LandingPageImg}
         alt="Chat Feature"
@@ -15,20 +18,20 @@ const Home = (): React.ReactElement => (
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       <Typography as="h1" className={classes.title1}>
-        Connect <span>Faster.</span>
+        {t.rich('landing_title1', {
+          strong: children => <strong>{children}</strong>,
+        })}
       </Typography>
       <Typography as="h1" className={classes.title2}>
-        Chat <span>Smarter.</span>
+        {t.rich('landing_title2', {
+          strong: children => <strong>{children}</strong>,
+        })}
       </Typography>
       <Typography as="p" className={classes.description}>
-        The most intuitive, secure AI-powered chat platform <br />
-        for <span>YOU</span>
+        {t('landing_description')}
       </Typography>
-    </section>
-    <section className={classes.columnRight} aria-label="Authentication form">
-      <Auth />
-    </section>
-  </main>
-);
+    </div>
+  );
+};
 
-export default Home;
+export default LandingPage;
