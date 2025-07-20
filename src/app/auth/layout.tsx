@@ -7,10 +7,10 @@ interface IProps {
 
 const AuthLayout: React.FC<IProps> = ({ left, right }) => {
   return (
-    <main className={classes.container}>
+    <div className={classes.container}>
       <section className={classes.columnLeft}>{left}</section>
       <section className={classes.columnRight}>{right}</section>
-    </main>
+    </div>
   );
 };
 

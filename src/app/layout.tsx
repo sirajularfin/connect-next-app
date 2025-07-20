@@ -25,11 +25,8 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <html
-      lang={locale}
-      className={classNames('dark-theme', customFonts.className)}
-    >
-      <body>
+    <html lang={locale}>
+      <body className={classNames('light-theme', customFonts.className)}>
         <React.StrictMode>
           <ReduxProvider>
             <LocalizationWrapper>
