@@ -1,46 +1,46 @@
 'use client';
 
+import { APP_LANGUAGES } from '@/types/appConstants';
 import React, {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useState,
 } from 'react';
 
 interface LocaleContextType {
-  locale: 'en' | 'hi';
+  locale: APP_LANGUAGES;
   toggleLanguage: () => void;
 }
 
 const LocaleContext = createContext<LocaleContextType>({
-  locale: 'en',
+  locale: APP_LANGUAGES.EN,
   toggleLanguage: () => {},
 });
 
-interface IProps {
+interface LocalizationWrapperProps {
   children: React.ReactNode;
-  initialLocale?: 'en' | 'hi';
+  initialLocale: APP_LANGUAGES;
 }
 
-const LocalizationWrapper: React.FC<IProps> = ({ children, initialLocale }) => {
-  const [locale, setLocale] = useState<'en' | 'hi'>(() => {
-    if (typeof window !== 'undefined') {
-      const match = document.cookie.match(/locale=(hi|en)/);
-      return (match?.[1] as 'en' | 'hi') || 'en';
-    }
-    return initialLocale || 'en';
-  });
+const COOKIE_EXPIRATION_TIME = 60 * 60 * 24 * 365; // 1 year
 
-  useEffect(() => {
-    document.cookie = `locale=${locale}; path=/; max-age=${60 * 60 * 24 * 365}`;
-  }, [locale]);
+const LocalizationWrapper: React.FC<LocalizationWrapperProps> = ({
+  children,
+  initialLocale,
+}) => {
+  const [locale, setLocale] = useState<APP_LANGUAGES>(initialLocale);
 
   const toggleLanguage = useCallback(() => {
-    setLocale(prev => (prev === 'en' ? 'hi' : 'en'));
+    const newLocale =
+      locale === APP_LANGUAGES.EN ? APP_LANGUAGES.HI : APP_LANGUAGES.EN;
+
+    document.cookie = `locale=${newLocale}; path=/; max-age=${COOKIE_EXPIRATION_TIME}`;
+
+    setLocale(newLocale);
     window.location.reload();
-  }, []);
+  }, [locale]);
 
   const contextValue = useMemo(
     () => ({ locale, toggleLanguage }),
@@ -54,7 +54,7 @@ const LocalizationWrapper: React.FC<IProps> = ({ children, initialLocale }) => {
   );
 };
 
-export const useLocaleContext = () => {
+export const useLocaleContext = (): LocaleContextType => {
   return useContext(LocaleContext);
 };
 

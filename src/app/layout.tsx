@@ -9,6 +9,8 @@ import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
+import { APP_LANGUAGES } from '@/types/appConstants';
+import { cookies } from 'next/headers';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {
@@ -23,13 +25,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get('locale')?.value as APP_LANGUAGES;
+  const initialLocale =
+    cookieLocale && Object.values(APP_LANGUAGES).includes(cookieLocale)
+      ? cookieLocale
+      : APP_LANGUAGES.EN;
 
   return (
     <html lang={locale}>
       <body className={classNames('light-theme', customFonts.className)}>
         <React.StrictMode>
           <ReduxProvider>
-            <LocalizationWrapper>
+            <LocalizationWrapper initialLocale={initialLocale}>
               <NextIntlClientProvider locale={locale}>
                 <main>
                   <MainHeader />
