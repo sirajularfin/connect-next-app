@@ -22,5 +22,6 @@
     "register_placeholder_lastName": "अंतिम नाम",
     "register_placeholder_password": "पासवर्ड",
     "register_title": "अपना खाता बनाएं",
-    "text_continue_with": "या जारी रखें"
+    "text_continue_with": "या जारी रखें",
+    "footer_text": "© {year} कनेक्ट — सिराजुल अरफिन द्वारा ❤️ के साथ बनाया गया"
 }
