@@ -7,3 +7,8 @@ export enum AUTH_MODES {
   OTP_VERIFICATION = 'otpVerification',
   RESET_PASSWORD = 'resetPassword',
 }
+
+export enum APP_LANGUAGES {
+  EN = 'En',
+  HI = 'Hi',
+}
