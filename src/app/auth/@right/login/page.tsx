@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
           aria-label="Log In"
           disabled={isPending}
           loading={isPending}
-          title="Log In"
+          title={t('button_login')}
           titleCase="uppercase"
           type="submit"
         />
