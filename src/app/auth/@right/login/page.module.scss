@@ -9,7 +9,7 @@
   min-width: px-to-rem(400);
   padding: px-to-rem(60) px-to-rem(30);
   row-gap: px-to-rem(20);
-  & > p {
+  & p {
     text-align: center;
     font-family: var(--font-dm-sans);
     font-size: px-to-rem(14);
