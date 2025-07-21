@@ -1,9 +1,7 @@
-@use '@/styles/theme.scss' as *;
-
 .container {
   padding: px-to-rem(20) 0;
 
-  @include respond-to(lg) {
+  @include respond-to(sm) {
     margin-top: px-to-rem(40);
     padding: px-to-rem(15) px-to-rem(20);
   }

@@ -1,20 +1,24 @@
-@use '@/styles/theme.scss' as *;
-
 .container {
+  flex: 1;
   background-color: $color-white;
   border-radius: px-to-rem(20);
   border: 1px solid $color-grey-400;
   display: flex;
   flex-direction: column;
-  max-width: px-to-rem(500);
   padding: px-to-rem(60) px-to-rem(30);
-  row-gap: px-to-rem(30);
+  row-gap: px-to-rem(20);
+  width: 100%;
+  max-width: px-to-rem(430);
+
+  @include respond-to(lg) {
+    max-width: px-to-rem(500);
+  }
 
   @include respond-to(sm) {
     padding: px-to-rem(15) px-to-rem(20);
-    border: none
+    border: none;
   }
-  
+
   & p {
     text-align: center;
     font-family: $font-dm-sans;
