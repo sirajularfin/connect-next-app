@@ -1,5 +1,4 @@
-@use './theme.scss' as *;
-@use './app.scss' as *;
+@use "./theme.scss" as *;
 
 html,
 body,
@@ -10,6 +9,6 @@ p {
 
 main {
   margin: 0 auto;
-  max-width: var(--default-max-width);
+  max-width: $default-max-width;
   min-height: 100vh;
 }

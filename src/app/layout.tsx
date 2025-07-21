@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
@@ -34,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={classNames('light-theme', customFonts.className)}>
+      <body className={customFonts.className}>
         <React.StrictMode>
           <ReduxProvider>
             <LocalizationWrapper initialLocale={initialLocale}>

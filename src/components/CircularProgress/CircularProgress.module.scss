@@ -1,3 +1,5 @@
+@use '@/styles/theme.scss' as *;
+
 .container {
   display: block;
   & circle {
@@ -5,7 +7,7 @@
     cy: 22;
     fill: none;
     r: 18;
-    stroke: var(--white);
+    stroke: $color-white;
     stroke-dasharray: 80;
     stroke-dashoffset: 60;
     stroke-linecap: round;
