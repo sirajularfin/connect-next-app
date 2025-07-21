@@ -1,7 +1,7 @@
 @use '@/styles/theme.scss' as *;
 
 .container {
-  background-color: $white;
+  background-color: $color-white;
   border-radius: px-to-rem(20);
   border: 1px solid $color-grey-400;
   display: flex;
