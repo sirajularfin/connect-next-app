@@ -2,11 +2,21 @@
 
 .container {
   padding: px-to-rem(20) 0;
+
+  @include respond-to(lg) {
+    margin-top: px-to-rem(40);
+    padding: px-to-rem(15) px-to-rem(20);
+  }
+
   & p {
     color: $color-grey-600;
     font-family: $font-dm-sans;
     font-size: px-to-rem(14);
     font-weight: 300;
     line-height: 100%;
+
+    @include respond-to(lg) {
+      text-align: center;
+    }
   }
 }

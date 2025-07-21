@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use './variables.scss' as *;
 
 // Mixins for responsive design
 @mixin respond-to($breakpoint) {
