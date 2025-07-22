@@ -2,7 +2,7 @@
   display: flex;
   column-gap: px-to-rem(10);
 
-  @include respond-to(lg) {
+  @include media-query(lg) {
     row-gap: px-to-rem(20);
     flex-direction: column;
   }

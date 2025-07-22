@@ -16,11 +16,11 @@
   text-align: center;
   color: $color-grey-800;
 
-  @include respond-to(lg) {
+  @include media-query(lg) {
     max-width: px-to-rem(500);
   }
 
-  @include respond-to(sm) {
+  @include media-query(sm) {
     padding: px-to-rem(15) px-to-rem(20);
     border: none;
   }
@@ -33,7 +33,7 @@
     font-weight: 600;
     color: $color-black;
 
-    @include respond-to(sm) {
+    @include media-query(sm) {
       font-size: px-to-rem(34);
     }
   }
