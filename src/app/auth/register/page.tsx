@@ -93,7 +93,7 @@ const RegisterForm: React.FC = () => {
 
       <Typography>
         {t('register_already_have_account')}
-        <Link href={APP_ROUTES.LOGIN} className={classes.link}>
+        <Link href={APP_ROUTES.LOGIN} className={classes.link} prefetch>
           {t('login_title')}
         </Link>
       </Typography>

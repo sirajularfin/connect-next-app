@@ -71,7 +71,7 @@ const LoginPage: React.FC = () => {
 
         <Typography>
           {t('login_no_account')}
-          <Link href={APP_ROUTES.REGISTER} className={classes.link}>
+          <Link href={APP_ROUTES.REGISTER} className={classes.link} prefetch>
             {t('login_create_account')}
           </Link>
         </Typography>
