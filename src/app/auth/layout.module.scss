@@ -22,11 +22,10 @@
 .columnRight {
   flex: 1;
   width: 100%;
-  justify-items: center;
   align-content: center;
 
   @include respond-to(sm) {
-    justify-items: normal;
-    align-content: normal;
+    margin-top: px-to-rem(30);
+    align-content: flex-start;
   }
 }
