@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useActionState } from 'react';
 
 import GoogleIcon from '@/assets/svg/google-icon';
+import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
@@ -28,9 +29,27 @@ const RegisterForm: React.FC = () => {
   );
 
   return (
-    <div className={classes.container}>
-      <Typography as="h2">{t('register_title')}</Typography>
-      <form action={formAction} className={classes.form}>
+    <AuthForm
+      title={<Typography as="h2">{t('register_title')}</Typography>}
+      dividerText={<Typography>{t('text_continue_with')}</Typography>}
+      googleButton={
+        <Button
+          aria-label="Google Sign In"
+          titleCase="uppercase"
+          variant="SECONDARY"
+        >
+          <GoogleIcon width={18} height={18} />
+          <span>{t('google_sign_in')}</span>
+        </Button>
+      }
+      bottomText={
+        <Typography>
+          {t('register_already_have_account')}
+          <Link href={APP_ROUTES.LOGIN}>{t('login_title')}</Link>
+        </Typography>
+      }
+    >
+      <form action={formAction}>
         <div className={classes.nameFields}>
           <TextInput
             id="firstName"
@@ -75,29 +94,7 @@ const RegisterForm: React.FC = () => {
           type="submit"
         />
       </form>
-
-      <div className={classes.divider}>
-        <hr />
-        <Typography>{t('text_continue_with')}</Typography>
-        <hr />
-      </div>
-
-      <Button
-        aria-label="Google Sign In"
-        titleCase="uppercase"
-        variant="SECONDARY"
-      >
-        <GoogleIcon width={18} height={18} />
-        <span>{t('google_sign_in')}</span>
-      </Button>
-
-      <Typography>
-        {t('register_already_have_account')}
-        <Link href={APP_ROUTES.LOGIN} className={classes.link} prefetch>
-          {t('login_title')}
-        </Link>
-      </Typography>
-    </div>
+    </AuthForm>
   );
 };
 

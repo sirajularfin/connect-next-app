@@ -1,14 +1,20 @@
 .container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   background-color: $color-white;
   border-radius: px-to-rem(20);
   border: 1px solid $color-grey-400;
-  display: flex;
-  flex-direction: column;
   padding: px-to-rem(60) px-to-rem(30);
   row-gap: px-to-rem(20);
   max-width: px-to-rem(430);
   margin: 0 auto;
+
+  font-family: $font-dm-sans;
+  font-size: px-to-rem(14);
+  font-weight: 400;
+  text-align: center;
+  color: $color-grey-800;
 
   @include respond-to(lg) {
     max-width: px-to-rem(500);
@@ -19,15 +25,7 @@
     border: none;
   }
 
-  & p {
-    text-align: center;
-    font-family: $font-dm-sans;
-    font-size: px-to-rem(14);
-    font-size: px-to-rem(14);
-    font-weight: 400;
-    color: $color-grey-800;
-  }
-  & > h2 {
+  & h2 {
     margin: 0;
     text-align: center;
     font-family: $font-dm-sans;
@@ -39,7 +37,14 @@
       font-size: px-to-rem(34);
     }
   }
-  & > form {
+
+  & a {
+    color: $color-amber-900;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  & form {
     display: flex;
     flex-direction: column;
     row-gap: px-to-rem(20);
@@ -47,29 +52,21 @@
 }
 
 .divider {
-  align-items: center;
-  column-gap: px-to-rem(10);
   display: flex;
+  align-items: center;
   justify-content: center;
+  column-gap: px-to-rem(10);
+
   & > p {
     white-space: nowrap;
     font-family: $font-dm-sans;
     font-size: px-to-rem(14);
     font-weight: 400;
     color: $color-grey-800;
-    font-family: $font-dm-sans;
-    font-size: px-to-rem(14);
-    font-weight: 400;
-    color: $color-grey-800;
   }
+
   & > hr {
     border: 0.5px solid $color-grey-400;
     width: 100%;
   }
-}
-
-.link {
-  text-decoration: none;
-  color: $color-amber-900;
-  cursor: pointer;
 }

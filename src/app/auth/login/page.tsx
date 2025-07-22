@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { useActionState } from 'react';
 
 import GoogleIcon from '@/assets/svg/google-icon';
+import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import APP_ROUTES from '@/types/routes';
 import { loginAction } from '@/util/formActions.util';
-import classes from './page.module.scss';
 
 const INITIAL_STATE = {
   email: '',
@@ -26,9 +26,27 @@ const LoginPage: React.FC = () => {
   );
 
   return (
-    <div className={classes.container}>
-      <Typography as="h2">{t('login_title')}</Typography>
-      <form action={formAction} className={classes.form}>
+    <AuthForm
+      title={<Typography as="h2">{t('login_title')}</Typography>}
+      dividerText={<Typography>{t('text_continue_with')}</Typography>}
+      googleButton={
+        <Button
+          aria-label="Google Sign In"
+          titleCase="uppercase"
+          variant="SECONDARY"
+        >
+          <GoogleIcon width={18} height={18} />
+          <span>{t('google_sign_in')}</span>
+        </Button>
+      }
+      bottomText={
+        <Typography>
+          {t('login_no_account')}
+          <Link href={APP_ROUTES.REGISTER}>{t('login_create_account')}</Link>
+        </Typography>
+      }
+    >
+      <form action={formAction}>
         <TextInput
           id="email"
           type="email"
@@ -45,7 +63,7 @@ const LoginPage: React.FC = () => {
           defaultValue={state.password}
           required
         />
-        <Typography>{t('login_forgot_password')}</Typography>
+        <Link href="#">{t('login_forgot_password')}</Link>
         <Button
           aria-label="Log In"
           disabled={isPending}
@@ -54,29 +72,8 @@ const LoginPage: React.FC = () => {
           titleCase="uppercase"
           type="submit"
         />
-        <div className={classes.divider}>
-          <hr />
-          <Typography>{t('text_continue_with')}</Typography>
-          <hr />
-        </div>
-
-        <Button
-          aria-label="Google Sign In"
-          titleCase="uppercase"
-          variant="SECONDARY"
-        >
-          <GoogleIcon width={18} height={18} />
-          <span>{t('google_sign_in')}</span>
-        </Button>
-
-        <Typography>
-          {t('login_no_account')}
-          <Link href={APP_ROUTES.REGISTER} className={classes.link} prefetch>
-            {t('login_create_account')}
-          </Link>
-        </Typography>
       </form>
-    </div>
+    </AuthForm>
   );
 };
 

@@ -1,50 +1,3 @@
-.container {
-  flex: 1;
-  background-color: $color-white;
-  border-radius: px-to-rem(20);
-  border: 1px solid $color-grey-400;
-  display: flex;
-  flex-direction: column;
-  padding: px-to-rem(60) px-to-rem(30);
-  row-gap: px-to-rem(20);
-  max-width: px-to-rem(430);
-  margin: 0 auto;
-
-  @include respond-to(lg) {
-    max-width: px-to-rem(500);
-  }
-
-  @include respond-to(sm) {
-    padding: px-to-rem(15) px-to-rem(20);
-    border: none;
-  }
-
-  & > p {
-    text-align: center;
-    font-family: $font-dm-sans;
-    font-size: px-to-rem(14);
-    font-weight: 400;
-    color: $color-grey-800;
-  }
-  & > h2 {
-    margin: 0;
-    text-align: center;
-    font-family: $font-dm-sans;
-    font-size: px-to-rem(36);
-    font-weight: 600;
-    color: $color-black;
-
-    @include respond-to(sm) {
-      font-size: px-to-rem(34);
-    }
-  }
-  & > form {
-    display: flex;
-    flex-direction: column;
-    row-gap: px-to-rem(20);
-  }
-}
-
 .nameFields {
   display: flex;
   column-gap: px-to-rem(10);
@@ -57,28 +10,4 @@
   & > div {
     flex: 1;
   }
-}
-
-.divider {
-  align-items: center;
-  column-gap: px-to-rem(10);
-  display: flex;
-  justify-content: center;
-  & > p {
-    white-space: nowrap;
-    font-family: $font-dm-sans;
-    font-size: px-to-rem(14);
-    font-weight: 400;
-    color: $color-grey-800;
-  }
-  & > hr {
-    border: 0.5px solid $color-grey-400;
-    width: 100%;
-  }
-}
-
-.link {
-  text-decoration: none;
-  color: $color-amber-900;
-  cursor: pointer;
 }
