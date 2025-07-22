@@ -1,8 +1,8 @@
 import z from 'zod';
 
-import { loginFormSchema } from '@/util/validation.util';
+import { LoginFormSchema } from '@/util/validation.util';
 
-export type ILoginRequest = z.infer<typeof loginFormSchema>;
+export type ILoginRequest = z.infer<typeof LoginFormSchema>;
 
 export interface ILoginResponse {
   accessToken: string;

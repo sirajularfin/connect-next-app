@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => {
           name="email"
           placeholder={t('login_placeholder_email')}
           defaultValue={state.email}
-          required
+          error={state?.errors?.email?.errors}
         />
         <TextInput
           id="password"
@@ -61,7 +61,7 @@ const LoginPage: React.FC = () => {
           name="password"
           placeholder={t('login_placeholder_password')}
           defaultValue={state.password}
-          required
+          error={state?.errors?.password?.errors}
         />
         <Link href="#">{t('login_forgot_password')}</Link>
         <Button

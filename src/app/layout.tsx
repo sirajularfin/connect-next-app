@@ -6,7 +6,6 @@ import React from 'react';
 import Footer from '@/components/Footer/Footer';
 import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
-import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
 import { APP_LANGUAGES } from '@/types/appConstants';
 import { cookies } from 'next/headers';
@@ -35,17 +34,15 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={customFonts.className}>
         <React.StrictMode>
-          <ReduxProvider>
-            <LocalizationWrapper initialLocale={initialLocale}>
-              <NextIntlClientProvider locale={locale}>
-                <main>
-                  <MainHeader />
-                  {children}
-                  <Footer />
-                </main>
-              </NextIntlClientProvider>
-            </LocalizationWrapper>
-          </ReduxProvider>
+          <LocalizationWrapper initialLocale={initialLocale}>
+            <NextIntlClientProvider locale={locale}>
+              <main>
+                <MainHeader />
+                {children}
+                <Footer />
+              </main>
+            </NextIntlClientProvider>
+          </LocalizationWrapper>
         </React.StrictMode>
       </body>
     </html>

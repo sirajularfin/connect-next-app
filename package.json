@@ -12,6 +12,9 @@
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
     "classnames": "^2.5.1",
+    "connect-mongodb-session": "^5.0.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.4",
     "next": "15.3.5",
     "next-intl": "^4.3.4",
     "prettier": "^3.6.2",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/connect-mongodb-session": "^2.4.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

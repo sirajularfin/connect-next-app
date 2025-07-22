@@ -1,19 +1,22 @@
 'use server';
+import { z } from 'zod';
 
 import { ILoginRequest } from '@/types/login.type';
-import { IUserRegistrationRequest } from '@/types/userRegistration.type';
-import { loginFormSchema } from '@/util/validation.util';
-import { z } from 'zod';
+import { IUserRegistrationRequest } from '@/types/register.type';
+import {
+  LoginFormSchema,
+  RegistrationFormSchema,
+} from '@/util/validation.util';
 
 export const loginAction = async (_prevState: unknown, formData: FormData) => {
   const values: ILoginRequest = {
     email: String(formData.get('email')),
     password: String(formData.get('password')),
   };
-  const parsed = loginFormSchema.safeParse(values);
-  if (!parsed.success) {
+  const validatedFields = LoginFormSchema.safeParse(values);
+  if (!validatedFields.success) {
     return {
-      errors: z.treeifyError(parsed.error),
+      errors: z.treeifyError(validatedFields.error).properties,
       success: false,
       email: values.email,
       password: values.password,
@@ -37,10 +40,10 @@ export const registerAction = async (
     firstName: String(formData.get('firstName')),
     lastName: String(formData.get('lastName')),
   };
-  const parsed = loginFormSchema.safeParse(values);
-  if (!parsed.success) {
+  const validatedFields = RegistrationFormSchema.safeParse(values);
+  if (!validatedFields.success) {
     return {
-      errors: z.treeifyError(parsed.error),
+      errors: z.treeifyError(validatedFields.error).properties,
       success: false,
       email: values.email,
       password: values.password,

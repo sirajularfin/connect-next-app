@@ -23,5 +23,14 @@
     "register_placeholder_password": "पासवर्ड",
     "register_title": "अपना खाता बनाएं",
     "text_continue_with": "या जारी रखें",
-    "footer_text": "© {year} कनेक्ट — सिराजुल अरफिन द्वारा विकसित"
+    "footer_text": "© {year} कनेक्ट — सिराजुल अरफिन द्वारा विकसित",
+    "error_invalid_email": "अमान्य ईमेल",
+    "error_email_required": "ईमेल आवश्यक है",
+    "error_password_required": "पासवर्ड आवश्यक है",
+    "error_password_min_length": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
+    "error_password_no_letter": "पासवर्ड में कम से कम एक अक्षर होना चाहिए।",
+    "error_password_no_number": "पासवर्ड में कम से कम एक संख्या होनी चाहिए।",
+    "error_password_no_special_char": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए।",
+    "error_first_name_required": "पहला नाम आवश्यक है",
+    "error_last_name_required": "अंतिम नाम आवश्यक है"
 }
