@@ -1,8 +1,6 @@
 import z from 'zod';
 
-import User from '@/types/user.type';
 import { IUserRegistrationRequest } from '@/types/register.type';
-import { encryptMessage } from '@/util/encryption.util';
 import { RegistrationFormSchema } from '@/util/validation.util';
 
 export const registerAction = async (
@@ -26,14 +24,22 @@ export const registerAction = async (
     };
   }
 
-  const { firstName, lastName, email, password } = validatedFields.data;
-  const hashedPassword = await encryptMessage(password);
-  const user = new User({
-    firstName,
-    lastName,
-    email,
-    password: hashedPassword,
-  });
+  return {
+    errors: undefined,
+    email: validatedFields.data.email,
+    password: validatedFields.data.password,
+    firstName: validatedFields.data.firstName,
+    lastName: validatedFields.data.lastName,
+  };
 
-  return await user.save();
+  // const { firstName, lastName, email, password } = validatedFields.data;
+  // const hashedPassword = await encryptMessage(password);
+  // const user = new User({
+  //   firstName,
+  //   lastName,
+  //   email,
+  //   password: hashedPassword,
+  // });
+
+  // return await user.save();
 };
