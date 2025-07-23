@@ -2,7 +2,6 @@
   padding: px-to-rem(20) 0;
 
   @include media-query(sm) {
-    margin-top: px-to-rem(40);
     padding: px-to-rem(15) px-to-rem(20);
   }
 
