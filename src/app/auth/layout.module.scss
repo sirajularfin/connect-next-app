@@ -3,7 +3,7 @@
   flex-direction: row;
   min-height: calc(100vh - px-to-rem(68) - px-to-rem(44));
 
-  @include respond-to(lg) {
+  @include media-query(lg) {
     width: 100%;
     flex-direction: column;
   }
@@ -14,7 +14,7 @@
   margin-top: px-to-rem(30);
   position: relative;
 
-  @include respond-to(lg) {
+  @include media-query(lg) {
     display: none;
   }
 }
@@ -24,7 +24,7 @@
   width: 100%;
   align-content: center;
 
-  @include respond-to(sm) {
+  @include media-query(sm) {
     margin-top: px-to-rem(30);
     align-content: flex-start;
   }

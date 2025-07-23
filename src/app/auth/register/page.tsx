@@ -3,12 +3,13 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useActionState } from 'react';
 
+import { registerAction } from '@/actions/registerActions';
 import GoogleIcon from '@/assets/svg/google-icon';
+import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import APP_ROUTES from '@/types/routes';
-import { registerAction } from '@/util/formActions.util';
 import classes from './page.module.scss';
 
 const INITIAL_STATE = {
@@ -16,7 +17,7 @@ const INITIAL_STATE = {
   lastName: '',
   email: '',
   password: '',
-  errors: null,
+  errors: undefined,
   success: false,
 };
 
@@ -28,9 +29,27 @@ const RegisterForm: React.FC = () => {
   );
 
   return (
-    <div className={classes.container}>
-      <Typography as="h2">{t('register_title')}</Typography>
-      <form action={formAction} className={classes.form}>
+    <AuthForm
+      title={<Typography as="h2">{t('register_title')}</Typography>}
+      dividerText={<Typography>{t('text_continue_with')}</Typography>}
+      googleButton={
+        <Button
+          aria-label="Google Sign In"
+          titleCase="uppercase"
+          variant="SECONDARY"
+        >
+          <GoogleIcon width={18} height={18} />
+          <span>{t('google_sign_in')}</span>
+        </Button>
+      }
+      bottomText={
+        <Typography>
+          {t('register_already_have_account')}
+          <Link href={APP_ROUTES.LOGIN}>{t('login_title')}</Link>
+        </Typography>
+      }
+    >
+      <form action={formAction}>
         <div className={classes.nameFields}>
           <TextInput
             id="firstName"
@@ -38,7 +57,7 @@ const RegisterForm: React.FC = () => {
             name="firstName"
             placeholder={t('register_placeholder_firstName')}
             defaultValue={state.firstName}
-            required
+            error={state?.errors?.firstName?.errors}
           />
           <TextInput
             id="lastName"
@@ -46,7 +65,7 @@ const RegisterForm: React.FC = () => {
             name="lastName"
             placeholder={t('register_placeholder_lastName')}
             defaultValue={state.lastName}
-            required
+            error={state?.errors?.lastName?.errors}
           />
         </div>
         <TextInput
@@ -55,7 +74,7 @@ const RegisterForm: React.FC = () => {
           name="email"
           placeholder={t('register_placeholder_email')}
           defaultValue={state.email}
-          required
+          error={state?.errors?.email?.errors}
         />
         <TextInput
           id="password"
@@ -63,8 +82,9 @@ const RegisterForm: React.FC = () => {
           name="password"
           placeholder={t('register_placeholder_password')}
           defaultValue={state.password}
+          error={state?.errors?.password?.errors}
+          minLength={6}
           helperText={t('register_password_hint')}
-          required
         />
         <Button
           aria-label="Register"
@@ -75,29 +95,7 @@ const RegisterForm: React.FC = () => {
           type="submit"
         />
       </form>
-
-      <div className={classes.divider}>
-        <hr />
-        <Typography>{t('text_continue_with')}</Typography>
-        <hr />
-      </div>
-
-      <Button
-        aria-label="Google Sign In"
-        titleCase="uppercase"
-        variant="SECONDARY"
-      >
-        <GoogleIcon width={18} height={18} />
-        <span>{t('google_sign_in')}</span>
-      </Button>
-
-      <Typography>
-        {t('register_already_have_account')}
-        <Link href={APP_ROUTES.LOGIN} className={classes.link}>
-          {t('login_title')}
-        </Link>
-      </Typography>
-    </div>
+    </AuthForm>
   );
 };
 

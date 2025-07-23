@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
+import { cookies } from 'next/headers';
 import React from 'react';
 
 import Footer from '@/components/Footer/Footer';
@@ -9,7 +10,6 @@ import LocalizationWrapper from '@/i18n/localizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
 import { APP_LANGUAGES } from '@/types/appConstants';
-import { cookies } from 'next/headers';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {

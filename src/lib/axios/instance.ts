@@ -4,7 +4,7 @@ import generateHttpHeaders from './helpers/axiosHeaders';
 const TIMEOUT_IN_MS = 10000;
 
 const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_VITE_API_URL,
+  baseURL: process.env.VITE_API_URL,
   timeout: TIMEOUT_IN_MS,
   headers: {
     // Configure from Axios Base Query

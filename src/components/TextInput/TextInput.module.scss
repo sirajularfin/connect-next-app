@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  row-gap: px-to-rem(8);
 }
 
 .textInput {
@@ -24,10 +23,28 @@
   }
 }
 
+.textInputError {
+  outline: px-to-rem(2) solid $color-red-500;
+  background: $color-grey-50;
+}
+
+.error {
+  display: 'block';
+  color: $color-red-500;
+  font-family: $font-dm-sans;
+  font-size: px-to-rem(12);
+  font-weight: 400;
+  margin-top: px-to-rem(2);
+  margin-left: px-to-rem(20);
+  text-align: left;
+}
+
 .helperText {
   color: $color-grey-600;
   font-family: $font-dm-sans;
   font-size: px-to-rem(12);
   font-weight: 300;
+  margin-top: px-to-rem(8);
   margin-left: px-to-rem(20);
+  text-align: left;
 }

@@ -23,6 +23,9 @@ export const profileSlice = createSlice({
       state.data = action.payload;
     },
   },
+  extraReducers: builder => {
+    builder.addCase('PURGE', () => initialState);
+  },
   selectors: {
     selectEmail: state => state.data?.email,
     selectFirstName: state => state.data?.firstName,

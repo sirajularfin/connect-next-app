@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import baseApi from '@/api/baseApi';
-import { appSessionSlice } from './slices/appSession.slice';
-import { authSlice } from './slices/auth.slice';
-import { profileSlice } from './slices/profile.slice';
+import baseApi from '@/lib/http/baseApi';
+import { appSessionSlice } from '@/redux/slices/appSession.slice';
+import { authSlice } from '@/redux/slices/auth.slice';
+import { profileSlice } from '@/redux/slices/profile.slice';
 
 const store = configureStore({
   reducer: {
@@ -18,7 +18,6 @@ const store = configureStore({
     }).concat(baseApi.middleware),
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

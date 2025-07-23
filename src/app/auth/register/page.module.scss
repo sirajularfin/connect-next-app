@@ -1,0 +1,13 @@
+.nameFields {
+  display: flex;
+  column-gap: px-to-rem(10);
+
+  @include media-query(lg) {
+    row-gap: px-to-rem(20);
+    flex-direction: column;
+  }
+
+  & > div {
+    flex: 1;
+  }
+}

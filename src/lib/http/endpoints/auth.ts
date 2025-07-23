@@ -2,7 +2,7 @@ import { ILoginRequest, ILoginResponse } from '@/types/login.type';
 import {
   IUserRegistrationRequest,
   IUserRegistrationResponse,
-} from '@/types/userRegistration.type';
+} from '@/types/register.type';
 import baseApi from '../baseApi';
 import { AuthServiceUrls, UserSessionUrls } from '../types';
 

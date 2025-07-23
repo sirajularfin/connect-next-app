@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { PURGE } from 'redux-persist';
 
 interface IAuthState {
   isLoggedIn?: boolean;
@@ -20,10 +21,9 @@ export const authSlice = createSlice({
     setActiveUserId: (state, action) => {
       state.activeUserId = action.payload;
     },
-    resetState: state => {
-      state.activeUserId = '';
-      state.isLoggedIn = false;
-    },
+  },
+  extraReducers: builder => {
+    builder.addCase(PURGE, () => initialState);
   },
   selectors: {
     selectIsLoggedIn: state => state.isLoggedIn,

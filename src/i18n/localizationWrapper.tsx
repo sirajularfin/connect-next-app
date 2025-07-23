@@ -1,6 +1,7 @@
 'use client';
 
 import { APP_LANGUAGES } from '@/types/appConstants';
+import { useRouter } from 'next/navigation';
 import React, {
   createContext,
   useCallback,
@@ -30,6 +31,7 @@ const LocalizationWrapper: React.FC<LocalizationWrapperProps> = ({
   children,
   initialLocale,
 }) => {
+  const router = useRouter();
   const [locale, setLocale] = useState<APP_LANGUAGES>(initialLocale);
 
   const toggleLanguage = useCallback(() => {
@@ -39,8 +41,8 @@ const LocalizationWrapper: React.FC<LocalizationWrapperProps> = ({
     document.cookie = `locale=${newLocale}; path=/; max-age=${COOKIE_EXPIRATION_TIME}`;
 
     setLocale(newLocale);
-    window.location.reload();
-  }, [locale]);
+    router.refresh();
+  }, [locale, router]);
 
   const contextValue = useMemo(
     () => ({ locale, toggleLanguage }),
