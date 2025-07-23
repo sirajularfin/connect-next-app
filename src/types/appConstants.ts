@@ -9,6 +9,6 @@ export enum AUTH_MODES {
 }
 
 export enum APP_LANGUAGES {
-  EN = 'En',
-  HI = 'Hi',
+  EN = 'en',
+  HI = 'hi',
 }

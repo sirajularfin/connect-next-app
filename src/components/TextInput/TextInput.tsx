@@ -28,7 +28,7 @@ const TextInput: React.FC<TextInputProps> = ({
         <Typography className={classes.error}>{t(error[0])}</Typography>
       )}
       {helperText && (
-        <Typography className={classes.helperText}>{t(helperText)}</Typography>
+        <Typography className={classes.helperText}>{helperText}</Typography>
       )}
     </div>
   );

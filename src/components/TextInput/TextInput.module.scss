@@ -24,7 +24,7 @@
 }
 
 .textInputError {
-  border: px-to-rem(2) solid $color-red-500;
+  outline: px-to-rem(2) solid $color-red-500;
   background: $color-grey-50;
 }
 

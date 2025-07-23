@@ -1,14 +1,23 @@
 import { z } from 'zod';
 
 export const LoginFormSchema = z.object({
-  email: z.email('error_invalid_email').nonempty('error_email_required').trim(),
+  email: z
+    .string()
+    .trim()
+    .nonempty('error_email_required')
+    .email('error_invalid_email'),
   password: z.string().nonempty('error_password_required').trim(),
 });
 
 export const RegistrationFormSchema = z.object({
-  email: z.email('error_invalid_email').nonempty('error_email_required').trim(),
+  email: z
+    .string()
+    .trim()
+    .nonempty('error_email_required')
+    .email('error_invalid_email'),
   password: z
     .string()
+    .nonempty('error_password_required')
     .min(6, { message: 'error_password_min_length' })
     .regex(/[a-zA-Z]/, {
       message: 'error_password_no_letter',
@@ -21,14 +30,3 @@ export const RegistrationFormSchema = z.object({
   firstName: z.string().nonempty('error_first_name_required').trim(),
   lastName: z.string().nonempty('error_last_name_required').trim(),
 });
-
-export type FormState =
-  | {
-      errors?: {
-        name?: string[];
-        email?: string[];
-        password?: string[];
-      };
-      message?: string;
-    }
-  | undefined;

@@ -3,13 +3,13 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useActionState } from 'react';
 
+import { registerAction } from '@/actions/registerActions';
 import GoogleIcon from '@/assets/svg/google-icon';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import APP_ROUTES from '@/types/routes';
-import { registerAction } from '@/util/formActions.util';
 import classes from './page.module.scss';
 
 const INITIAL_STATE = {
@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   lastName: '',
   email: '',
   password: '',
-  errors: null,
+  errors: undefined,
   success: false,
 };
 
@@ -27,8 +27,6 @@ const RegisterForm: React.FC = () => {
     registerAction,
     INITIAL_STATE
   );
-
-  console.log('RegisterForm state:', state.errors);
 
   return (
     <AuthForm

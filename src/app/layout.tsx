@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
+import { cookies } from 'next/headers';
 import React from 'react';
 
 import Footer from '@/components/Footer/Footer';
 import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
+import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
 import { APP_LANGUAGES } from '@/types/appConstants';
-import { cookies } from 'next/headers';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {
@@ -34,15 +35,17 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={customFonts.className}>
         <React.StrictMode>
-          <LocalizationWrapper initialLocale={initialLocale}>
-            <NextIntlClientProvider locale={locale}>
-              <main>
-                <MainHeader />
-                {children}
-                <Footer />
-              </main>
-            </NextIntlClientProvider>
-          </LocalizationWrapper>
+          <ReduxProvider>
+            <LocalizationWrapper initialLocale={initialLocale}>
+              <NextIntlClientProvider locale={locale}>
+                <main>
+                  <MainHeader />
+                  {children}
+                  <Footer />
+                </main>
+              </NextIntlClientProvider>
+            </LocalizationWrapper>
+          </ReduxProvider>
         </React.StrictMode>
       </body>
     </html>
