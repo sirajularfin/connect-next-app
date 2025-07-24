@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import LanguageIcon from '@/assets/svg/language-icon';
 import { useLocaleContext } from '@/i18n/localizationWrapper';
-import { APP_LANGUAGES } from '@/types/appConstants';
+import { APP_LANGUAGES } from '@/types/constants';
 import Button from '../Button/Button';
 import classes from './LanguageButton.module.scss';
 

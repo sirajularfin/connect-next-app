@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+import logger from '@/util/logger.util';
+
 type MongooseCache = {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -9,10 +11,10 @@ declare global {
   var mongoose: MongooseCache | undefined;
 }
 
-const DATABASE_URL = process.env.DATABASE_URL as string;
+const MONGODB_URI = process.env.MONGODB_URI as string;
 
-if (!DATABASE_URL) {
-  throw new Error('Please define the DATABASE_URL environment variable');
+if (!MONGODB_URI) {
+  throw new Error('Please define the MONGODB_URI environment variable');
 }
 
 const cached: MongooseCache = global.mongoose ?? { conn: null, promise: null };
@@ -22,19 +24,24 @@ if (!global.mongoose) {
 }
 
 export async function connectToDatabase() {
-  if (cached.conn) return cached.conn;
+  if (cached.conn) {
+    logger(`Using cached MongoDB connection`);
+    return cached.conn;
+  }
 
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(DATABASE_URL, {
-        dbName: 'CONNECT_NEXT_APP',
+      .connect(MONGODB_URI, {
+        dbName: process.env.MONGODB_DB_NAME,
         bufferCommands: false,
       })
       .then(mongoose => {
+        logger(`Connected to MongoDB!!`);
         return mongoose;
       });
   }
 
   cached.conn = await cached.promise;
+  logger(`MongoDB connection established successfully`);
   return cached.conn;
 }

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import baseApi from '@/lib/http/baseApi';
+import baseApi from '@/integrations/http/baseApi';
 import { appSessionSlice } from '@/redux/slices/appSession.slice';
 import { authSlice } from '@/redux/slices/auth.slice';
 import { profileSlice } from '@/redux/slices/profile.slice';

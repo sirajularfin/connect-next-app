@@ -7,9 +7,4 @@
   @include media-query(lg) {
     padding: px-to-rem(15) px-to-rem(20);
   }
-
-  & a {
-    text-decoration: none;
-    color: $color-white;
-  }
 }

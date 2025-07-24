@@ -1,11 +1,15 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - px-to-rem(68) - px-to-rem(44));
+  min-height: calc(100vh - px-to-rem(57) - px-to-rem(54));
 
   @include media-query(lg) {
     width: 100%;
     flex-direction: column;
+  }
+
+  @include media-query(sm) {
+    min-height: calc(100vh - px-to-rem(57) - px-to-rem(44));
   }
 }
 

@@ -10,3 +10,14 @@ main {
   max-width: $default-max-width;
   min-height: 100vh;
 }
+
+a {
+  text-decoration: none;
+  color: $color-amber-900;
+
+  &:hover {
+    color: $color-amber-800;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

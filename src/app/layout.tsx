@@ -9,7 +9,7 @@ import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
-import { APP_LANGUAGES } from '@/types/appConstants';
+import { APP_LANGUAGES } from '@/types/constants';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {

@@ -1,32 +1,21 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useActionState } from 'react';
 
-import { registerAction } from '@/actions/registerActions';
 import GoogleIcon from '@/assets/svg/google-icon';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
+import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/types/constants';
 import APP_ROUTES from '@/types/routes';
 import classes from './page.module.scss';
-
-const INITIAL_STATE = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  password: '',
-  errors: undefined,
-  success: false,
-};
+import useRegister from './useRegister';
 
 const RegisterForm: React.FC = () => {
+  const { error, formState, handleFieldChange, isLoading, handleFormSubmit } =
+    useRegister();
   const t = useTranslations();
-  const [state, formAction, isPending] = useActionState(
-    registerAction,
-    INITIAL_STATE
-  );
 
   return (
     <AuthForm
@@ -49,23 +38,25 @@ const RegisterForm: React.FC = () => {
         </Typography>
       }
     >
-      <form action={formAction}>
+      <form onSubmit={handleFormSubmit}>
         <div className={classes.nameFields}>
           <TextInput
             id="firstName"
             type="text"
             name="firstName"
             placeholder={t('register_placeholder_firstName')}
-            defaultValue={state.firstName}
-            error={state?.errors?.firstName?.errors}
+            defaultValue={formState.firstName}
+            onChange={e => handleFieldChange('firstName', e.target.value)}
+            error={error?.properties?.firstName}
           />
           <TextInput
             id="lastName"
             type="text"
             name="lastName"
             placeholder={t('register_placeholder_lastName')}
-            defaultValue={state.lastName}
-            error={state?.errors?.lastName?.errors}
+            defaultValue={formState.lastName}
+            onChange={e => handleFieldChange('lastName', e.target.value)}
+            error={error?.properties?.lastName}
           />
         </div>
         <TextInput
@@ -73,23 +64,27 @@ const RegisterForm: React.FC = () => {
           type="email"
           name="email"
           placeholder={t('register_placeholder_email')}
-          defaultValue={state.email}
-          error={state?.errors?.email?.errors}
+          onChange={e => handleFieldChange('email', e.target.value)}
+          defaultValue={formState.email}
+          error={error?.properties?.email}
         />
         <TextInput
           id="password"
           type="password"
           name="password"
           placeholder={t('register_placeholder_password')}
-          defaultValue={state.password}
-          error={state?.errors?.password?.errors}
-          minLength={6}
-          helperText={t('register_password_hint')}
+          defaultValue={formState.password}
+          error={error?.properties?.password}
+          minLength={DEFAULT_MIN_PASSWORD_LENGTH}
+          onChange={e => handleFieldChange('password', e.target.value)}
+          helperText={t('register_password_hint', {
+            length: DEFAULT_MIN_PASSWORD_LENGTH,
+          })}
         />
         <Button
           aria-label="Register"
-          disabled={isPending}
-          loading={isPending}
+          disabled={isLoading}
+          loading={isLoading}
           title={t('button_register')}
           titleCase="uppercase"
           type="submit"
