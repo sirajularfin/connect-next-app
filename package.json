@@ -15,6 +15,7 @@
     "classnames": "^2.5.1",
     "connect-mongodb-session": "^5.0.0",
     "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.4",
     "next": "15.3.5",

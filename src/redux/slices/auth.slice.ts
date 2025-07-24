@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { JwtPayload } from 'jsonwebtoken';
+import { jwtDecode } from 'jwt-decode';
 import { PURGE } from 'redux-persist';
+
+import { authApi } from '@/integrations/http/endpoints/auth';
 
 interface IAuthState {
   isLoggedIn?: boolean;
@@ -24,6 +28,14 @@ export const authSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(PURGE, () => initialState);
+    builder.addMatcher(
+      authApi.endpoints.postLogin.matchFulfilled,
+      (state, action) => {
+        const decodedToken: JwtPayload = jwtDecode(action.payload.accessToken);
+        state.isLoggedIn = true;
+        state.activeUserId = decodedToken?.sub ?? '';
+      }
+    );
   },
   selectors: {
     selectIsLoggedIn: state => state.isLoggedIn,
