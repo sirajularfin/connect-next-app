@@ -4,7 +4,6 @@ export const UserAuthResponseSchema = z.object({
   user: z.object({
     id: z.string(),
     email: z.email(),
-    username: z.string(),
     createdAt: z.string(),
   }),
   accessToken: z.string(),

@@ -22,6 +22,7 @@ export const RegisterUserSchema = z.object({
     }),
   firstName: z.string().trim().nonempty('error_first_name_required'),
   lastName: z.string().trim().nonempty('error_last_name_required'),
+  createdAt: z.date().optional(),
 });
 
 export type RegisterUserSchemaType = z.infer<typeof RegisterUserSchema>;

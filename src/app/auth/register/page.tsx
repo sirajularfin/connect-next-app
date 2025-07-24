@@ -9,6 +9,7 @@ import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
+import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/types/constants';
 import APP_ROUTES from '@/types/routes';
 import classes from './page.module.scss';
 
@@ -83,8 +84,10 @@ const RegisterForm: React.FC = () => {
           placeholder={t('register_placeholder_password')}
           defaultValue={state.password}
           error={state?.errors?.password?.errors}
-          minLength={6}
-          helperText={t('register_password_hint')}
+          minLength={DEFAULT_MIN_PASSWORD_LENGTH}
+          helperText={t('register_password_hint', {
+            length: DEFAULT_MIN_PASSWORD_LENGTH,
+          })}
         />
         <Button
           aria-label="Register"

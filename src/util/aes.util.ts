@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 
-export const encryptMessage = async (args: string): Promise<string> => {
+export const generateHashedMessage = async (args: string): Promise<string> => {
   const hashedMessage = await bcrypt.hash(args, 12);
   return hashedMessage;
 };

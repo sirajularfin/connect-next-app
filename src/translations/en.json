@@ -16,7 +16,7 @@
     "login_title": "Log In",
     "register_already_have_account": "Already have an account? ",
     "register_button_register": "Register",
-    "register_password_hint": "Create a password with at least 6 characters, including letters and numbers. Avoid common words or easily guessed information.",
+    "register_password_hint": "Create a password with at least {length} characters, including letters and numbers. Avoid common words or easily guessed information.",
     "register_placeholder_email": "eg. usernam@domainname.com",
     "register_placeholder_firstName": "First Name",
     "register_placeholder_lastName": "Last Name",

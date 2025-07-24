@@ -38,12 +38,6 @@
     }
   }
 
-  & a {
-    color: $color-amber-900;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
   & form {
     display: flex;
     flex-direction: column;

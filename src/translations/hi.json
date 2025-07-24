@@ -16,7 +16,7 @@
     "login_title": "लॉग इन करें",
     "register_already_have_account": "क्या पहले से खाता है? ",
     "register_button_register": "रजिस्टर करें",
-    "register_password_hint": "कम से कम 6 अक्षरों, अंकों के साथ पासवर्ड बनाएं। सामान्य शब्द या आसानी से अनुमानित जानकारी से बचें।",
+    "register_password_hint": "कम से कम {length} अक्षरों, अंकों के साथ पासवर्ड बनाएं। सामान्य शब्द या आसानी से अनुमानित जानकारी से बचें।",
     "register_placeholder_email": "उदा. username@domainname.com",
     "register_placeholder_firstName": "पहला नाम",
     "register_placeholder_lastName": "अंतिम नाम",
