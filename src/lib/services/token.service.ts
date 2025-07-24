@@ -8,14 +8,14 @@ import {
 import logger from '@/util/logger.util';
 
 export const generateAccessToken = (id: string): string => {
-  const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
+  const ACCESS_TOKEN_SECRET = process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET;
   return jwt.sign({ userId: id }, ACCESS_TOKEN_SECRET, {
     expiresIn: DEFAULT_ACCESS_TOKEN_EXPIRY,
   });
 };
 
 export const generateRefreshToken = (id: string): string => {
-  const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
+  const REFRESH_TOKEN_SECRET = process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET;
   return jwt.sign({ userId: id }, REFRESH_TOKEN_SECRET, {
     expiresIn: DEFAULT_REFRESH_TOKEN_EXPIRY,
   });
@@ -37,7 +37,7 @@ export const refreshToken = async (token: string) => {
     return undefined;
   }
   try {
-    const decoded = verifyAccessToken(token, process.env.REFRESH_TOKEN_SECRET);
+    const decoded = verifyAccessToken(token, process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET);
     const accessToken = generateAccessToken(decoded.userId);
     return { accessToken, refreshToken: token };
   } catch (err) {
