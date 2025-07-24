@@ -1,14 +1,13 @@
-import { ILoginRequest, ILoginResponse } from '@/types/login.type';
-import {
-  IUserRegistrationRequest,
-  IUserRegistrationResponse,
-} from '@/types/register.type';
+import { AuthTokenSchemaType } from '@/lib/validations/auth-token.schema';
+import { LoginUserSchemaType } from '@/lib/validations/login-user.schema';
+import { RegisterUserSchemaType } from '@/lib/validations/register-user.schema';
+import { UserAuthResponseSchemaType } from '@/lib/validations/user-auth-response.schema';
 import baseApi from '../baseApi';
 import { AuthServiceUrls, UserSessionUrls } from '../types';
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: builder => ({
-    postLogin: builder.mutation<ILoginResponse, ILoginRequest>({
+    postLogin: builder.mutation<AuthTokenSchemaType, LoginUserSchemaType>({
       query: body => ({
         url: AuthServiceUrls.ROOT + AuthServiceUrls.LOGIN,
         method: 'POST',
@@ -25,8 +24,8 @@ export const authApi = baseApi.injectEndpoints({
     }),
 
     postRegistration: builder.mutation<
-      IUserRegistrationResponse,
-      IUserRegistrationRequest
+      UserAuthResponseSchemaType,
+      RegisterUserSchemaType
     >({
       query: body => ({
         url: AuthServiceUrls.ROOT + AuthServiceUrls.REGISTRATION,

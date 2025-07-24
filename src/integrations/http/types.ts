@@ -1,6 +1,5 @@
 export enum RootUrls {
-  PROTECTED = '/v1/private',
-  PUBLIC = '/v1/public',
+  PUBLIC = '/api',
 }
 
 export enum AuthServiceUrls {
@@ -10,18 +9,11 @@ export enum AuthServiceUrls {
 }
 
 export enum UserSessionUrls {
-  ROOT = RootUrls.PROTECTED,
+  ROOT = RootUrls.PUBLIC,
   LOGOUT = '/logout',
 }
 
-export enum UserServiceUrls {
-  ROOT = RootUrls.PROTECTED,
-  ALL_USERS = '/users',
-  USER_BY_ID = '/users/:id',
-  ACTIVE_USER_PROFILE = '/users/profile',
-}
-
 export enum TokenServiceUrls {
-  ROOT = RootUrls.PROTECTED,
+  ROOT = RootUrls.PUBLIC,
   REFRESH_TOKEN = '/token',
 }
