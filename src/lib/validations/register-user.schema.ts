@@ -1,6 +1,6 @@
 import z from 'zod';
 
-import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/constants/app.constant';
+import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/types/constants';
 
 export const RegisterUserSchema = z.object({
   email: z
