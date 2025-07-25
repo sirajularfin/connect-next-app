@@ -7,16 +7,19 @@ import {
 } from '@/lib/validations/login-user.schema';
 import { useState } from 'react';
 
+const INITIAL_FORM_STATE: LoginUserSchemaType = {
+  email: '',
+  password: '',
+};
+
 const useLogin = () => {
-  const [triggerPostLoginMutation, { isError, isLoading }] =
+  const [triggerPostLoginMutation, { isLoading, isSuccess }] =
     usePostLoginMutation();
   const [error, setError] = useState<{
     properties?: Record<string, string[]>;
   }>();
-  const [formState, setFormState] = useState<LoginUserSchemaType>({
-    email: '',
-    password: '',
-  });
+  const [formState, setFormState] =
+    useState<LoginUserSchemaType>(INITIAL_FORM_STATE);
 
   const handleFieldChange = (
     field: keyof LoginUserSchemaType,
@@ -39,10 +42,10 @@ const useLogin = () => {
       return;
     }
     setError(undefined);
-    const response = triggerPostLoginMutation(formState).unwrap();
-    if (!isError) {
+    triggerPostLoginMutation(formState).unwrap();
+    setFormState(INITIAL_FORM_STATE);
+    if (isSuccess) {
       alert('Login successful!');
-      return response;
     }
   };
 
