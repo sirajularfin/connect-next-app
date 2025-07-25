@@ -42,7 +42,7 @@ const LoginPage: React.FC = () => {
           type="email"
           name="email"
           placeholder={t('login_placeholder_email')}
-          defaultValue={formState.email}
+          value={formState.email}
           error={error?.properties?.email}
           onChange={e => handleFieldChange('email', e.target.value)}
         />
@@ -51,7 +51,7 @@ const LoginPage: React.FC = () => {
           type="password"
           name="password"
           placeholder={t('login_placeholder_password')}
-          defaultValue={formState.password}
+          value={formState.password}
           error={error?.properties?.password}
           onChange={e => handleFieldChange('password', e.target.value)}
         />

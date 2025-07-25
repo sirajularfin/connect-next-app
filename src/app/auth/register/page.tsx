@@ -45,7 +45,7 @@ const RegisterForm: React.FC = () => {
             type="text"
             name="firstName"
             placeholder={t('register_placeholder_firstName')}
-            defaultValue={formState.firstName}
+            value={formState.firstName}
             onChange={e => handleFieldChange('firstName', e.target.value)}
             error={error?.properties?.firstName}
           />
@@ -54,7 +54,7 @@ const RegisterForm: React.FC = () => {
             type="text"
             name="lastName"
             placeholder={t('register_placeholder_lastName')}
-            defaultValue={formState.lastName}
+            value={formState.lastName}
             onChange={e => handleFieldChange('lastName', e.target.value)}
             error={error?.properties?.lastName}
           />
@@ -65,7 +65,7 @@ const RegisterForm: React.FC = () => {
           name="email"
           placeholder={t('register_placeholder_email')}
           onChange={e => handleFieldChange('email', e.target.value)}
-          defaultValue={formState.email}
+          value={formState.email}
           error={error?.properties?.email}
         />
         <TextInput
@@ -73,7 +73,7 @@ const RegisterForm: React.FC = () => {
           type="password"
           name="password"
           placeholder={t('register_placeholder_password')}
-          defaultValue={formState.password}
+          value={formState.password}
           error={error?.properties?.password}
           minLength={DEFAULT_MIN_PASSWORD_LENGTH}
           onChange={e => handleFieldChange('password', e.target.value)}
