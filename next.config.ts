@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: process.env.NEXT_PUBLIC_SITE_URL,
+            value: 'https://connect-next-app.vercel.app',
           },
           {
             key: 'Access-Control-Allow-Methods',
