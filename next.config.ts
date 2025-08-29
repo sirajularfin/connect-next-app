@@ -3,7 +3,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
   sassOptions: {
-    additionalData: `@use '@/styles/theme.scss' as *;`,
+    additionalData: `@use '@/common/styles/theme.scss' as *;`,
   },
   async headers() {
     return [
