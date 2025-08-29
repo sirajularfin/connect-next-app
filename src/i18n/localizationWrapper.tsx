@@ -1,6 +1,6 @@
 'use client';
 
-import { APP_LANGUAGES } from '@/types/constants';
+import { APP_LANGUAGES } from '@/common/types/constants';
 import { useRouter } from 'next/navigation';
 import React, {
   createContext,

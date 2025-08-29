@@ -3,11 +3,11 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import GoogleIcon from '@/assets/svg/google-icon';
+import APP_ROUTES from '@/common/types/routes';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
-import APP_ROUTES from '@/types/routes';
 import useLogin from './useLogin';
 
 const LoginPage: React.FC = () => {

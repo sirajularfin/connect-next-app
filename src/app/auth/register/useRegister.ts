@@ -1,11 +1,11 @@
 'use client';
 
-import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
 import {
   RegisterUserSchema,
   RegisterUserSchemaType,
-} from '@/lib/validations/register-user.schema';
-import { generateHashedMessage } from '@/util/aes.util';
+} from '@/common/validations/register-user.schema';
+import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
+import { generateHashedMessage } from '@/common/util/aes.util';
 import { useState } from 'react';
 
 const INITIAL_FORM_STATE: RegisterUserSchemaType = {

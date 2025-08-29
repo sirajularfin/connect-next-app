@@ -4,12 +4,12 @@ import { getLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import React from 'react';
 
+import { APP_LANGUAGES } from '@/common/types/constants';
 import Footer from '@/components/Footer/Footer';
 import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import '@/styles/globals.scss';
-import { APP_LANGUAGES } from '@/types/constants';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {

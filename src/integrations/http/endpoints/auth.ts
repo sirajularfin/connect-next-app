@@ -1,7 +1,7 @@
-import { AuthTokenSchemaType } from '@/lib/validations/auth-token.schema';
-import { LoginUserSchemaType } from '@/lib/validations/login-user.schema';
-import { RegisterUserSchemaType } from '@/lib/validations/register-user.schema';
-import { UserAuthResponseSchemaType } from '@/lib/validations/user-auth-response.schema';
+import { AuthTokenSchemaType } from '@/common/validations/auth-token.schema';
+import { LoginUserSchemaType } from '@/common/validations/login-user.schema';
+import { RegisterUserSchemaType } from '@/common/validations/register-user.schema';
+import { UserAuthResponseSchemaType } from '@/common/validations/user-auth-response.schema';
 import baseApi from '../baseApi';
 import { AuthServiceUrls, UserSessionUrls } from '../types';
 

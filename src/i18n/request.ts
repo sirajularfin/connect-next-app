@@ -1,4 +1,4 @@
-import { APP_LANGUAGES } from '@/types/constants';
+import { APP_LANGUAGES } from '@/common/types/constants';
 import { getRequestConfig } from 'next-intl/server';
 import { cookies } from 'next/headers';
 
