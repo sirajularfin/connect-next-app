@@ -1,11 +1,11 @@
 'use client';
+import { useState } from 'react';
 
 import {
   LoginUserSchema,
   LoginUserSchemaType,
 } from '@/common/validations/login-user.schema';
 import { usePostLoginMutation } from '@/integrations/http/endpoints/auth';
-import { useState } from 'react';
 
 const INITIAL_FORM_STATE: LoginUserSchemaType = {
   email: '',
