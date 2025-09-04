@@ -1,4 +1,6 @@
-import classes from './layout.module.scss';
+import Footer from '@/components/Footer/Footer';
+import MainHeader from '@/components/MainHeader/MainHeader';
+import classes from './auth.module.scss';
 
 interface IProps {
   left: React.ReactNode;
@@ -7,10 +9,14 @@ interface IProps {
 
 const AuthLayout: React.FC<IProps> = ({ left, children }) => {
   return (
-    <div className={classes.container}>
-      <section className={classes.columnLeft}>{left}</section>
-      <section className={classes.columnRight}>{children}</section>
-    </div>
+    <section>
+      <MainHeader />
+      <div className={classes.container}>
+        <section className={classes.columnLeft}>{left}</section>
+        <section className={classes.columnRight}>{children}</section>
+      </div>
+      <Footer />
+    </section>
   );
 };
 

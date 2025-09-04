@@ -6,8 +6,6 @@ import React from 'react';
 
 import '@/common/styles/globals.scss';
 import { APP_LANGUAGES } from '@/common/types/constants';
-import Footer from '@/components/Footer/Footer';
-import MainHeader from '@/components/MainHeader/MainHeader';
 import LocalizationWrapper from '@/i18n/localizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import customFonts from '../../public/fonts/fonts';
@@ -38,11 +36,7 @@ export default async function RootLayout({
           <ReduxProvider>
             <LocalizationWrapper initialLocale={initialLocale}>
               <NextIntlClientProvider locale={locale}>
-                <main>
-                  <MainHeader />
-                  {children}
-                  <Footer />
-                </main>
+                <main>{children}</main>
               </NextIntlClientProvider>
             </LocalizationWrapper>
           </ReduxProvider>
