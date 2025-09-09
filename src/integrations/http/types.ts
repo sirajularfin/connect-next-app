@@ -17,3 +17,15 @@ export enum TokenServiceUrls {
   ROOT = RootUrls.PUBLIC,
   REFRESH_TOKEN = '/token',
 }
+
+export enum ProfileServiceUrls {
+  ROOT = RootUrls.PUBLIC,
+  PROFILE = '/profile',
+  UPDATE_PROFILE = '/profile/update',
+}
+
+export enum ChatServiceUrls {
+  ROOT = RootUrls.PUBLIC,
+  CONVERSATIONS_LIST = '/conversations',
+  CHAT_MESSAGES = '/conversations/:conversationId/messages',
+}
