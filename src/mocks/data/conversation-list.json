@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "lastMessage": "Hello!",
+        "lastActivity": "2023-12-01T00:00:00.000Z",
+        "participant": {
+            "id": 1,
+            "name": "Test User",
+            "avatar": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "id": 2,
+        "lastMessage": "Hi there!",
+        "lastActivity": "2023-12-01T00:00:00.000Z",
+        "participant": {
+            "id": 2,
+            "name": "Another User",
+            "avatar": "https://via.placeholder.com/150"
+        }
+    }
+]

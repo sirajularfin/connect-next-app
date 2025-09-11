@@ -1,9 +1,5 @@
 import { setupWorker } from 'msw/browser';
 
-import { conversationApiHandlers } from './handlers/conversation.api';
-import { profileApiHandler } from './handlers/profile.api';
+import { handlers } from './handlers';
 
-export const worker = setupWorker(
-  ...profileApiHandler,
-  ...conversationApiHandlers
-);
+export const worker = setupWorker(...handlers);

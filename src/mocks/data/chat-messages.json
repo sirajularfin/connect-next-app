@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "conversationId": 1,
+        "sender": {
+            "id": 1,
+            "name": "Test User",
+            "avatar": "https://via.placeholder.com/150"
+        },
+        "content": "Hello!",
+        "createdAt": "2023-12-01T00:00:00.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+    },
+    {
+        "id": 2,
+        "conversationId": 1,
+        "sender": {
+            "id": 2,
+            "name": "Another User",
+            "avatar": "https://via.placeholder.com/150"
+        },
+        "content": "Hi there!",
+        "createdAt": "2023-12-01T00:00:00.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+    }
+]
