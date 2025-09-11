@@ -27,7 +27,7 @@ export const chatApi = baseApi.injectEndpoints({
 });
 
 export const {
-  useLazyGetChatMessagesQuery,
   useGetConversationListQuery,
+  useLazyGetChatMessagesQuery,
   endpoints: chatApiEndpoints,
 } = chatApi;

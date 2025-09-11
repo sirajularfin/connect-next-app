@@ -8,7 +8,8 @@ import ProfileHeader from '../ProfileHeader/ProfileHeader';
 
 const ChatSection = () => {
   const { conversationId } = useParams();
-  const [trigger, { data, isLoading, error }] = useLazyGetChatMessagesQuery();
+  const [trigger, { data, isSuccess, isLoading }] =
+    useLazyGetChatMessagesQuery();
 
   useEffect(() => {
     if (conversationId) {
@@ -21,11 +22,14 @@ const ChatSection = () => {
 
   return (
     <div>
-      <ProfileHeader
-        profileImageUrl={data?.messages[0]?.sender?.avatar ?? ''}
-        username={data?.messages[0]?.sender?.name ?? ''}
-        isOnline={true}
-      />
+      {isLoading && <p>Loading...</p>}
+      {isSuccess && (
+        <ProfileHeader
+          profileImageUrl={data?.messages[0]?.sender?.avatar ?? ''}
+          username={data?.messages[0]?.sender?.name ?? ''}
+          isOnline={true}
+        />
+      )}
     </div>
   );
 };

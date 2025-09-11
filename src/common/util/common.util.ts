@@ -7,9 +7,9 @@ export const isEmpty = (args: unknown): boolean => {
   );
 };
 
-export function formatJson(args: string) {
+export function formatJson(args: unknown) {
   try {
-    return JSON.stringify(JSON.parse(args), null, 2);
+    return JSON.stringify(args, null, 2);
   } catch {
     return args;
   }

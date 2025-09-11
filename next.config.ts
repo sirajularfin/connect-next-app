@@ -2,6 +2,14 @@ import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*', // Allow all hostnames
+      },
+    ],
+  },
   sassOptions: {
     additionalData: `@use '@/common/styles/theme.scss' as *;`,
   },

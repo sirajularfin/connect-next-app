@@ -37,9 +37,7 @@ function MSWProvider({ children }: PropsWithChildren<IProps>) {
     }
   }, [isMswReady]);
 
-  if (!isMswReady) {
-    return '[MSW] Initializing...';
-  }
+  if (!isMswReady) return;
 
   return <>{children}</>;
 }
