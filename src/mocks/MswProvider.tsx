@@ -13,7 +13,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export default function MSWProvider({ children }: PropsWithChildren<IProps>) {
+function MSWProvider({ children }: PropsWithChildren<IProps>) {
   const [isMswReady, setIsMswReady] = useState<boolean>(false);
 
   useEffect(() => {
@@ -34,6 +34,8 @@ export default function MSWProvider({ children }: PropsWithChildren<IProps>) {
 
     if (!window.msw) {
       enableMocking();
+    } else {
+      setIsMswReady(true);
     }
   }, [isMswReady]);
 
@@ -43,3 +45,5 @@ export default function MSWProvider({ children }: PropsWithChildren<IProps>) {
 
   return <>{children}</>;
 }
+
+export default MSWProvider;
