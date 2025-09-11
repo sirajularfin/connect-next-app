@@ -1,7 +1,7 @@
 'use client';
-import { PropsWithChildren, useEffect, useState } from 'react';
 
 import logger from '@/common/util/logger.util';
+import { PropsWithChildren, useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -16,22 +16,20 @@ interface IProps {
 function MSWProvider({ children }: PropsWithChildren<IProps>) {
   const [isMswReady, setIsMswReady] = useState<boolean>(false);
 
+  const enableMocking = async () => {
+    try {
+      const { worker } = await import('@/mocks/browser');
+      await worker.start({ onUnhandledRequest: 'warn' });
+      setIsMswReady(true);
+      logger('[MSW] Started', 'info');
+    } catch (err) {
+      setIsMswReady(false);
+      logger(`[MSW] Error: ${err}`, 'error');
+    }
+  };
+
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') return;
-
-    const enableMocking = async () => {
-      const { worker } = await import('@/mocks/browser');
-      worker
-        .start({ onUnhandledRequest: 'warn' })
-        .then(() => {
-          logger('[MSW] Started', 'info');
-          setIsMswReady(true);
-        })
-        .catch((err: Error) => {
-          logger(`[MSW] Error: ${err.message}`, 'error');
-        });
-    };
-
     if (!window.msw) {
       enableMocking();
     } else {
