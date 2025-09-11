@@ -1,3 +1,44 @@
 .container {
-    display: flex;
+  display: flex;
+  padding: convertPxToRem(15) convertPxToRem(10);
+  gap: convertPxToRem(10);
+
+  .profileImage {
+    border-radius: convertPxToRem(8);
+  }
+
+  .username {
+    font-family: $font-dm-sans;
+    font-size: convertPxToRem(16);
+    font-weight: 600;
+    color: $color-black;
+  }
+
+  .info {
+    width: 100%;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .timestamp {
+      font-family: $font-dm-sans;
+      font-size: convertPxToRem(11);
+      font-weight: 500;
+      color: $color-grey-600;
+    }
+
+    .message {
+      font-family: $font-dm-sans;
+      font-size: convertPxToRem(12);
+      font-weight: 400;
+      color: $color-grey-700;
+    }
+  }
+}
+
+.container:hover {
+  background-color: $color-amber-100;
+  cursor: pointer;
 }

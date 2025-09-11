@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import ProfileImage from '@/assets/images/profile-image.png';
+import { formatTimestamp } from '@/common/util/date.util';
 import { useRouter } from 'next/navigation';
 import Typography from '../Typography/Typography';
 import classes from './ConversationItem.module.scss';
@@ -31,15 +32,20 @@ const ConversationItem: React.FC<IProps> = ({
       }}
     >
       <Image
+        width={40}
+        height={40}
         src={avatar ?? ProfileImage}
         alt={`Profile Picture - ${name}`}
-        width={50}
-        height={50}
+        className={classes.profileImage}
       />
       <div className={classes.info}>
-        <Typography className={classes.name}>{name}</Typography>
+        <div>
+          <Typography className={classes.username}>{name}</Typography>
+          <Typography className={classes.timestamp}>
+            {formatTimestamp(timestamp)}
+          </Typography>
+        </div>
         <Typography className={classes.message}>{lastMessage}</Typography>
-        <Typography className={classes.timestamp}>{timestamp}</Typography>
       </div>
     </div>
   );

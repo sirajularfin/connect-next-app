@@ -5,17 +5,17 @@
 
 .textInput {
   background: $color-grey-100;
-  border-radius: px-to-rem(100);
+  border-radius: convertPxToRem(100);
   border: none;
   color: $color-black;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(14);
+  font-size: convertPxToRem(14);
   font-weight: 400;
-  height: px-to-rem(50);
+  height: convertPxToRem(50);
   line-height: 100%;
-  padding: 0 px-to-rem(30);
+  padding: 0 convertPxToRem(30);
   &:focus {
-    outline: px-to-rem(1.5) solid $color-amber-800;
+    outline: convertPxToRem(1.5) solid $color-amber-800;
   }
   &::placeholder {
     font-weight: 300;
@@ -24,7 +24,7 @@
 }
 
 .textInputError {
-  outline: px-to-rem(2) solid $color-red-500;
+  outline: convertPxToRem(2) solid $color-red-500;
   background: $color-grey-50;
 }
 
@@ -32,19 +32,19 @@
   display: 'block';
   color: $color-red-500;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(12);
+  font-size: convertPxToRem(12);
   font-weight: 400;
-  margin-top: px-to-rem(2);
-  margin-left: px-to-rem(20);
+  margin-top: convertPxToRem(2);
+  margin-left: convertPxToRem(20);
   text-align: left;
 }
 
 .helperText {
   color: $color-grey-600;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(12);
+  font-size: convertPxToRem(12);
   font-weight: 300;
-  margin-top: px-to-rem(8);
-  margin-left: px-to-rem(20);
+  margin-top: convertPxToRem(8);
+  margin-left: convertPxToRem(20);
   text-align: left;
 }

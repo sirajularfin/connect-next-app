@@ -1,9 +1,9 @@
 .nameFields {
   display: flex;
-  column-gap: px-to-rem(10);
+  column-gap: convertPxToRem(10);
 
   @include media-query(lg) {
-    row-gap: px-to-rem(20);
+    row-gap: convertPxToRem(20);
     flex-direction: column;
   }
 

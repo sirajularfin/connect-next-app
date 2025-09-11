@@ -1,17 +1,17 @@
 .container {
   align-items: center;
-  border-radius: px-to-rem(8);
+  border-radius: convertPxToRem(8);
   border: none;
-  column-gap: px-to-rem(10);
+  column-gap: convertPxToRem(10);
   cursor: pointer;
   display: flex;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(14);
+  font-size: convertPxToRem(14);
   font-weight: 500;
-  height: px-to-rem(46);
+  height: convertPxToRem(46);
   justify-content: center;
   line-height: 100%;
-  padding: 0 px-to-rem(20);
+  padding: 0 convertPxToRem(20);
 }
 
 .PRIMARY {

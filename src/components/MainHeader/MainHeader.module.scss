@@ -2,9 +2,11 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: px-to-rem(15) 0;
+  padding: convertPxToRem(15) 0;
+  margin: 0 auto;
+  max-width: $default-max-width;
 
   @include media-query(lg) {
-    padding: px-to-rem(15) px-to-rem(20);
+    padding: convertPxToRem(15) convertPxToRem(20);
   }
 }

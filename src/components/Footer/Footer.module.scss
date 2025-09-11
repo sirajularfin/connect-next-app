@@ -1,14 +1,16 @@
 .container {
-  padding: px-to-rem(20) 0;
+  margin: 0 auto;
+  max-width: $default-max-width;
+  padding: convertPxToRem(20) 0;
 
   @include media-query(sm) {
-    padding: px-to-rem(15) px-to-rem(20);
+    padding: convertPxToRem(15) convertPxToRem(20);
   }
 
   & p {
     color: $color-grey-600;
     font-family: $font-dm-sans;
-    font-size: px-to-rem(14);
+    font-size: convertPxToRem(14);
     font-weight: 300;
     line-height: 100%;
 

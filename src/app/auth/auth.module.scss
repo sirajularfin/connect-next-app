@@ -1,7 +1,9 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - px-to-rem(57) - px-to-rem(54));
+  margin: 0 auto;
+  max-width: $default-max-width;
+  min-height: calc(100vh - convertPxToRem(57) - convertPxToRem(54));
 
   @include media-query(lg) {
     width: 100%;
@@ -9,13 +11,13 @@
   }
 
   @include media-query(sm) {
-    min-height: calc(100vh - px-to-rem(57) - px-to-rem(44));
+    min-height: calc(100vh - convertPxToRem(57) - convertPxToRem(44));
   }
 }
 
 .columnLeft {
   flex: 1.5;
-  margin-top: px-to-rem(30);
+  margin-top: convertPxToRem(30);
   position: relative;
 
   @include media-query(lg) {
@@ -29,7 +31,7 @@
   align-content: center;
 
   @include media-query(sm) {
-    margin-top: px-to-rem(30);
+    margin-top: convertPxToRem(30);
     align-content: flex-start;
   }
 }
