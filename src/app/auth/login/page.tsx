@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-import GoogleIcon from '@/assets/svg/google-icon';
+import { GoogleLogo } from '@/assets';
 import APP_ROUTES from '@/common/types/routes';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
           titleCase="uppercase"
           variant="SECONDARY"
         >
-          <GoogleIcon width={18} height={18} />
+          <GoogleLogo />
           <span>{t('google_sign_in')}</span>
         </Button>
       }
