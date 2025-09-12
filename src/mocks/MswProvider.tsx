@@ -1,6 +1,7 @@
 'use client';
 
 import logger from '@/common/util/logger.util';
+import Typography from '@/components/Typography/Typography';
 import { PropsWithChildren, useEffect, useState } from 'react';
 
 declare global {
@@ -23,21 +24,28 @@ function MSWProvider({ children }: PropsWithChildren<IProps>) {
       setIsMswReady(true);
       logger('[MSW] Started', 'info');
     } catch (err) {
-      setIsMswReady(false);
+      setIsMswReady(true); // Set to true even on error to render the app
       logger(`[MSW] Error: ${err}`, 'error');
     }
   };
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'development') return;
+    if (process.env.NODE_ENV !== 'development') {
+      setIsMswReady(true); // Skip MSW in production
+      return;
+    }
+
     if (!window.msw) {
       enableMocking();
     } else {
       setIsMswReady(true);
     }
-  }, [isMswReady]);
+  }, []);
 
-  if (!isMswReady) return;
+  // Always render children, don't block the app
+  if (!isMswReady && process.env.NODE_ENV === 'development') {
+    return <Typography>[MSW] Loading Mock Server...</Typography>; // Optional loading state
+  }
 
   return <>{children}</>;
 }
