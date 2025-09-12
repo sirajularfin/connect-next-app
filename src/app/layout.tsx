@@ -7,9 +7,9 @@ import React from 'react';
 import '@/common/styles/globals.scss';
 import { APP_LANGUAGES } from '@/common/types/constants';
 import MSWProvider from '@/mocks/MswProvider';
-import LocalizationWrapper from '@/i18n/LocalizationWrapper';
 import ReduxProvider from '@/redux/provider';
 import customFonts from '../../public/fonts/fonts';
+import LocalizationWrapper from '../i18n/LocalizationWrapper';
 
 export const metadata: Metadata = {
   title: 'Connect - AI Powered Chat Application',
