@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
+import { SearchIcon } from '@/assets';
 import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat';
 import ConversationItem from '../ConversationItem/ConversationItem';
 import TextInput from '../TextInput/TextInput';
@@ -19,6 +20,8 @@ const ChatSidebar: React.FC = () => {
         type="text"
         name="search"
         placeholder={t('chat_search_placeholder')}
+        customStyle={classes.searchBar}
+        startIcon={<SearchIcon className={classes.searchIcon} />}
       />
 
       {Boolean(data?.conversations?.length) &&

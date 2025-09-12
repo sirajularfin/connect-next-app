@@ -1,29 +1,36 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+
 import Typography from '../Typography/Typography';
 import classes from './TextInput.module.scss';
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string[];
   helperText?: string;
+  customStyle?: string;
+  startIcon?: React.ReactNode;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
   error,
   helperText,
+  customStyle,
+  startIcon,
   ...props
 }) => {
   const t = useTranslations();
 
   return (
     <div className={classes.container}>
-      <input
-        className={classNames(classes.textInput, {
+      <div
+        className={classNames(customStyle, classes.inputWrapper, {
           [classes.textInputError]: error,
         })}
-        {...props}
-      />
+      >
+        {startIcon}
+        <input className={classes.textInput} {...props} />
+      </div>
       {Array.isArray(error) && error.length > 0 && (
         <Typography className={classes.error}>{t(error[0])}</Typography>
       )}
