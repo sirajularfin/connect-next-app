@@ -35,5 +35,6 @@
     "error_last_name_required": "Last name is required",
     "profile_online": "Online",
     "profile_offline": "Offline",
-    "chat_search_placeholder": "Search"
+    "chat_search_placeholder": "Search",
+    "chat_sidebar_title": "Messages"
 }

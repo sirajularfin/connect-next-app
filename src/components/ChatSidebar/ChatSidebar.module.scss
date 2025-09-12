@@ -1,8 +1,22 @@
+.sidebar {
+  border-right: convertPxToRem(1) solid $color-grey-300;
+}
+
+.title {
+  color: $color-black;
+  font-weight: 600;
+  font-family: $font-dm-sans;
+  font-size: convertPxToRem(16);
+  border-bottom: convertPxToRem(1) solid $color-grey-300;
+  padding: convertPxToRem(30) convertPxToRem(20);
+}
+
 .searchBar {
   border-radius: convertPxToRem(8);
   padding: convertPxToRem(12);
   gap: convertPxToRem(6);
   max-height: convertPxToRem(30);
+  margin: convertPxToRem(10) convertPxToRem(10);
 }
 
 .searchIcon {

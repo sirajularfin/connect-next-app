@@ -1,11 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
 import { SearchIcon } from '@/assets';
 import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat';
 import ConversationItem from '../ConversationItem/ConversationItem';
 import TextInput from '../TextInput/TextInput';
+import Typography from '../Typography/Typography';
 import classes from './ChatSidebar.module.scss';
 
 const ChatSidebar: React.FC = () => {
@@ -14,7 +16,10 @@ const ChatSidebar: React.FC = () => {
   const { data } = useGetConversationListQuery();
 
   return (
-    <div className={classes.container}>
+    <div className={classes.sidebar}>
+      <Typography className={classes.title}>
+        {t('chat_sidebar_title')}
+      </Typography>
       <TextInput
         id="search"
         type="text"
