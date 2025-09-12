@@ -1,6 +1,6 @@
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
-
 import { AxiosError, AxiosRequestConfig } from 'axios';
+
 import axiosInstance from '../instance';
 
 interface IApiRequestOptions {

@@ -2,8 +2,23 @@ import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*', // Allow all hostnames
+      },
+    ],
+  },
   sassOptions: {
-    additionalData: `@use '@/styles/theme.scss' as *;`,
+    additionalData: `@use '@/common/styles/theme.scss' as *;`,
   },
   async headers() {
     return [

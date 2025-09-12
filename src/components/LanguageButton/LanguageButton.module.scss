@@ -6,9 +6,9 @@
   cursor: pointer;
   display: flex;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(14);
+  font-size: convertPxToRem(14);
   font-weight: 400;
-  gap: px-to-rem(6);
+  gap: convertPxToRem(6);
   line-height: 100%;
 
   &:hover {

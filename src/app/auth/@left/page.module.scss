@@ -1,7 +1,7 @@
 .image {
   position: absolute;
   z-index: -1;
-  width: px-to-rem(450);
+  width: convertPxToRem(450);
   height: auto;
   left: 50%;
   top: 48%;
@@ -11,11 +11,11 @@
 .title1 {
   color: $color-black;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(48);
+  font-size: convertPxToRem(48);
   font-weight: 700;
   line-height: 100%;
   margin: 0;
-  margin-bottom: px-to-rem(8);
+  margin-bottom: convertPxToRem(8);
   & strong {
     color: $color-amber-800;
   }
@@ -24,11 +24,11 @@
 .title2 {
   color: $color-black;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(64);
+  font-size: convertPxToRem(64);
   font-weight: 700;
   line-height: 100%;
   margin: 0;
-  margin-left: px-to-rem(200);
+  margin-left: convertPxToRem(200);
   & strong {
     color: $color-amber-900;
   }
@@ -37,7 +37,7 @@
 .description {
   color: $color-grey-800;
   font-family: $font-dm-sans;
-  font-size: px-to-rem(16);
+  font-size: convertPxToRem(16);
   font-weight: 300;
   line-height: 150%;
 }

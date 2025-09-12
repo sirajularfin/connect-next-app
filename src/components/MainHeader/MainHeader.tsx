@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from '@/assets/svg/logo';
+import { Logo } from '@/assets';
 import LanguageButton from '../LanguageButton/LanguageButton';
 import classes from './MainHeader.module.scss';
 

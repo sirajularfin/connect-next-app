@@ -1,12 +1,12 @@
 'use client';
 
-import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
+import { useState } from 'react';
+
 import {
   RegisterUserSchema,
   RegisterUserSchemaType,
-} from '@/lib/validations/register-user.schema';
-import { generateHashedMessage } from '@/util/aes.util';
-import { useState } from 'react';
+} from '@/common/validations/register-user.schema';
+import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
 
 const INITIAL_FORM_STATE: RegisterUserSchemaType = {
   email: '',
@@ -45,11 +45,7 @@ const useRegister = () => {
       return;
     }
     setError(undefined);
-    const hashedPassword = await generateHashedMessage(formState.password);
-    triggerPostRegistrationMutation({
-      ...formState,
-      password: hashedPassword,
-    }).unwrap();
+    triggerPostRegistrationMutation(formState).unwrap();
     setFormState(INITIAL_FORM_STATE);
     if (isSuccess) {
       alert('Registration successful!');

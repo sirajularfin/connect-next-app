@@ -32,5 +32,9 @@
     "error_password_no_number": "Password should contain at least one number.",
     "error_password_no_special_char": "Password should contain at least one special character.",
     "error_first_name_required": "First name is required",
-    "error_last_name_required": "Last name is required"
+    "error_last_name_required": "Last name is required",
+    "profile_online": "Online",
+    "profile_offline": "Offline",
+    "chat_search_placeholder": "Search",
+    "chat_sidebar_title": "Messages"
 }

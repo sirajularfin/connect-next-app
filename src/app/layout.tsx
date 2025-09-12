@@ -4,12 +4,11 @@ import { getLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import React from 'react';
 
-import Footer from '@/components/Footer/Footer';
-import MainHeader from '@/components/MainHeader/MainHeader';
-import LocalizationWrapper from '@/i18n/localizationWrapper';
+import '@/common/styles/globals.scss';
+import { APP_LANGUAGES } from '@/common/types/constants';
+import MSWProvider from '@/mocks/MswProvider';
+import LocalizationWrapper from '@/i18n/LocalizationWrapper';
 import ReduxProvider from '@/redux/provider';
-import '@/styles/globals.scss';
-import { APP_LANGUAGES } from '@/types/constants';
 import customFonts from '../../public/fonts/fonts';
 
 export const metadata: Metadata = {
@@ -35,17 +34,15 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={customFonts.className}>
         <React.StrictMode>
-          <ReduxProvider>
-            <LocalizationWrapper initialLocale={initialLocale}>
-              <NextIntlClientProvider locale={locale}>
-                <main>
-                  <MainHeader />
-                  {children}
-                  <Footer />
-                </main>
-              </NextIntlClientProvider>
-            </LocalizationWrapper>
-          </ReduxProvider>
+          <MSWProvider>
+            <ReduxProvider>
+              <LocalizationWrapper initialLocale={initialLocale}>
+                <NextIntlClientProvider locale={locale}>
+                  <main>{children}</main>
+                </NextIntlClientProvider>
+              </LocalizationWrapper>
+            </ReduxProvider>
+          </MSWProvider>
         </React.StrictMode>
       </body>
     </html>
