@@ -1,32 +1,88 @@
 {
     "messages": [
-        {
-            "id": 1,
-            "conversationId": 1,
-            "sender": {
-                "id": 1,
-                "name": "Test User",
-                "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
-            },
-            "content": "Hello!",
-            "createdAt": "2023-12-01T00:00:00.000Z",
-            "isEdited": false,
-            "isDeleted": false,
-            "isRead": true
+      {
+        "id": 1,
+        "conversationId": 1,
+        "sender": {
+          "id": 1,
+          "name": "Alex Johnson",
+          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
         },
-        {
-            "id": 2,
-            "conversationId": 1,
-            "sender": {
-                "id": 2,
-                "name": "Another User",
-                "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
-            },
-            "content": "Hi there!",
-            "createdAt": "2023-12-01T00:00:00.000Z",
-            "isEdited": false,
-            "isDeleted": false,
-            "isRead": true
-        }
+        "content": "Hey! How's your day going?",
+        "createdAt": "2023-12-01T09:15:00.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+      },
+      {
+        "id": 2,
+        "conversationId": 1,
+        "sender": {
+          "id": 2,
+          "name": "Sarah Mitchell",
+          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
+        },
+        "content": "Pretty good! Just finished that presentation I was working on. You?",
+        "createdAt": "2023-12-01T09:17:30.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+      },
+      {
+        "id": 3,
+        "conversationId": 1,
+        "sender": {
+          "id": 1,
+          "name": "Alex Johnson",
+          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
+        },
+        "content": "Nice! How did it go? I'm just debugging some code issues 😅",
+        "createdAt": "2023-12-01T09:18:45.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+      },
+      {
+        "id": 4,
+        "conversationId": 1,
+        "sender": {
+          "id": 2,
+          "name": "Sarah Mitchell",
+          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
+        },
+        "content": "It went well, thanks! What kind of bugs are you dealing with?",
+        "createdAt": "2023-12-01T09:20:12.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": true
+      },
+      {
+        "id": 5,
+        "conversationId": 1,
+        "sender": {
+          "id": 1,
+          "name": "Alex Johnson",
+          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
+        },
+        "content": "API integration issues. The response format keeps changing 🤦‍♂️",
+        "createdAt": "2023-12-01T09:22:08.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": false
+      },
+      {
+        "id": 6,
+        "conversationId": 1,
+        "sender": {
+          "id": 2,
+          "name": "Sarah Mitchell",
+          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
+        },
+        "content": "Oof, that's frustrating. Have you tried using a schema validator?",
+        "createdAt": "2023-12-01T09:23:55.000Z",
+        "isEdited": false,
+        "isDeleted": false,
+        "isRead": false
+      }
     ]
 }
