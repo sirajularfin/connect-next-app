@@ -8,6 +8,7 @@
                 "id": 1,
                 "name": "John Anderson",
                 "email": "john.anderson@example.com",
+                "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
                 "role": "USER",
                 "createdAt": "2023-03-15T10:30:00.000Z",
                 "updatedAt": "2023-12-01T00:00:00.000Z",
@@ -23,7 +24,7 @@
                 "id": 2,
                 "name": "Maria Garcia",
                 "email": "maria.garcia@example.com",
-                "avatar": "https://picsum.photos/150/150?random=2",
+                "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
                 "role": "USER",
                 "createdAt": "2023-02-20T14:22:00.000Z",
                 "updatedAt": "2023-11-28T16:30:00.000Z",
@@ -39,7 +40,7 @@
                 "id": 3,
                 "name": "Sarah Johnson",
                 "email": "sarah.johnson@example.com",
-                "avatar": "https://picsum.photos/150/150?random=3",
+                "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
                 "role": "USER",
                 "createdAt": "2023-01-10T09:45:00.000Z",
                 "updatedAt": "2023-12-02T08:30:00.000Z",
@@ -55,7 +56,7 @@
                 "id": 4,
                 "name": "Mike Chen",
                 "email": "mike.chen@example.com",
-                "avatar": "https://picsum.photos/150/150?random=4",
+                "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
                 "role": "USER",
                 "createdAt": "2023-04-05T11:20:00.000Z",
                 "updatedAt": "2023-12-02T14:15:00.000Z",
@@ -71,12 +72,252 @@
                 "id": 5,
                 "name": "Emily Rodriguez",
                 "email": "emily.rodriguez@example.com",
-                "avatar": "https://picsum.photos/150/150?random=5",
+                "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
                 "role": "USER",
                 "createdAt": "2023-05-12T16:30:00.000Z",
                 "updatedAt": "2023-12-03T09:45:00.000Z",
                 "lastLoginAt": "2023-12-03T08:30:00.000Z",
                 "phoneNumber": "555-0654"
+            }
+        },
+        {
+            "id": 6,
+            "lastMessage": "Great work on the project!",
+            "lastActivity": "2023-12-03T15:20:00.000Z",
+            "participant": {
+                "id": 6,
+                "name": "David Wilson",
+                "email": "david.wilson@example.com",
+                "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-06-08T12:15:00.000Z",
+                "updatedAt": "2023-12-03T15:20:00.000Z",
+                "lastLoginAt": "2023-12-03T14:10:00.000Z",
+                "phoneNumber": "555-0987"
+            }
+        },
+        {
+            "id": 7,
+            "lastMessage": "Can you review my code?",
+            "lastActivity": "2023-12-04T11:30:00.000Z",
+            "participant": {
+                "id": 7,
+                "name": "Lisa Thompson",
+                "email": "lisa.thompson@example.com",
+                "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-07-20T09:30:00.000Z",
+                "updatedAt": "2023-12-04T11:30:00.000Z",
+                "lastLoginAt": "2023-12-04T10:15:00.000Z",
+                "phoneNumber": "555-0246"
+            }
+        },
+        {
+            "id": 8,
+            "lastMessage": "See you at the conference",
+            "lastActivity": "2023-12-04T16:45:00.000Z",
+            "participant": {
+                "id": 8,
+                "name": "James Parker",
+                "email": "james.parker@example.com",
+                "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-08-14T14:20:00.000Z",
+                "updatedAt": "2023-12-04T16:45:00.000Z",
+                "lastLoginAt": "2023-12-04T15:30:00.000Z",
+                "phoneNumber": "555-0135"
+            }
+        },
+        {
+            "id": 9,
+            "lastMessage": "Happy birthday!",
+            "lastActivity": "2023-12-05T08:15:00.000Z",
+            "participant": {
+                "id": 9,
+                "name": "Rachel Green",
+                "email": "rachel.green@example.com",
+                "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-09-05T11:45:00.000Z",
+                "updatedAt": "2023-12-05T08:15:00.000Z",
+                "lastLoginAt": "2023-12-05T07:00:00.000Z",
+                "phoneNumber": "555-0864"
+            }
+        },
+        {
+            "id": 10,
+            "lastMessage": "The meeting is postponed",
+            "lastActivity": "2023-12-05T13:20:00.000Z",
+            "participant": {
+                "id": 10,
+                "name": "Alex Kim",
+                "email": "alex.kim@example.com",
+                "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-10-12T16:30:00.000Z",
+                "updatedAt": "2023-12-05T13:20:00.000Z",
+                "lastLoginAt": "2023-12-05T12:05:00.000Z",
+                "phoneNumber": "555-0753"
+            }
+        },
+        {
+            "id": 11,
+            "lastMessage": "I'll send the documents later",
+            "lastActivity": "2023-12-06T09:40:00.000Z",
+            "participant": {
+                "id": 11,
+                "name": "Jessica Brown",
+                "email": "jessica.brown@example.com",
+                "avatar": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-11-01T13:15:00.000Z",
+                "updatedAt": "2023-12-06T09:40:00.000Z",
+                "lastLoginAt": "2023-12-06T08:25:00.000Z",
+                "phoneNumber": "555-0428"
+            }
+        },
+        {
+            "id": 12,
+            "lastMessage": "Looking forward to our lunch",
+            "lastActivity": "2023-12-06T14:55:00.000Z",
+            "participant": {
+                "id": 12,
+                "name": "Robert Taylor",
+                "email": "robert.taylor@example.com",
+                "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-03-28T10:20:00.000Z",
+                "updatedAt": "2023-12-06T14:55:00.000Z",
+                "lastLoginAt": "2023-12-06T13:40:00.000Z",
+                "phoneNumber": "555-0691"
+            }
+        },
+        {
+            "id": 13,
+            "lastMessage": "Can we reschedule?",
+            "lastActivity": "2023-12-07T10:10:00.000Z",
+            "participant": {
+                "id": 13,
+                "name": "Amanda White",
+                "email": "amanda.white@example.com",
+                "avatar": "https://images.unsplash.com/photo-1521577352947-9bb58764b69a?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-04-18T15:45:00.000Z",
+                "updatedAt": "2023-12-07T10:10:00.000Z",
+                "lastLoginAt": "2023-12-07T09:30:00.000Z",
+                "phoneNumber": "555-0517"
+            }
+        },
+        {
+            "id": 14,
+            "lastMessage": "The presentation went well",
+            "lastActivity": "2023-12-07T17:25:00.000Z",
+            "participant": {
+                "id": 14,
+                "name": "Kevin Martinez",
+                "email": "kevin.martinez@example.com",
+                "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-05-30T12:00:00.000Z",
+                "updatedAt": "2023-12-07T17:25:00.000Z",
+                "lastLoginAt": "2023-12-07T16:10:00.000Z",
+                "phoneNumber": "555-0382"
+            }
+        },
+        {
+            "id": 15,
+            "lastMessage": "Thanks for the feedback",
+            "lastActivity": "2023-12-08T11:50:00.000Z",
+            "participant": {
+                "id": 15,
+                "name": "Nicole Davis",
+                "email": "nicole.davis@example.com",
+                "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-07-14T09:15:00.000Z",
+                "updatedAt": "2023-12-08T11:50:00.000Z",
+                "lastLoginAt": "2023-12-08T10:35:00.000Z",
+                "phoneNumber": "555-0926"
+            }
+        },
+        {
+            "id": 16,
+            "lastMessage": "Have a great weekend!",
+            "lastActivity": "2023-12-08T18:30:00.000Z",
+            "participant": {
+                "id": 16,
+                "name": "Brian Lee",
+                "email": "brian.lee@example.com",
+                "avatar": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-08-22T14:30:00.000Z",
+                "updatedAt": "2023-12-08T18:30:00.000Z",
+                "lastLoginAt": "2023-12-08T17:15:00.000Z",
+                "phoneNumber": "555-0649"
+            }
+        },
+        {
+            "id": 17,
+            "lastMessage": "The project is on track",
+            "lastActivity": "2023-12-09T12:15:00.000Z",
+            "participant": {
+                "id": 17,
+                "name": "Samantha Clark",
+                "email": "samantha.clark@example.com",
+                "avatar": "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-09-17T11:20:00.000Z",
+                "updatedAt": "2023-12-09T12:15:00.000Z",
+                "lastLoginAt": "2023-12-09T11:00:00.000Z",
+                "phoneNumber": "555-0714"
+            }
+        },
+        {
+            "id": 18,
+            "lastMessage": "Let's discuss tomorrow",
+            "lastActivity": "2023-12-09T15:40:00.000Z",
+            "participant": {
+                "id": 18,
+                "name": "Daniel Moore",
+                "email": "daniel.moore@example.com",
+                "avatar": "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-10-03T13:45:00.000Z",
+                "updatedAt": "2023-12-09T15:40:00.000Z",
+                "lastLoginAt": "2023-12-09T14:25:00.000Z",
+                "phoneNumber": "555-0835"
+            }
+        },
+        {
+            "id": 19,
+            "lastMessage": "Good luck with the interview!",
+            "lastActivity": "2023-12-10T08:20:00.000Z",
+            "participant": {
+                "id": 19,
+                "name": "Michelle Adams",
+                "email": "michelle.adams@example.com",
+                "avatar": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-11-15T16:10:00.000Z",
+                "updatedAt": "2023-12-10T08:20:00.000Z",
+                "lastLoginAt": "2023-12-10T07:05:00.000Z",
+                "phoneNumber": "555-0573"
+            }
+        },
+        {
+            "id": 20,
+            "lastMessage": "Coffee later?",
+            "lastActivity": "2023-12-10T13:35:00.000Z",
+            "participant": {
+                "id": 20,
+                "name": "Christopher Hall",
+                "email": "christopher.hall@example.com",
+                "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&h=150&fit=crop&crop=face",
+                "role": "USER",
+                "createdAt": "2023-12-01T10:25:00.000Z",
+                "updatedAt": "2023-12-10T13:35:00.000Z",
+                "lastLoginAt": "2023-12-10T12:20:00.000Z",
+                "phoneNumber": "555-0198"
             }
         }
     ]
