@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
     "classnames": "^2.5.1",
+    "date-fns": "^4.1.0",
     "msw": "^2.11.1",
     "next": "15.3.5",
     "next-intl": "^4.3.4",
