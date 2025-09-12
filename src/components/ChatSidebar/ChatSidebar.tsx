@@ -29,17 +29,19 @@ const ChatSidebar: React.FC = () => {
         startIcon={<SearchIcon className={classes.searchIcon} />}
       />
 
-      {Boolean(data?.conversations?.length) &&
-        data?.conversations?.map(conversation => (
-          <ConversationItem
-            key={conversation.id}
-            conversationId={String(conversation.id)}
-            avatar={conversation.participant.avatar}
-            name={conversation.participant.name}
-            lastMessage={conversation.lastMessage}
-            timestamp={conversation.lastActivity}
-          />
-        ))}
+      <div className={classes.conversationList}>
+        {Boolean(data?.conversations?.length) &&
+          data?.conversations?.map(conversation => (
+            <ConversationItem
+              key={conversation.id}
+              conversationId={String(conversation.id)}
+              avatar={conversation.participant.avatar}
+              name={conversation.participant.name}
+              lastMessage={conversation.lastMessage}
+              timestamp={conversation.lastActivity}
+            />
+          ))}
+      </div>
     </div>
   );
 };

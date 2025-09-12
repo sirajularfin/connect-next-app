@@ -24,3 +24,10 @@
   width: convertPxToRem(20);
   height: convertPxToRem(20);
 }
+
+.conversationList {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-grey-300 transparent;
+  height: calc(100vh - convertPxToRem(150));
+}
