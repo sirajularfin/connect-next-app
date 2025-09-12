@@ -9,7 +9,7 @@ import { APP_LANGUAGES } from '@/common/types/constants';
 import MSWProvider from '@/mocks/MswProvider';
 import ReduxProvider from '@/redux/provider';
 import customFonts from '../../public/fonts/fonts';
-import LocalizationWrapper from '../i18n/LocalizationWrapper';
+import LocalizationWrapper from '../i18n/LocalizationProvider';
 
 export const metadata: Metadata = {
   title: 'Connect - AI Powered Chat Application',
