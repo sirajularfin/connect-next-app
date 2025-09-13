@@ -5,7 +5,7 @@ import LandingPageImg from '@/assets/images/landing-page.png';
 import Typography from '@/components/Typography/Typography';
 import classes from './page.module.scss';
 
-const LeftSection: React.FC = () => {
+const Default: React.FC = () => {
   const t = useTranslations();
 
   return (
@@ -34,4 +34,4 @@ const LeftSection: React.FC = () => {
   );
 };
 
-export default LeftSection;
+export default Default;

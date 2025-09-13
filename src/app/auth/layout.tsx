@@ -7,7 +7,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const AuthLayout: React.FC<IProps> = ({ left, children }) => {
+const Layout: React.FC<IProps> = ({ left, children }) => {
   return (
     <section>
       <MainHeader />
@@ -20,4 +20,4 @@ const AuthLayout: React.FC<IProps> = ({ left, children }) => {
   );
 };
 
-export default AuthLayout;
+export default Layout;

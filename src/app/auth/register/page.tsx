@@ -10,9 +10,9 @@ import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import classes from './page.module.scss';
-import useRegister from './useRegister';
+import useRegister from './register.hook';
 
-const RegisterForm: React.FC = () => {
+const Page: React.FC = () => {
   const { error, formState, handleFieldChange, isLoading, handleFormSubmit } =
     useRegister();
   const t = useTranslations();
@@ -94,4 +94,4 @@ const RegisterForm: React.FC = () => {
   );
 };
 
-export default RegisterForm;
+export default Page;
