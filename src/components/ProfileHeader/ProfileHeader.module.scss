@@ -1,3 +1,46 @@
 .container {
-    
+  display: flex;
+  padding: convertPxToRem(15.5) convertPxToRem(10);
+  gap: convertPxToRem(8);
+  align-items: center;
+  border-bottom: convertPxToRem(1) solid $color-grey-300;
+
+  .profileImage {
+    border-radius: convertPxToRem(8);
+  }
+
+  .username {
+    font-family: $font-dm-sans;
+    font-size: convertPxToRem(20);
+    font-weight: 600;
+    color: $color-grey-800;
+  }
+  
+  .statusText {
+    font-family: $font-dm-sans;
+    font-size: convertPxToRem(12);
+    font-weight: 500;
+    color: $color-grey-700;
+  }
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: convertPxToRem(4);
+  margin-top: convertPxToRem(2);
+}
+
+.statusIcon {
+  border-radius: 100%;
+  width: convertPxToRem(8);
+  height: convertPxToRem(8);
+}
+
+.onlineStatus {
+  background-color: $color-green-500;
+}
+
+.offlineStatus {
+  background-color: $color-red-500;
 }
