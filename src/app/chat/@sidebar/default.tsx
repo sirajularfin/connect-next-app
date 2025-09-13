@@ -10,7 +10,7 @@ import Typography from '@/components/Typography/Typography';
 import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat';
 import classes from './sidebar.module.scss';
 
-const ChatSidebar: React.FC = () => {
+const Default: React.FC = () => {
   const t = useTranslations();
 
   const { data } = useGetConversationListQuery();
@@ -46,4 +46,4 @@ const ChatSidebar: React.FC = () => {
   );
 };
 
-export default ChatSidebar;
+export default Default;

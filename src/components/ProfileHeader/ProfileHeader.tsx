@@ -3,8 +3,6 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { RootState } from '@/redux/store';
-import { useSelector } from 'react-redux';
 import Typography from '../Typography/Typography';
 import classes from './ProfileHeader.module.scss';
 
@@ -27,6 +25,8 @@ const ProfileHeader: React.FC<IProps> = ({
         src={profileImageUrl}
         alt={username}
         className={classes.profileImage}
+        width={40}
+        height={40}
       />
       <div>
         <Typography>{username}</Typography>

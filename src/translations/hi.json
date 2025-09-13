@@ -36,5 +36,7 @@
   "profile_online": "ऑनलाइन",
   "profile_offline": "ऑफलाइन",
   "chat_search_placeholder": "खोजें",
-  "chat_sidebar_title": "संदेश"
+  "chat_sidebar_title": "संदेश",
+  "chat_welcome_title": "Connect में आपका स्वागत है!",
+  "chat_welcome_message": "बातचीत शुरू करने के लिए साइडबार से एक वार्तालाप चुनें"
 }

@@ -1,15 +1,18 @@
+import Typography from '@/components/Typography/Typography';
+import { useTranslations } from 'next-intl';
 import classes from './chat.module.scss';
 
-interface IProps {
-  sidebar: React.ReactNode;
-  children: React.ReactNode;
-}
+const Page: React.FC = () => {
+  const t = useTranslations();
 
-const Page: React.FC<IProps> = ({ sidebar, children }) => {
   return (
     <div className={classes.container}>
-      <section>{sidebar}</section>
-      <section>{children}</section>
+      <Typography className={classes.heading}>
+        {t('chat_welcome_title')}
+      </Typography>
+      <Typography className={classes.subHeading}>
+        {t('chat_welcome_message')}
+      </Typography>
     </div>
   );
 };

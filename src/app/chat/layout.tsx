@@ -7,7 +7,7 @@ interface IProps {
 
 const Layout: React.FC<IProps> = ({ sidebar, children }) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.chatLayout}>
       <section>{sidebar}</section>
       <section>{children}</section>
     </div>

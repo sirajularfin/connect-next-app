@@ -36,5 +36,7 @@
   "profile_online": "Online",
   "profile_offline": "Offline",
   "chat_search_placeholder": "Search",
-  "chat_sidebar_title": "Messages"
+  "chat_sidebar_title": "Messages",
+  "chat_welcome_title": "Welcome to Connect!",
+  "chat_welcome_message": "Select a conversation from the sidebar to start chatting"
 }
