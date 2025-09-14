@@ -7,6 +7,7 @@ import React from 'react';
 import ChatMessage from '@/components/ChatMessage/ChatMessage';
 import CircularProgress from '@/components/CircularProgress/CircularProgress';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
+import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import { useGetChatMessagesQuery } from '@/integrations/http/endpoints/chat';
 import classes from './section.module.scss';
@@ -50,6 +51,13 @@ const ChatSection = () => {
           <></>
         )}
       </div>
+      <TextInput
+        id="chatInput"
+        type="text"
+        name="chatInput"
+        placeholder={t('chat_input_placeholder')}
+        customStyle={classes.textInput}
+      />
     </React.Fragment>
   );
 };
