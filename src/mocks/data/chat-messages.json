@@ -1,88 +1,284 @@
 {
-    "messages": [
-      {
-        "id": 1,
-        "conversationId": 1,
-        "sender": {
-          "id": 1,
-          "name": "Alex Johnson",
-          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
-        },
-        "content": "Hey! How's your day going?",
-        "createdAt": "2023-12-01T09:15:00.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": true
-      },
-      {
-        "id": 2,
-        "conversationId": 1,
-        "sender": {
-          "id": 2,
-          "name": "Sarah Mitchell",
-          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
-        },
-        "content": "Pretty good! Just finished that presentation I was working on. You?",
-        "createdAt": "2023-12-01T09:17:30.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": true
-      },
-      {
-        "id": 3,
-        "conversationId": 1,
-        "sender": {
-          "id": 1,
-          "name": "Alex Johnson",
-          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
-        },
-        "content": "Nice! How did it go? I'm just debugging some code issues 😅",
-        "createdAt": "2023-12-01T09:18:45.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": true
-      },
-      {
-        "id": 4,
-        "conversationId": 1,
-        "sender": {
-          "id": 2,
-          "name": "Sarah Mitchell",
-          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
-        },
-        "content": "It went well, thanks! What kind of bugs are you dealing with?",
-        "createdAt": "2023-12-01T09:20:12.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": true
-      },
-      {
-        "id": 5,
-        "conversationId": 1,
-        "sender": {
-          "id": 1,
-          "name": "Alex Johnson",
-          "avatar": "https://cdn.pixabay.com/photo/2024/03/31/05/00/ai-generated-8665996_1280.jpg"
-        },
-        "content": "API integration issues. The response format keeps changing 🤦‍♂️",
-        "createdAt": "2023-12-01T09:22:08.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": false
-      },
-      {
-        "id": 6,
-        "conversationId": 1,
-        "sender": {
-          "id": 2,
-          "name": "Sarah Mitchell",
-          "avatar": "https://cdn.pixabay.com/photo/2023/02/24/00/41/ai-generated-7809880_640.jpg"
-        },
-        "content": "Oof, that's frustrating. Have you tried using a schema validator?",
-        "createdAt": "2023-12-01T09:23:55.000Z",
-        "isEdited": false,
-        "isDeleted": false,
-        "isRead": false
-      }
-    ]
+  "messages": [
+    {
+      "id": 1,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "Hey! How's your day going?",
+      "createdAt": "2023-12-01T09:15:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 2,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Pretty good! Just finished that presentation I was working on. You?",
+      "createdAt": "2023-12-01T09:17:30.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 3,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "Nice! How did it go? I'm just debugging some code issues 😅",
+      "createdAt": "2023-12-01T09:18:45.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 4,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "It went well, thanks! What kind of bugs are you dealing with?",
+      "createdAt": "2023-12-01T09:20:12.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 5,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "API integration issues. The response format keeps changing 🤦‍♂️",
+      "createdAt": "2023-12-01T09:22:08.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 6,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Oof, that's frustrating. Have you tried using a schema validator?",
+      "createdAt": "2023-12-01T09:23:55.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 7,
+      "senderId": 20,
+      "conversationId": 2,
+      "content": "Are we still on for the meeting tomorrow?",
+      "createdAt": "2023-12-01T10:30:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 8,
+      "senderId": 2,
+      "conversationId": 2,
+      "content": "Yes, 2 PM sharp. Don't forget the documents!",
+      "createdAt": "2023-12-01T10:32:15.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 9,
+      "senderId": 3,
+      "conversationId": 3,
+      "content": "Did you see the latest update on the project?",
+      "createdAt": "2023-12-01T11:00:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 10,
+      "senderId": 20,
+      "conversationId": 3,
+      "content": "Yeah, looks promising! When do we start implementation?",
+      "createdAt": "2023-12-01T11:05:22.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 11,
+      "senderId": 20,
+      "conversationId": 4,
+      "content": "Thanks for helping me with the database query yesterday",
+      "createdAt": "2023-12-01T12:15:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 12,
+      "senderId": 4,
+      "conversationId": 4,
+      "content": "No problem! Happy to help anytime 😊",
+      "createdAt": "2023-12-01T12:18:30.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 13,
+      "senderId": 5,
+      "conversationId": 5,
+      "content": "Can you review my pull request when you get a chance?",
+      "createdAt": "2023-12-01T13:20:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 14,
+      "senderId": 20,
+      "conversationId": 5,
+      "content": "Sure! I'll take a look this afternoon",
+      "createdAt": "2023-12-01T13:25:45.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 15,
+      "senderId": 20,
+      "conversationId": 6,
+      "content": "Coffee break? ☕",
+      "createdAt": "2023-12-01T14:00:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 16,
+      "senderId": 6,
+      "conversationId": 6,
+      "content": "Always! Meet you at the usual spot?",
+      "createdAt": "2023-12-01T14:02:10.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 17,
+      "senderId": 7,
+      "conversationId": 7,
+      "content": "The client wants to add another feature to the dashboard",
+      "createdAt": "2023-12-01T15:10:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 18,
+      "senderId": 20,
+      "conversationId": 7,
+      "content": "What kind of feature? We're already pretty tight on deadline",
+      "createdAt": "2023-12-01T15:12:33.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 19,
+      "senderId": 20,
+      "conversationId": 8,
+      "content": "Did you finish the unit tests for the auth module?",
+      "createdAt": "2023-12-01T16:00:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 20,
+      "senderId": 8,
+      "conversationId": 8,
+      "content": "Almost done! Just need to cover a few edge cases",
+      "createdAt": "2023-12-01T16:03:18.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 21,
+      "senderId": 9,
+      "conversationId": 9,
+      "content": "The staging environment is down again 😓",
+      "createdAt": "2023-12-01T17:00:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 22,
+      "senderId": 20,
+      "conversationId": 9,
+      "content": "I'll check the server logs. Probably another memory issue",
+      "createdAt": "2023-12-01T17:02:45.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 23,
+      "senderId": 20,
+      "conversationId": 10,
+      "content": "Great job on the presentation today!",
+      "createdAt": "2023-12-01T18:15:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 24,
+      "senderId": 10,
+      "conversationId": 10,
+      "content": "Thanks! I was nervous but it went better than expected",
+      "createdAt": "2023-12-01T18:17:22.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 25,
+      "senderId": 11,
+      "conversationId": 11,
+      "content": "Can we schedule a code review session for next week?",
+      "createdAt": "2023-12-01T19:00:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 26,
+      "senderId": 20,
+      "conversationId": 11,
+      "content": "Sure! How about Tuesday at 10 AM?",
+      "createdAt": "2023-12-01T19:05:15.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 27,
+      "senderId": 20,
+      "conversationId": 12,
+      "content": "Have a great weekend! 🎉",
+      "createdAt": "2023-12-01T19:30:00.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": true
+    },
+    {
+      "id": 28,
+      "senderId": 12,
+      "conversationId": 12,
+      "content": "You too! Any fun plans?",
+      "createdAt": "2023-12-01T19:32:44.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    }
+  ]
 }
