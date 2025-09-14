@@ -38,5 +38,8 @@
   "chat_search_placeholder": "Search",
   "chat_sidebar_title": "Messages",
   "chat_welcome_title": "Welcome to Connect!",
-  "chat_welcome_message": "Select a conversation from the sidebar to start chatting"
+  "chat_welcome_message": "Select a conversation from the sidebar to start chatting",
+  "message_deleted": "This message has been deleted.",
+  "message_edited": "Edited",
+  "error_something_went_wrong": "Something went wrong. Please try again."
 }

@@ -40,3 +40,8 @@ export function formatTimestamp(timestamp: string): string {
   // More than a week - return dd/mm/yyyy format
   return format(date, 'dd/MM/yyyy');
 }
+
+export function formatDateTime(timestamp: string): string {
+  const date = new Date(timestamp);
+  return format(date, 'MMM dd, yyyy • h:mm a');
+}

@@ -1,50 +1,56 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-import { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 
+import ChatMessage from '@/components/ChatMessage/ChatMessage';
+import CircularProgress from '@/components/CircularProgress/CircularProgress';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
-import { useLazyGetChatMessagesQuery } from '@/integrations/http/endpoints/chat';
-import { RootState } from '@/redux/store';
+import Typography from '@/components/Typography/Typography';
+import { useGetChatMessagesQuery } from '@/integrations/http/endpoints/chat';
+import classes from './section.module.scss';
 
 const ChatSection = () => {
+  const t = useTranslations();
   const { conversationId } = useParams();
-  const [trigger, { data, isSuccess, isLoading }] =
-    useLazyGetChatMessagesQuery();
+  const { data, isLoading, isError } = useGetChatMessagesQuery({
+    conversationId: String(conversationId),
+  });
 
-  const { conversations } = useSelector(
-    (state: RootState) => state.conversation
-  );
+  if (isLoading) {
+    return <CircularProgress />;
+  }
 
-  useEffect(() => {
-    if (conversationId) {
-      const id = Array.isArray(conversationId)
-        ? conversationId[0]
-        : conversationId;
-      trigger({ conversationId: id });
-    }
-  }, [conversationId]);
-
-  const selectedConversation = useMemo(
-    () =>
-      conversations.find(
-        conversation => conversation.id === Number(conversationId)
-      ),
-    [conversationId]
-  );
+  if (isError || !data) {
+    return <Typography>{t('error_something_went_wrong')}</Typography>;
+  }
 
   return (
-    <div>
-      {isLoading && <p>Loading...</p>}
-      {isSuccess && (
-        <ProfileHeader
-          profileImageUrl={selectedConversation?.participant?.avatar ?? ''}
-          username={selectedConversation?.participant?.name ?? ''}
-          isOnline={selectedConversation?.participant?.isOnline ?? false}
-        />
-      )}
-    </div>
+    <React.Fragment>
+      <ProfileHeader
+        profileImageUrl={data.sender?.avatar ?? ''}
+        username={data.sender?.name ?? ''}
+        isOnline={data.sender?.isOnline}
+      />
+      <div className={classes.messageContainer}>
+        {data.messages?.length > 0 ? (
+          data.messages.map(message => (
+            <ChatMessage
+              key={message.id}
+              senderId={message.senderId}
+              content={message.content}
+              timestamp={message.createdAt}
+              isEdited={message.isEdited}
+              isDeleted={message.isDeleted}
+              isRead={message.isRead}
+            />
+          ))
+        ) : (
+          <></>
+        )}
+      </div>
+    </React.Fragment>
   );
 };
 
