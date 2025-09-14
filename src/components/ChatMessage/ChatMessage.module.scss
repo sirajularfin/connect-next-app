@@ -7,6 +7,10 @@
   padding: convertPxToRem(10) convertPxToRem(20);
   width: fit-content;
   max-width: 60%;
+
+  &:last-child {
+    margin-bottom: convertPxToRem(102);
+  }
 }
 
 .outgoingMessage {
