@@ -8,9 +8,9 @@ import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
-import useLogin from './useLogin';
+import useLogin from './login.hook';
 
-const LoginPage: React.FC = () => {
+const Page: React.FC = () => {
   const t = useTranslations();
   const { error, isLoading, formState, handleFieldChange, handleFormSubmit } =
     useLogin();
@@ -69,4 +69,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default Page;

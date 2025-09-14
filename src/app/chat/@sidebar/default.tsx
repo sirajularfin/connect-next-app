@@ -4,13 +4,13 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { SearchIcon } from '@/assets';
+import ConversationItem from '@/components/ConversationItem/ConversationItem';
+import TextInput from '@/components/TextInput/TextInput';
+import Typography from '@/components/Typography/Typography';
 import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat';
-import ConversationItem from '../ConversationItem/ConversationItem';
-import TextInput from '../TextInput/TextInput';
-import Typography from '../Typography/Typography';
-import classes from './ChatSidebar.module.scss';
+import classes from './sidebar.module.scss';
 
-const ChatSidebar: React.FC = () => {
+const Default: React.FC = () => {
   const t = useTranslations();
 
   const { data } = useGetConversationListQuery();
@@ -46,4 +46,4 @@ const ChatSidebar: React.FC = () => {
   );
 };
 
-export default ChatSidebar;
+export default Default;

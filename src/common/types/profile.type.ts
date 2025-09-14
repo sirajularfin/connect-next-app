@@ -8,4 +8,5 @@ export interface UserProfile {
   updatedAt: string;
   lastLoginAt: string;
   phoneNumber: string;
+  isOnline: boolean;
 }

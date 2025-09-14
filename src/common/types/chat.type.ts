@@ -14,7 +14,7 @@ export interface ConversationListResponse {
 export interface ChatMessage {
   id: number;
   conversationId: number;
-  sender: UserProfile;
+  senderId: number;
   content: string;
   createdAt: string;
   isRead: boolean;
@@ -23,5 +23,6 @@ export interface ChatMessage {
 }
 
 export interface ChatMessagesResponse {
+  sender: UserProfile;
   messages: ChatMessage[];
 }

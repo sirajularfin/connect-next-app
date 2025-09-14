@@ -1,14 +1,17 @@
-import ChatSection from '@/components/ChatSection/ChatSection';
-import ChatSidebar from '@/components/ChatSidebar/ChatSidebar';
 import classes from './chat.module.scss';
 
-const ChatLayout: React.FC = () => {
+interface IProps {
+  sidebar: React.ReactNode;
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<IProps> = ({ sidebar, children }) => {
   return (
-    <div className={classes.container}>
-      <ChatSidebar />
-      <ChatSection />
+    <div className={classes.chatLayout}>
+      <section>{sidebar}</section>
+      <section>{children}</section>
     </div>
   );
 };
 
-export default ChatLayout;
+export default Layout;

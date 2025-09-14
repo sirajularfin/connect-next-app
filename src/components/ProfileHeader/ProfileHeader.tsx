@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
+import { ProfilePlaceholder } from '@/assets';
 import Typography from '../Typography/Typography';
 import classes from './ProfileHeader.module.scss';
 
@@ -22,12 +23,14 @@ const ProfileHeader: React.FC<IProps> = ({
   return (
     <div className={classes.container}>
       <Image
-        src={profileImageUrl}
-        alt={username}
+        width={50}
+        height={50}
+        src={profileImageUrl ?? ProfilePlaceholder}
+        alt={`Profile Picture - ${username}`}
         className={classes.profileImage}
       />
       <div>
-        <Typography>{username}</Typography>
+        <Typography className={classes.username}>{username}</Typography>
         <div>
           <span
             className={classNames(
@@ -35,9 +38,18 @@ const ProfileHeader: React.FC<IProps> = ({
               { [classes.offlineIndicator]: !isOnline }
             )}
           ></span>
-          <Typography>
-            {isOnline ? t('profile_online') : t('profile_offline')}
-          </Typography>
+          <div className={classes.statusContainer}>
+            <div
+              className={classNames(
+                classes.statusIcon,
+                { [classes.onlineStatus]: isOnline },
+                { [classes.offlineStatus]: !isOnline }
+              )}
+            ></div>
+            <Typography className={classes.statusText}>
+              {isOnline ? t('profile_online') : t('profile_offline')}
+            </Typography>
+          </div>
         </div>
       </div>
     </div>

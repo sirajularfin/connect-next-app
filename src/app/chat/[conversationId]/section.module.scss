@@ -1,0 +1,8 @@
+.messageContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - convertPxToRem(82));
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $color-grey-300 transparent;
+}

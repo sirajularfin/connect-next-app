@@ -1,8 +1,8 @@
 import APP_ROUTES from '@/common/types/routes';
 import { redirect, RedirectType } from 'next/navigation';
 
-function AuthPage() {
+function Page() {
   redirect(APP_ROUTES.LOGIN, RedirectType.replace);
 }
 
-export default AuthPage;
+export default Page;

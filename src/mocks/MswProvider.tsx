@@ -1,7 +1,6 @@
 'use client';
 
 import logger from '@/common/util/logger.util';
-import Typography from '@/components/Typography/Typography';
 import { PropsWithChildren, useEffect, useState } from 'react';
 
 declare global {
@@ -44,7 +43,7 @@ function MSWProvider({ children }: PropsWithChildren<IProps>) {
 
   // Always render children, don't block the app
   if (!isMswReady && process.env.NODE_ENV === 'development') {
-    return <Typography>[MSW] Loading Mock Server...</Typography>; // Optional loading state
+    return;
   }
 
   return <>{children}</>;

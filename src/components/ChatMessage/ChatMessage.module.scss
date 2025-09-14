@@ -1,0 +1,44 @@
+.container {
+  border-radius: convertPxToRem(10);
+  display: flex;
+  flex-direction: column;
+  gap: convertPxToRem(5);
+  margin: convertPxToRem(10) convertPxToRem(25);
+  padding: convertPxToRem(10) convertPxToRem(20);
+  width: fit-content;
+  max-width: 60%;
+}
+
+.outgoingMessage {
+  align-self: flex-end;
+  background-color: $color-amber-900;
+  color: $color-white;
+  text-align: right;
+}
+
+.incomingMessage {
+  background-color: $color-grey-200;
+  color: $color-black;
+  text-align: left;
+}
+
+.content {
+  font-family: $font-dm-sans;
+  font-size: convertPxToRem(14);
+  font-weight: 300;
+}
+
+.timestamp {
+  color: $color-grey-200;
+  font-family: $font-dm-sans;
+  font-size: convertPxToRem(11);
+  font-weight: 400;
+  letter-spacing: convertPxToRem(0.5);
+  line-height: convertPxToRem(16);
+  margin-top: convertPxToRem(5);
+  text-align: right;
+}
+
+.timestampDark {
+  color: $color-black;
+}
