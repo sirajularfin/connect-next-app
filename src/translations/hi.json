@@ -40,5 +40,6 @@
   "chat_welcome_title": "Connect में आपका स्वागत है!",
   "chat_welcome_message": "बातचीत शुरू करने के लिए साइडबार से एक वार्तालाप चुनें",
   "message_deleted": "यह संदेश हटा दिया गया है।",
-  "message_edited": "संपादित"
+  "message_edited": "संपादित",
+  "error_something_went_wrong": "कुछ गलत हुआ। कृपया फिर से प्रयास करें।"
 }
