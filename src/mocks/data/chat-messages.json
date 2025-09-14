@@ -61,6 +61,106 @@
       "isRead": false
     },
     {
+      "id": 29,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "That's actually a great idea! I haven't implemented one yet. The third-party API documentation is pretty vague too, which doesn't help. They mention field types but don't specify if they're optional or required in different scenarios.",
+      "createdAt": "2023-12-01T09:25:10.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 30,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Oh I feel your pain! I dealt with something similar last month. Have you considered reaching out to their support team? Sometimes they have internal docs that are more detailed than the public ones. Also, you could set up some logging to capture the different response variations you're seeing.",
+      "createdAt": "2023-12-01T09:27:45.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 31,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "Good point about the logging! I've been manually checking responses but automated logging would definitely help identify patterns. Their support team... well, let's just say their response times are not great. I submitted a ticket three days ago and still haven't heard back.",
+      "createdAt": "2023-12-01T09:29:20.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 32,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Ugh, typical! In the meantime, you could try building a more defensive parsing strategy. Maybe create fallback logic for when fields are missing or have unexpected types? I learned this the hard way - always assume external APIs will surprise you in the worst possible way at the worst possible time 😂",
+      "createdAt": "2023-12-01T09:31:15.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 33,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "Haha, so true! Murphy's Law of APIs. I think I'll implement both your suggestions - set up comprehensive logging and add defensive parsing with fallbacks. It'll take some extra time upfront but will save headaches later. Do you have any recommendations for schema validation libraries?",
+      "createdAt": "2023-12-01T09:33:40.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 34,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Absolutely! For JavaScript, I really like Joi or Yup. They're both pretty intuitive and have good error messages. If you're working with TypeScript, you might want to check out Zod - it can generate types from your schemas which is super handy. What language are you working in?",
+      "createdAt": "2023-12-01T09:35:25.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 35,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "We're using TypeScript actually! Zod sounds perfect then. I love when tools can generate types - saves so much manual work and reduces the chance of mismatches between runtime validation and compile-time types. Thanks for the recommendation! I'll give it a try this afternoon.",
+      "createdAt": "2023-12-01T09:37:12.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 36,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Perfect choice! Zod's documentation is really good too. One tip: start with a basic schema and gradually add more specific validations as you discover edge cases. Oh, and their error messages are developer-friendly, which makes debugging much easier than some other libraries I've used.",
+      "createdAt": "2023-12-01T09:39:05.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 37,
+      "senderId": 20,
+      "conversationId": 1,
+      "content": "That's exactly the approach I was thinking! Start simple and iterate. Developer-friendly error messages are a huge plus - I can't count how many times I've been stuck trying to decipher cryptic validation errors. You've been super helpful, thanks! I should probably get back to implementing this before the afternoon standup.",
+      "createdAt": "2023-12-01T09:41:30.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
+      "id": 38,
+      "senderId": 1,
+      "conversationId": 1,
+      "content": "Glad I could help! Let me know how it goes with Zod. If you run into any weird issues, feel free to ping me. I've probably made most of the possible mistakes with it already 😅 Good luck with your implementation!",
+      "createdAt": "2023-12-01T09:43:15.000Z",
+      "isEdited": false,
+      "isDeleted": false,
+      "isRead": false
+    },
+    {
       "id": 7,
       "senderId": 20,
       "conversationId": 2,

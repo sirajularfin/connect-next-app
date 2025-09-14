@@ -6,6 +6,7 @@
   margin: convertPxToRem(10) convertPxToRem(25);
   padding: convertPxToRem(10) convertPxToRem(20);
   width: fit-content;
+  max-width: 60%;
 }
 
 .outgoingMessage {
