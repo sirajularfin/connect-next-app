@@ -12,7 +12,12 @@ class HttpClient {
 
   constructor() {}
 
-  // Request interceptor equivalent
+  /**
+   * Intercepts the request before it is sent.
+   * @param url The request URL.
+   * @param config The request configuration.
+   * @returns The processed URL and configuration.
+   */
   private async interceptRequest(
     url: string,
     config: RequestInit
@@ -50,7 +55,12 @@ class HttpClient {
     return [fullUrl, finalConfig];
   }
 
-  // Response interceptor equivalent
+  /**
+   * Intercepts the response from the API.
+   * @param response The API response.
+   * @param originalUrl The original request URL.
+   * @returns The processed response.
+   */
   private async interceptResponse(
     response: Response,
     originalUrl: string
@@ -88,6 +98,12 @@ class HttpClient {
     return response;
   }
 
+  /**
+   * Sends an HTTP request.
+   * @param url The URL to send the request to.
+   * @param config The request configuration.
+   * @returns The response data.
+   */
   private async sendRequest<T>(url: string, config: RequestInit): Promise<T> {
     const [fullUrl, finalConfig] = await this.interceptRequest(url, config);
 
@@ -143,7 +159,7 @@ class HttpClient {
   }
 }
 
-// Custom error class
+// Custom error class for API errors.
 export class ApiError extends Error {
   constructor(
     public status: number,
