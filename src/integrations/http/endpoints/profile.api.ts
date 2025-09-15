@@ -14,5 +14,5 @@ export const profileApi = baseApi.injectEndpoints({
   overrideExisting: true,
 });
 
-export const { useGetProfileQuery, endpoints: profileApiEndpoints } =
+export const { useLazyGetProfileQuery, endpoints: profileApiEndpoints } =
   profileApi;

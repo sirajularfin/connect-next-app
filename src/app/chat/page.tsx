@@ -1,5 +1,6 @@
-import Typography from '@/components/Typography/Typography';
 import { useTranslations } from 'next-intl';
+
+import Typography from '@/components/Typography/Typography';
 import classes from './chat.module.scss';
 
 const Page: React.FC = () => {
