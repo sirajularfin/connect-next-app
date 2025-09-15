@@ -18,8 +18,8 @@ function MSWProvider({ children }: PropsWithChildren<IProps>) {
 
   const enableMocking = async () => {
     try {
-      const { worker } = await import('@/mocks/browser');
-      await worker.start({ onUnhandledRequest: 'warn' });
+      const { server } = await import('@/mocks/browser');
+      server.listen({ onUnhandledRequest: 'warn' });
       setIsMswReady(true);
       logger('[MSW] Started', 'info');
     } catch (err) {

@@ -1,4 +1,4 @@
-import APP_ROUTES from '@/common/types/routes';
+import APP_ROUTES from '@/common/types/appRoutes.type';
 import { redirect, RedirectType } from 'next/navigation';
 
 function Page() {
