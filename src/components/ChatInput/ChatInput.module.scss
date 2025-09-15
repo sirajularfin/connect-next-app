@@ -1,0 +1,22 @@
+.container {
+  align-items: center;
+  bottom: convertPxToRem(20);
+  display: flex;
+  gap: convertPxToRem(8);
+  margin: 0 convertPxToRem(24);
+  position: fixed;
+  z-index: 999;
+  width: -webkit-fill-available;
+
+  & svg {
+    cursor: pointer;
+  }
+}
+
+.textInput {
+  background-color: $color-white;
+  border-radius: convertPxToRem(8);
+  border: 1px solid $color-grey-200;
+  min-height: convertPxToRem(40);
+  padding: convertPxToRem(10) convertPxToRem(20);
+}

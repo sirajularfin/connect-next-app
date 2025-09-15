@@ -1,22 +1,9 @@
 .messageContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    max-height: calc(100vh - convertPxToRem(82));
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $color-grey-300 transparent;
-}
-
-.textInput {
-    background-color: $color-white;
-    border-radius: convertPxToRem(8);
-    border: 1px solid $color-grey-200;
-    margin: 0 convertPxToRem(24);
-    width: -webkit-fill-available;
-    min-height: convertPxToRem(40);
-    padding: convertPxToRem(10) convertPxToRem(10) convertPxToRem(10) convertPxToRem(20);
-    position: fixed;
-    bottom: convertPxToRem(10);
-    z-index: 999;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - convertPxToRem(82));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-grey-300 transparent;
 }
