@@ -7,7 +7,7 @@ import { SearchIcon } from '@/assets';
 import ConversationItem from '@/components/ConversationItem/ConversationItem';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
-import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat';
+import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat.api';
 import classes from './sidebar.module.scss';
 
 const Default: React.FC = () => {

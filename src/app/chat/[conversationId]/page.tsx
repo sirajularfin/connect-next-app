@@ -9,7 +9,7 @@ import ChatMessage from '@/components/ChatMessage/ChatMessage';
 import CircularProgress from '@/components/CircularProgress/CircularProgress';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
 import Typography from '@/components/Typography/Typography';
-import { useGetChatMessagesQuery } from '@/integrations/http/endpoints/chat';
+import { useGetChatMessagesQuery } from '@/integrations/http/endpoints/chat.api';
 import classes from './section.module.scss';
 
 const ChatSection = () => {

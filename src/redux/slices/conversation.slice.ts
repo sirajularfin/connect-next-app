@@ -1,5 +1,5 @@
 import { UserProfile } from '@/common/types/profile.type';
-import { chatApi } from '@/integrations/http/endpoints/chat';
+import { chatApi } from '@/integrations/http/endpoints/chat.api';
 import { createSlice } from '@reduxjs/toolkit';
 import { PURGE } from 'redux-persist';
 

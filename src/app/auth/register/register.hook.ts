@@ -6,7 +6,7 @@ import {
   RegisterUserSchema,
   RegisterUserSchemaType,
 } from '@/common/validations/register-user.schema';
-import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
+import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth.api';
 
 const INITIAL_FORM_STATE: RegisterUserSchemaType = {
   email: '',

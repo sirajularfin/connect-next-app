@@ -5,7 +5,7 @@ import {
   LoginUserSchema,
   LoginUserSchemaType,
 } from '@/common/validations/login-user.schema';
-import { usePostLoginMutation } from '@/integrations/http/endpoints/auth';
+import { usePostLoginMutation } from '@/integrations/http/endpoints/auth.api';
 
 const INITIAL_FORM_STATE: LoginUserSchemaType = {
   email: '',

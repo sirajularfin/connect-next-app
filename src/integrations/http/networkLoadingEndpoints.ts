@@ -1,5 +1,5 @@
-import { authApiEndpoints } from './endpoints/auth';
-import { tokenApiEndpoints } from './endpoints/token';
+import { authApiEndpoints } from './endpoints/auth.api';
+import { tokenApiEndpoints } from './endpoints/token.api';
 
 const NetworkLoadingEndpoints = [
   authApiEndpoints.getLogout,
