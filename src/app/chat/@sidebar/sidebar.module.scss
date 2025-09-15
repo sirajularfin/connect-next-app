@@ -13,7 +13,7 @@
 
 .searchBar {
   border-radius: convertPxToRem(8);
-  padding: convertPxToRem(12);
+  padding: convertPxToRem(12) convertPxToRem(16) !important;
   gap: convertPxToRem(6);
   max-height: convertPxToRem(30);
   margin: convertPxToRem(10) convertPxToRem(10);
