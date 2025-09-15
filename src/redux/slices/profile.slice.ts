@@ -1,14 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+
+import { UserProfile } from '@/common/types/profile.type';
+import { profileApiEndpoints } from '@/integrations/http/endpoints/profile.api';
 
 interface IProfileState {
-  data:
-    | {
-        email: string;
-        firstName: string;
-        lastName: string;
-        username: string;
-      }
-    | undefined;
+  data?: UserProfile;
 }
 
 const initialState: IProfileState = {
@@ -18,21 +14,21 @@ const initialState: IProfileState = {
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {
-    setProfile: (state, action: PayloadAction<IProfileState['data']>) => {
-      state.data = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: builder => {
+    const { matchFulfilled, matchPending, matchRejected } =
+      profileApiEndpoints.getProfile;
     builder.addCase('PURGE', () => initialState);
+    builder.addMatcher(matchPending || matchRejected, state => {
+      state.data = undefined;
+    });
+    builder.addMatcher(matchFulfilled, (state, action) => {
+      state.data = action.payload;
+    });
   },
   selectors: {
-    selectEmail: state => state.data?.email,
-    selectFirstName: state => state.data?.firstName,
-    selectLastName: state => state.data?.lastName,
-    selectUsername: state => state.data?.username,
+    selectLoggedInUserProfile: (state: IProfileState) => state.data,
   },
 });
 
-export const { selectEmail, selectFirstName, selectLastName, selectUsername } =
-  profileSlice.selectors;
+export const { selectLoggedInUserProfile } = profileSlice.selectors;
