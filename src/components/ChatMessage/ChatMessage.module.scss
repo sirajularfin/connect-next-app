@@ -7,11 +7,15 @@
   padding: convertPxToRem(10) convertPxToRem(20);
   width: fit-content;
   max-width: 60%;
+
+  &:last-child {
+    margin-bottom: convertPxToRem(100);
+  }
 }
 
 .outgoingMessage {
   align-self: flex-end;
-  background-color: $color-amber-900;
+  background-color: $color-amber-800;
   color: $color-white;
   text-align: right;
 }

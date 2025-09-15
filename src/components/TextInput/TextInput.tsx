@@ -10,6 +10,7 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   helperText?: string;
   customStyle?: string;
   startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -17,6 +18,7 @@ const TextInput: React.FC<TextInputProps> = ({
   helperText,
   customStyle,
   startIcon,
+  endIcon,
   ...props
 }) => {
   const t = useTranslations();
@@ -30,6 +32,7 @@ const TextInput: React.FC<TextInputProps> = ({
       >
         {startIcon}
         <input className={classes.textInput} {...props} />
+        {endIcon}
       </div>
       {Array.isArray(error) && error.length > 0 && (
         <Typography className={classes.error}>{t(error[0])}</Typography>

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import React from 'react';
 
+import ChatInput from '@/components/ChatInput/ChatInput';
 import ChatMessage from '@/components/ChatMessage/ChatMessage';
 import CircularProgress from '@/components/CircularProgress/CircularProgress';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
@@ -50,6 +51,7 @@ const ChatSection = () => {
           <></>
         )}
       </div>
+      <ChatInput />
     </React.Fragment>
   );
 };

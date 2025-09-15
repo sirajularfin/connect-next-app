@@ -13,7 +13,7 @@
 
 .searchBar {
   border-radius: convertPxToRem(8);
-  padding: convertPxToRem(12);
+  padding: convertPxToRem(12) convertPxToRem(16) !important;
   gap: convertPxToRem(6);
   max-height: convertPxToRem(30);
   margin: convertPxToRem(10) convertPxToRem(10);
@@ -28,6 +28,16 @@
 .conversationList {
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: $color-grey-300 transparent;
-  height: calc(100vh - convertPxToRem(150));
+  scrollbar-color: $color-grey-400 transparent;
+  &::-webkit-scrollbar {
+    width: convertPxToRem(6);
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-grey-400;
+    border-radius: convertPxToRem(3);
+  }
+  height: calc(100vh - convertPxToRem(152));
 }
