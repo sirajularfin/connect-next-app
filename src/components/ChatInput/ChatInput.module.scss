@@ -3,7 +3,8 @@
   bottom: convertPxToRem(20);
   display: flex;
   gap: convertPxToRem(8);
-  margin: 0 convertPxToRem(24);
+  margin-left: convertPxToRem(24);
+  margin-right: convertPxToRem(24);
   position: fixed;
   z-index: 999;
   width: -webkit-fill-available;
