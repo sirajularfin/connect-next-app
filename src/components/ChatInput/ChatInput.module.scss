@@ -8,8 +8,7 @@
   position: fixed;
   z-index: 999;
   width: -webkit-fill-available;
-
-  & svg {
+  & svg:hover {
     cursor: pointer;
   }
 }
@@ -19,5 +18,16 @@
   border-radius: convertPxToRem(8);
   border: convertPxToRem(2) solid $color-grey-200;
   min-height: convertPxToRem(40);
-  padding: convertPxToRem(10) convertPxToRem(20);
+  padding: convertPxToRem(10) convertPxToRem(10) convertPxToRem(10)
+    convertPxToRem(20);
+}
+
+.sendButton {
+  padding: convertPxToRem(8) convertPxToRem(10) !important;
+  background-color: $color-amber-800;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-amber-900;
+  }
 }
