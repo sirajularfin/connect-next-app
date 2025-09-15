@@ -3,7 +3,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import baseApi from '@/integrations/http/baseApi';
 import { appSessionSlice } from '@/redux/slices/appSession.slice';
 import { authSlice } from '@/redux/slices/auth.slice';
-import { conversationSlice } from '@/redux/slices/conversation.slice';
 import { profileSlice } from '@/redux/slices/profile.slice';
 
 const store = configureStore({
@@ -12,7 +11,6 @@ const store = configureStore({
     [appSessionSlice.name]: appSessionSlice.reducer,
     [authSlice.name]: authSlice.reducer,
     [profileSlice.name]: profileSlice.reducer,
-    [conversationSlice.name]: conversationSlice.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
