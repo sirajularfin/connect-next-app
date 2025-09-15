@@ -5,5 +5,15 @@
   max-height: calc(100vh - convertPxToRem(82));
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: $color-grey-300 transparent;
+  scrollbar-color: $color-grey-400 transparent;
+  &::-webkit-scrollbar {
+    width: convertPxToRem(10);
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-grey-400;
+    border-radius: convertPxToRem(3);
+  }
 }
