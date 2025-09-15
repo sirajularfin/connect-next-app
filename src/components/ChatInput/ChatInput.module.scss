@@ -17,7 +17,7 @@
 .textInput {
   background-color: $color-white;
   border-radius: convertPxToRem(8);
-  border: 1px solid $color-grey-200;
+  border: convertPxToRem(2) solid $color-grey-200;
   min-height: convertPxToRem(40);
   padding: convertPxToRem(10) convertPxToRem(20);
 }
