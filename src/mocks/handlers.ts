@@ -5,6 +5,22 @@ import conversationList from './data/conversation-list.json';
 import userProfile from './data/user-profile.json';
 
 export const handlers = [
+  http.post('*/v1/api/login', async () => {
+    return HttpResponse.json({
+      accessToken: 'MOCK_ACCESS_TOKEN',
+      refreshToken: 'MOCK_REFRESH_TOKEN',
+      tokenExpiry: Date.now() + 3600000, // 1 hour from now
+    });
+  }),
+
+  http.post('*/v1/api/register', async () => {
+    return HttpResponse.json({
+      accessToken: 'MOCK_ACCESS_TOKEN',
+      refreshToken: 'MOCK_REFRESH_TOKEN',
+      tokenExpiry: Date.now() + 3600000, // 1 hour from now
+    });
+  }),
+
   http.get('*/v1/api/conversations', () => {
     return HttpResponse.json(conversationList);
   }),
