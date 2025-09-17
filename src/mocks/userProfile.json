@@ -7,5 +7,6 @@
   "createdAt": "2023-03-15T10:30:00.000Z",
   "updatedAt": "2024-01-15T14:22:00.000Z",
   "lastLoginAt": "2024-01-15T09:45:00.000Z",
-  "phoneNumber": "+966-50-123-4567"
+  "phoneNumber": "+966-50-123-4567",
+  "isOnline": true
 }

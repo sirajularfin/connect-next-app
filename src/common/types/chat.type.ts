@@ -1,11 +1,11 @@
 import { IPaginatedResult } from './pagination.type';
-import { UserProfile } from './profile.type';
+import { IUserProfile } from './profile.type';
 
 export interface IConversation {
   id: number;
   lastMessage: string;
   lastActivity: string;
-  participant: UserProfile;
+  participant: IUserProfile;
 }
 
 export interface IChatMessage {
@@ -20,7 +20,7 @@ export interface IChatMessage {
 }
 
 export type TChatMessagesResponse = {
-  sender: UserProfile;
+  sender: IUserProfile;
   messages: IPaginatedResult<IChatMessage>;
 };
 export type TConversationListResponse = IPaginatedResult<IConversation>;
