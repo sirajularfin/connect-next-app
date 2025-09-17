@@ -1,8 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import { HttpMethods } from 'msw';
-import { redirect } from 'next/navigation';
 
-import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import logger from '@/common/util/logger.util';
 
 class HttpClient {
@@ -79,7 +77,6 @@ class HttpClient {
       switch (response.status) {
         case StatusCodes.UNAUTHORIZED:
           logger('[API] Unauthorized - redirecting to login', 'warn');
-          redirect(APP_ROUTES.LOGIN);
         case StatusCodes.FORBIDDEN:
           logger('[API] Forbidden access', 'warn');
           break;
