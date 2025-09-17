@@ -6,7 +6,6 @@ import React from 'react';
 
 import '@/common/styles/globals.scss';
 import { APP_LANGUAGES } from '@/common/types/constants';
-import MSWProvider from '@/mocks/MswProvider';
 import customFonts from '../../public/fonts/fonts';
 import LocalizationWrapper from '../i18n/LocalizationProvider';
 
@@ -33,13 +32,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={customFonts.className}>
         <React.StrictMode>
-          <MSWProvider>
-            <LocalizationWrapper initialLocale={initialLocale}>
-              <NextIntlClientProvider locale={locale}>
-                <main>{children}</main>
-              </NextIntlClientProvider>
-            </LocalizationWrapper>
-          </MSWProvider>
+          <LocalizationWrapper initialLocale={initialLocale}>
+            <NextIntlClientProvider locale={locale}>
+              <main>{children}</main>
+            </NextIntlClientProvider>
+          </LocalizationWrapper>
         </React.StrictMode>
       </body>
     </html>

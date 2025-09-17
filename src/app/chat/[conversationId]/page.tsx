@@ -1,31 +1,30 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
 import React from 'react';
 
+import { TChatMessagesResponse } from '@/common/types/chat.type';
 import ChatInput from '@/components/ChatInput/ChatInput';
 import ChatMessage from '@/components/ChatMessage/ChatMessage';
-import CircularProgress from '@/components/CircularProgress/CircularProgress';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
-import Typography from '@/components/Typography/Typography';
-import { useGetChatMessagesQuery } from '@/integrations/http/endpoints/chat.api';
+import { API_URLS } from '@/network/apiConstants.type';
+import { httpClient } from '@/network/httpClient';
 import classes from './section.module.scss';
 
-const ChatSection = () => {
-  const t = useTranslations();
-  const { conversationId } = useParams();
-  const { data, isLoading, isError } = useGetChatMessagesQuery({
-    conversationId: String(conversationId),
-  });
+interface IProps {
+  params: { conversationId: string };
+}
 
-  if (isLoading) {
-    return <CircularProgress />;
-  }
+const ChatSection = async ({ params }: IProps) => {
+  const { conversationId } = params;
+  const { data } = await httpClient.get<TChatMessagesResponse>(
+    API_URLS.MESSAGING.getChatMessages(conversationId)
+  );
 
-  if (isError || !data) {
-    return <Typography>{t('error_something_went_wrong')}</Typography>;
-  }
+  // if (isLoading) {
+  //   return <CircularProgress />;
+  // }
+
+  // if (isError || !data) {
+  //   return <Typography>{t('error_something_went_wrong')}</Typography>;
+  // }
 
   return (
     <React.Fragment>
@@ -35,8 +34,8 @@ const ChatSection = () => {
         isOnline={data.sender?.isOnline}
       />
       <div className={classes.messageContainer}>
-        {data.messages?.length > 0 ? (
-          data.messages.map(message => (
+        {data.messages.items?.length > 0 ? (
+          data.messages.items.map(message => (
             <ChatMessage
               key={message.id}
               senderId={message.senderId}

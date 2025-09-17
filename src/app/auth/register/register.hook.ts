@@ -5,8 +5,6 @@ import {
   RegisterUserSchema,
   RegisterUserSchemaType,
 } from '@/common/validations/register-user.schema';
-import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth.api';
-import { useLazyGetProfileQuery } from '@/integrations/http/endpoints/profile.api';
 
 const INITIAL_FORM_STATE: RegisterUserSchemaType = {
   email: '',
@@ -16,10 +14,6 @@ const INITIAL_FORM_STATE: RegisterUserSchemaType = {
 };
 
 const useRegister = () => {
-  const [triggerGetProfile] = useLazyGetProfileQuery();
-  const [triggerPostRegistrationMutation, { isLoading }] =
-    usePostRegistrationMutation();
-
   const [error, setError] = useState<{
     properties?: Record<string, string[]>;
   }>();
@@ -47,17 +41,11 @@ const useRegister = () => {
       return;
     }
     setError(undefined);
-    triggerPostRegistrationMutation(formState)
-      .unwrap()
-      .then(() => {
-        triggerGetProfile();
-      });
     setFormState(INITIAL_FORM_STATE);
   };
 
   return {
     error,
-    isLoading,
     formState,
     handleFieldChange,
     handleFormSubmit,

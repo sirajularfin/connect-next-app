@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { GoogleLogo } from '@/assets';
-import APP_ROUTES from '@/common/types/appRoutes.type';
+import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/common/types/constants';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';

@@ -1,19 +1,20 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import { SearchIcon } from '@/assets';
+import { TConversationListResponse } from '@/common/types/chat.type';
 import ConversationItem from '@/components/ConversationItem/ConversationItem';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
-import { useGetConversationListQuery } from '@/integrations/http/endpoints/chat.api';
+import { API_URLS } from '@/network/apiConstants.type';
+import { httpClient } from '@/network/httpClient';
 import classes from './sidebar.module.scss';
 
-const Default: React.FC = () => {
-  const t = useTranslations();
-
-  const { data } = useGetConversationListQuery();
+const Default: React.FC = async () => {
+  const t = await getTranslations();
+  const { data } = await httpClient.get<TConversationListResponse>(
+    API_URLS.MESSAGING.getConversations
+  );
 
   return (
     <div className={classes.sidebar}>
@@ -30,8 +31,8 @@ const Default: React.FC = () => {
       />
 
       <div className={classes.conversationList}>
-        {Boolean(data?.conversations?.length) &&
-          data?.conversations?.map(conversation => (
+        {Boolean(data?.items?.length) &&
+          data?.items?.map(conversation => (
             <ConversationItem
               key={conversation.id}
               conversationId={String(conversation.id)}

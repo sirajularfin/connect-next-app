@@ -1,21 +1,21 @@
 import { NextResponse } from 'next/server';
 
 import { AuthTokenSchemaType } from '@/common/validations/auth-token.schema';
+import { API_URLS } from '@/network/apiConstants.type';
 import { httpClient } from '@/network/httpClient';
-import { UserAuthUrls } from '@/network/types';
 
 export async function POST(req: Request) {
   const { email, password } = await req.json();
 
   const res = await httpClient.post<AuthTokenSchemaType>(
-    UserAuthUrls.ROOT + UserAuthUrls.LOGIN,
+    API_URLS.AUTH.postLogin,
     {
       email,
       password,
     }
   );
 
-  const { accessToken, refreshToken, tokenExpiry } = res;
+  const { accessToken, refreshToken, tokenExpiry } = res.data;
   const response = NextResponse.json({ success: true });
 
   // Access token

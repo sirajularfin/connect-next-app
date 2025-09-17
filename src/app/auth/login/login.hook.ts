@@ -5,8 +5,6 @@ import {
   LoginUserSchema,
   LoginUserSchemaType,
 } from '@/common/validations/login-user.schema';
-import { usePostLoginMutation } from '@/integrations/http/endpoints/auth.api';
-import { useLazyGetProfileQuery } from '@/integrations/http/endpoints/profile.api';
 
 const INITIAL_FORM_STATE: LoginUserSchemaType = {
   email: '',
@@ -14,9 +12,6 @@ const INITIAL_FORM_STATE: LoginUserSchemaType = {
 };
 
 const useLogin = () => {
-  const [triggerGetProfile] = useLazyGetProfileQuery();
-  const [triggerPostLoginMutation, { isLoading }] = usePostLoginMutation();
-
   const [error, setError] = useState<{
     properties?: Record<string, string[]>;
   }>();
@@ -44,17 +39,11 @@ const useLogin = () => {
       return;
     }
     setError(undefined);
-    triggerPostLoginMutation(formState)
-      .unwrap()
-      .then(() => {
-        triggerGetProfile();
-      });
     setFormState(INITIAL_FORM_STATE);
   };
 
   return {
     error,
-    isLoading,
     formState,
     handleFieldChange,
     handleFormSubmit,
