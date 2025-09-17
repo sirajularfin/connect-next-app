@@ -1,9 +1,5 @@
-export const APP_ROUTES = {
-  PROTECTED: {
-    CHAT: '/dashboard/chat',
-  },
-  PUBLIC: {
-    LOGIN: '/auth/login',
-    REGISTER: '/auth/register',
-  },
-};
+export enum APP_ROUTES {
+  CHAT = '/chat',
+  LOGIN = '/auth/login',
+  REGISTER = '/auth/register',
+}
