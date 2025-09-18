@@ -5,7 +5,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<IProps> = ({ conversationList, children }) => {
+const ChatLayout: React.FC<IProps> = ({ conversationList, children }) => {
   return (
     <div className={classes.chatLayout}>
       <section>{conversationList}</section>
@@ -14,4 +14,4 @@ const Layout: React.FC<IProps> = ({ conversationList, children }) => {
   );
 };
 
-export default Layout;
+export default ChatLayout;

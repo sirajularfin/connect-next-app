@@ -6,6 +6,7 @@ import LanguageIcon from '@/assets/svg/language-icon.svg';
 import Logo from '@/assets/svg/logo.svg';
 import RightArrowIcon from '@/assets/svg/right-arrow.svg';
 import SearchIcon from '@/assets/svg/search-icon.svg';
+import SettingsIcon from '@/assets/svg/settings.svg';
 
 export {
   AttachmentIcon,
@@ -16,5 +17,6 @@ export {
   ProfilePlaceholder,
   RightArrowIcon,
   SearchIcon,
+  SettingsIcon,
 };
 

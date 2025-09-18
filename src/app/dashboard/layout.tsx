@@ -10,7 +10,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<IProps> = async ({ sidebar, children }) => {
+const DashboardLayout: React.FC<IProps> = async ({ sidebar, children }) => {
   const { data: initialProfile } = await httpClient.get(
     API_URLS.USER_PROFILE.getProfile
   );
@@ -25,4 +25,4 @@ const Layout: React.FC<IProps> = async ({ sidebar, children }) => {
   );
 };
 
-export default Layout;
+export default DashboardLayout;
