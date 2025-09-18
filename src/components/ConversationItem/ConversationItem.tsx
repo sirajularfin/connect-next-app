@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 
 import ProfileImage from '@/assets/images/profile-image.png';
+import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import { formatTimestamp } from '@/common/util/date.util';
 import Typography from '@/components/Typography/Typography';
 import classes from './ConversationItem.module.scss';
@@ -31,7 +32,7 @@ const ConversationItem: React.FC<IProps> = ({
     <div
       className={classes.container}
       onClick={() => {
-        router.push(`/chat/${conversationId}`);
+        router.push(`${APP_ROUTES.CHAT}/${conversationId}`);
       }}
     >
       <Image

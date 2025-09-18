@@ -1,5 +1,6 @@
 export enum APP_ROUTES {
-  CHAT = '/chat',
+  DASHBOARD = '/dashboard',
+  CHAT = '/dashboard/chat',
   LOGIN = '/auth/login',
   REGISTER = '/auth/register',
 }

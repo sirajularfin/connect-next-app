@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const ChatSection = async ({ params }: IProps) => {
-  const conversationId = await params.conversationId;
+  const { conversationId } = await params;
   const { data } = await httpClient.get<TChatMessagesResponse>(
     API_URLS.MESSAGING.getChatMessages(conversationId)
   );

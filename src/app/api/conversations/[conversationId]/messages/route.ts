@@ -16,7 +16,7 @@ export async function GET(
   { params }: { params: { conversationId: string } }
 ): Promise<NextResponse<TChatMessagesResponse | { error: string }>> {
   try {
-    const { conversationId } = params;
+    const { conversationId } = await params;
     const conversationIdNum = Number(conversationId);
 
     if (isNaN(conversationIdNum)) {
