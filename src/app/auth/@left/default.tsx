@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 import LandingPageImg from '@/assets/images/landing-page.png';
 import Typography from '@/components/Typography/Typography';
-import classes from './page.module.scss';
+import classes from './welcomeSection.module.scss';
 
-const Default: React.FC = () => {
+const WelcomeSection: React.FC = () => {
   const t = useTranslations();
 
   return (
@@ -34,4 +34,4 @@ const Default: React.FC = () => {
   );
 };
 
-export default Default;
+export default WelcomeSection;

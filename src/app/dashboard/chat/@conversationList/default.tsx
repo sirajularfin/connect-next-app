@@ -8,9 +8,9 @@ import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import { API_URLS } from '@/network/apiConstants.type';
 import { httpClient } from '@/network/httpClient';
-import classes from './sidebar.module.scss';
+import classes from './conversationList.module.scss';
 
-const Default: React.FC = async () => {
+const ConversationList: React.FC = async () => {
   const t = await getTranslations();
   const { data } = await httpClient.get<TConversationListResponse>(
     API_URLS.MESSAGING.getConversations
@@ -47,4 +47,4 @@ const Default: React.FC = async () => {
   );
 };
 
-export default Default;
+export default ConversationList;

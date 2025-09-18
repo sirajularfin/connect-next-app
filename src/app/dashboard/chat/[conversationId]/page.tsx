@@ -6,7 +6,7 @@ import ChatMessage from '@/components/ChatMessage/ChatMessage';
 import ProfileHeader from '@/components/ProfileHeader/ProfileHeader';
 import { API_URLS } from '@/network/apiConstants.type';
 import { httpClient } from '@/network/httpClient';
-import classes from './section.module.scss';
+import classes from './chatSection.module.scss';
 
 interface IProps {
   params: { conversationId: string };

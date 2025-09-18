@@ -1,14 +1,14 @@
 import classes from './chat.module.scss';
 
 interface IProps {
-  sidebar: React.ReactNode;
+  conversationList: React.ReactNode;
   children: React.ReactNode;
 }
 
-const Layout: React.FC<IProps> = ({ sidebar, children }) => {
+const Layout: React.FC<IProps> = ({ conversationList, children }) => {
   return (
     <div className={classes.chatLayout}>
-      <section>{sidebar}</section>
+      <section>{conversationList}</section>
       <section>{children}</section>
     </div>
   );
