@@ -1,0 +1,8 @@
+.container {
+  z-index: 999;
+  background-color: $color-white;
+  border-right: convertPxToRem(1) solid $color-grey-500;
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
