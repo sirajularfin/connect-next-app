@@ -1,12 +1,10 @@
 'use client';
-
 import { useState } from 'react';
 
 import {
   RegisterUserSchema,
   RegisterUserSchemaType,
 } from '@/common/validations/register-user.schema';
-import { usePostRegistrationMutation } from '@/integrations/http/endpoints/auth';
 
 const INITIAL_FORM_STATE: RegisterUserSchemaType = {
   email: '',
@@ -16,8 +14,6 @@ const INITIAL_FORM_STATE: RegisterUserSchemaType = {
 };
 
 const useRegister = () => {
-  const [triggerPostRegistrationMutation, { isLoading, isSuccess }] =
-    usePostRegistrationMutation();
   const [error, setError] = useState<{
     properties?: Record<string, string[]>;
   }>();
@@ -45,16 +41,11 @@ const useRegister = () => {
       return;
     }
     setError(undefined);
-    triggerPostRegistrationMutation(formState).unwrap();
     setFormState(INITIAL_FORM_STATE);
-    if (isSuccess) {
-      alert('Registration successful!');
-    }
   };
 
   return {
     error,
-    isLoading,
     formState,
     handleFieldChange,
     handleFormSubmit,

@@ -1,10 +1,14 @@
+'use client';
+
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 import ProfileImage from '@/assets/images/profile-image.png';
+import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import { formatTimestamp } from '@/common/util/date.util';
-import { useRouter } from 'next/navigation';
-import Typography from '../Typography/Typography';
+import Typography from '@/components/Typography/Typography';
 import classes from './ConversationItem.module.scss';
 
 interface IProps {
@@ -22,13 +26,13 @@ const ConversationItem: React.FC<IProps> = ({
   lastMessage,
   timestamp,
 }) => {
-  const router = useRouter();
+  const router: AppRouterInstance = useRouter();
 
   return (
     <div
       className={classes.container}
       onClick={() => {
-        router.push(`/chat/${conversationId}`);
+        router.push(`${APP_ROUTES.CHAT}/${conversationId}`);
       }}
     >
       <Image

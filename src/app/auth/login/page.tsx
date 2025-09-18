@@ -3,17 +3,16 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { GoogleLogo } from '@/assets';
-import APP_ROUTES from '@/common/types/routes';
+import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
 import useLogin from './login.hook';
 
-const Page: React.FC = () => {
+const Login: React.FC = () => {
   const t = useTranslations();
-  const { error, isLoading, formState, handleFieldChange, handleFormSubmit } =
-    useLogin();
+  const { error, formState, handleFieldChange, handleFormSubmit } = useLogin();
 
   return (
     <AuthForm
@@ -58,8 +57,8 @@ const Page: React.FC = () => {
         <Link href="#">{t('login_forgot_password')}</Link>
         <Button
           aria-label="Log In"
-          disabled={isLoading}
-          loading={isLoading}
+          // disabled={isLoading}
+          // loading={isLoading}
           title={t('button_login')}
           titleCase="uppercase"
           type="submit"
@@ -69,4 +68,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Login;

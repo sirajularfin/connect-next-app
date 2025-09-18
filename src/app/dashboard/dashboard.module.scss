@@ -1,0 +1,11 @@
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 0.5fr 11.5fr;
+  height: 100vh;
+}
+
+.dashboardSidebar {
+  border: 0;
+  background-color: $color-white;
+  box-shadow: convertPxToRem(2) 0 convertPxToRem(8) rgba(0, 0, 0, 0.1);
+}

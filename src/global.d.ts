@@ -1,10 +1,8 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    NEXT_PUBLIC_SITE_URL: string;
-    NEXT_PUBLIC_MONGODB_URI: string;
-    NEXT_PUBLIC_MONGODB_DB_NAME: string;
-    NEXT_PUBLIC_API_SECRET: string;
-    NEXT_PUBLIC_ACCESS_TOKEN_SECRET: string;
-    NEXT_PUBLIC_REFRESH_TOKEN_SECRET: string;
+    API_BASE_URL: string;
+    API_SECRET: string;
+    ACCESS_TOKEN_SECRET: string;
+    REFRESH_TOKEN_SECRET: string;
   }
 }

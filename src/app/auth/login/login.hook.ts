@@ -5,7 +5,6 @@ import {
   LoginUserSchema,
   LoginUserSchemaType,
 } from '@/common/validations/login-user.schema';
-import { usePostLoginMutation } from '@/integrations/http/endpoints/auth';
 
 const INITIAL_FORM_STATE: LoginUserSchemaType = {
   email: '',
@@ -13,8 +12,6 @@ const INITIAL_FORM_STATE: LoginUserSchemaType = {
 };
 
 const useLogin = () => {
-  const [triggerPostLoginMutation, { isLoading, isSuccess }] =
-    usePostLoginMutation();
   const [error, setError] = useState<{
     properties?: Record<string, string[]>;
   }>();
@@ -42,16 +39,11 @@ const useLogin = () => {
       return;
     }
     setError(undefined);
-    triggerPostLoginMutation(formState).unwrap();
     setFormState(INITIAL_FORM_STATE);
-    if (isSuccess) {
-      alert('Login successful!');
-    }
   };
 
   return {
     error,
-    isLoading,
     formState,
     handleFieldChange,
     handleFormSubmit,

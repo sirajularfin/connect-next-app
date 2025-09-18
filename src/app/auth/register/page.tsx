@@ -3,16 +3,16 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { GoogleLogo } from '@/assets';
+import { APP_ROUTES } from '@/common/types/appRoutes.type';
 import { DEFAULT_MIN_PASSWORD_LENGTH } from '@/common/types/constants';
-import APP_ROUTES from '@/common/types/routes';
 import AuthForm from '@/components/AuthForm/AuthForm';
 import Button from '@/components/Button/Button';
 import TextInput from '@/components/TextInput/TextInput';
 import Typography from '@/components/Typography/Typography';
-import classes from './page.module.scss';
 import useRegister from './register.hook';
+import classes from './register.module.scss';
 
-const Page: React.FC = () => {
+const Register: React.FC = () => {
   const { error, formState, handleFieldChange, isLoading, handleFormSubmit } =
     useRegister();
   const t = useTranslations();
@@ -94,4 +94,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Register;

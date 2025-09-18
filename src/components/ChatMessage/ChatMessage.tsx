@@ -1,9 +1,10 @@
-import React from 'react';
-
+'use client';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
 import { formatDateTime } from '@/common/util/date.util';
+import { useProfile } from '@/context/ProfileContext';
 import Typography from '../Typography/Typography';
 import classes from './ChatMessage.module.scss';
 
@@ -24,12 +25,13 @@ const ChatMessage: React.FC<IProps> = ({
   isDeleted,
 }) => {
   const t = useTranslations();
+  const { profile } = useProfile();
 
   return (
     <div
       className={classNames(classes.container, {
-        [classes.outgoingMessage]: senderId === 1,
-        [classes.incomingMessage]: senderId !== 1,
+        [classes.outgoingMessage]: senderId === profile?.id,
+        [classes.incomingMessage]: senderId !== profile?.id,
       })}
     >
       <Typography className={classes.content}>
@@ -38,7 +40,7 @@ const ChatMessage: React.FC<IProps> = ({
       <div className={classes.footer}>
         <Typography
           className={classNames(classes.timestamp, {
-            [classes.timestampDark]: senderId !== 1,
+            [classes.timestampDark]: senderId !== profile?.id,
           })}
         >
           {formatDateTime(timestamp)}
