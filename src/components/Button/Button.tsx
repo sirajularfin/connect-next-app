@@ -14,7 +14,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | 'lowercase'
     | 'initial'
     | 'inherit';
-  variant?: 'PRIMARY' | 'SECONDARY';
+  variant?: 'PRIMARY' | 'SECONDARY' | 'LINK';
 }
 
 const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
