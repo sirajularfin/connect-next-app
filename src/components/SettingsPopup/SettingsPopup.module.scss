@@ -3,7 +3,7 @@
   border-radius: convertPxToRem(8);
   border: convertPxToRem(1) solid $color-grey-300;
   box-shadow: 0 convertPxToRem(4) convertPxToRem(12) rgba(0, 0, 0, 0.15);
-  min-width: convertPxToRem(180);
+  min-width: convertPxToRem(150);
   z-index: 999;
 }
 
@@ -14,6 +14,7 @@
 
   button {
     width: 100%;
+    height: convertPxToRem(50);
     padding: convertPxToRem(0) convertPxToRem(16);
     display: flex;
     gap: convertPxToRem(6);

@@ -53,7 +53,7 @@ const SettingsPopup: React.FC<IProps> = ({ isOpen, onClose, anchorEl }) => {
       className={classes.settingsMenu}
       style={{
         position: 'absolute',
-        top: anchorEl ? anchorEl.offsetTop - anchorEl.offsetHeight - 40 : 0,
+        top: anchorEl ? anchorEl.offsetTop - anchorEl.offsetHeight - 20 : 0,
         left: anchorEl ? anchorEl.offsetLeft + anchorEl.offsetWidth : 0,
       }}
     >
