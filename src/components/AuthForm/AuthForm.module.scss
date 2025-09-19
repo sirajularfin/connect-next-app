@@ -10,7 +10,6 @@
   max-width: convertPxToRem(430);
   margin: 0 auto;
 
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(14);
   font-weight: 400;
   text-align: center;
@@ -28,7 +27,6 @@
   & h2 {
     margin: 0;
     text-align: center;
-    font-family: $font-dm-sans;
     font-size: convertPxToRem(36);
     font-weight: 600;
     color: $color-black;
@@ -53,7 +51,6 @@
 
   & > p {
     white-space: nowrap;
-    font-family: $font-dm-sans;
     font-size: convertPxToRem(14);
     font-weight: 400;
     color: $color-grey-800;

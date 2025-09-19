@@ -42,5 +42,7 @@
   "message_deleted": "यह संदेश हटा दिया गया है।",
   "message_edited": "संपादित",
   "error_something_went_wrong": "कुछ गलत हुआ। कृपया फिर से प्रयास करें।",
-  "chat_input_placeholder": "एक संदेश लिखें..."
+  "chat_input_placeholder": "एक संदेश लिखें...",
+  "text_language": "भाषा",
+  "text_logout": "लॉगआउट"
 }

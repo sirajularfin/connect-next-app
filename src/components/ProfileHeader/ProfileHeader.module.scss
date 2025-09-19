@@ -10,14 +10,12 @@
   }
 
   .username {
-    font-family: $font-dm-sans;
     font-size: convertPxToRem(20);
     font-weight: 600;
     color: $color-grey-800;
   }
 
   .statusText {
-    font-family: $font-dm-sans;
     font-size: convertPxToRem(12);
     font-weight: 500;
     color: $color-grey-700;

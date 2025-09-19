@@ -1,0 +1,41 @@
+.settingsMenu {
+  background: $color-white;
+  border-radius: convertPxToRem(8);
+  border: convertPxToRem(1) solid $color-grey-300;
+  box-shadow: 0 convertPxToRem(4) convertPxToRem(12) rgba(0, 0, 0, 0.15);
+  min-width: convertPxToRem(150);
+  z-index: 999;
+}
+
+.menuItem {
+  &:hover {
+    background-color: $color-grey-100;
+  }
+
+  button {
+    width: 100%;
+    height: convertPxToRem(50);
+    padding: convertPxToRem(0) convertPxToRem(16);
+    display: flex;
+    gap: convertPxToRem(6);
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      color: $color-grey-800;
+    }
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none !important;
+    }
+
+    p {
+      flex: 1;
+      text-align: left;
+      font-weight: 400;
+      font-size: convertPxToRem(14);
+      color: $color-grey-800;
+    }
+  }
+}

@@ -10,7 +10,6 @@
 
 .title1 {
   color: $color-black;
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(48);
   font-weight: 700;
   line-height: 100%;
@@ -23,7 +22,6 @@
 
 .title2 {
   color: $color-black;
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(64);
   font-weight: 700;
   line-height: 100%;
@@ -36,7 +34,6 @@
 
 .description {
   color: $color-grey-800;
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(16);
   font-weight: 300;
   line-height: 150%;

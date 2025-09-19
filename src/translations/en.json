@@ -42,5 +42,7 @@
   "message_deleted": "This message has been deleted.",
   "message_edited": "Edited",
   "error_something_went_wrong": "Something went wrong. Please try again.",
-  "chat_input_placeholder": "Write a message..."
+  "chat_input_placeholder": "Write a message...",
+  "text_language": "Language",
+  "text_logout": "Logout"
 }

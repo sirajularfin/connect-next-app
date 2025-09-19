@@ -5,7 +5,6 @@
   column-gap: convertPxToRem(10);
   cursor: pointer;
   display: flex;
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(14);
   font-weight: 500;
   height: convertPxToRem(46);
@@ -26,4 +25,14 @@
 .SECONDARY {
   color: $color-grey-800;
   background: $color-grey-200;
+}
+
+.LINK {
+  background: transparent;
+  padding: 0;
+  height: auto;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
