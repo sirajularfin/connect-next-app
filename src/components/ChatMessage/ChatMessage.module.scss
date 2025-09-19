@@ -27,14 +27,12 @@
 }
 
 .content {
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(14);
   font-weight: 300;
 }
 
 .timestamp {
   color: $color-grey-200;
-  font-family: $font-dm-sans;
   font-size: convertPxToRem(11);
   font-weight: 400;
   letter-spacing: convertPxToRem(0.5);

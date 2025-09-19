@@ -17,25 +17,36 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'PRIMARY' | 'SECONDARY' | 'LINK';
 }
 
-const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  title,
-  loading = false,
-  type = 'button',
-  variant = 'PRIMARY',
-  titleCase,
-  ...props
-}) => {
-  return (
-    <button
-      type={type}
-      className={classNames(classes.container, classes[variant], classNames)}
-      style={titleCase && { textTransform: titleCase }}
-      {...props}
-    >
-      {loading ? <CircularProgress /> : title ? title : children}
-    </button>
-  );
-};
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  PropsWithChildren<ButtonProps>
+>(
+  (
+    {
+      children,
+      title,
+      loading = false,
+      type = 'button',
+      variant = 'PRIMARY',
+      titleCase,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        className={classNames(classes.container, classes[variant])}
+        style={titleCase && { textTransform: titleCase }}
+        {...props}
+      >
+        {loading ? <CircularProgress /> : title ? title : children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = 'Button';
 
 export default Button;
