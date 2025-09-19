@@ -5,6 +5,7 @@ import { LanguageIcon } from '@/assets';
 import { APP_LANGUAGES } from '@/common/types/constants';
 import { useLocaleContext } from '../../i18n/LocalizationProvider';
 import Button from '../Button/Button';
+import Typography from '../Typography/Typography';
 import classes from './LanguageButton.module.scss';
 
 const LanguageButton = () => {
@@ -22,7 +23,7 @@ const LanguageButton = () => {
       className={classes.container}
     >
       <LanguageIcon />
-      <span>{languageLabel}</span>
+      <Typography>{languageLabel}</Typography>
     </Button>
   );
 };

@@ -20,8 +20,13 @@
     align-items: center;
     cursor: pointer;
 
+    svg {
+      color: $color-grey-800;
+    }
+
     &:hover {
       background-color: transparent;
+      text-decoration: none !important;
     }
 
     p {
@@ -30,7 +35,6 @@
       font-weight: 400;
       font-size: convertPxToRem(14);
       color: $color-grey-800;
-      text-decoration: none;
     }
   }
 }

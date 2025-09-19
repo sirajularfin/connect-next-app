@@ -1,9 +1,10 @@
-'use client';
+import { useTranslations } from 'next-intl';
+import React, { useEffect, useRef } from 'react';
 
-import React, { useEffect, useRef, useState } from 'react';
-
-import { LanguageIcon, LogoutIcon } from '@/assets';
+import { LogoutIcon } from '@/assets';
+import logger from '@/common/util/logger.util';
 import Button from '@/components/Button/Button';
+import LanguageButton from '../LanguageButton/LanguageButton';
 import Typography from '../Typography/Typography';
 import classes from './SettingsPopup.module.scss';
 
@@ -14,8 +15,8 @@ interface IProps {
 }
 
 const SettingsPopup: React.FC<IProps> = ({ isOpen, onClose, anchorEl }) => {
+  const t = useTranslations();
   const menuRef = useRef<HTMLDivElement>(null);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -38,22 +39,13 @@ const SettingsPopup: React.FC<IProps> = ({ isOpen, onClose, anchorEl }) => {
     };
   }, [isOpen, onClose, anchorEl]);
 
-  const handleLanguageToggle = () => {
-    const newLanguage = currentLanguage === 'en' ? 'es' : 'en';
-    setCurrentLanguage(newLanguage);
-    // Add your language change logic here
-    console.log('Language changed to:', newLanguage);
-  };
-
   const handleLogout = () => {
-    // Add your logout logic here
-    console.log('Logging out...');
+    // TODO: Add your logout logic here
+    logger('Logging out...');
     onClose();
   };
 
   if (!isOpen) return null;
-
-  console.log('AnchorEl:', anchorEl);
 
   return (
     <div
@@ -66,15 +58,12 @@ const SettingsPopup: React.FC<IProps> = ({ isOpen, onClose, anchorEl }) => {
       }}
     >
       <div className={classes.menuItem}>
-        <Button variant="LINK" onClick={handleLanguageToggle}>
-          <LanguageIcon />
-          <Typography>Language ({currentLanguage.toUpperCase()})</Typography>
-        </Button>
+        <LanguageButton />
       </div>
       <div className={classes.menuItem}>
         <Button variant="LINK" onClick={handleLogout}>
           <LogoutIcon />
-          <Typography>Logout</Typography>
+          <Typography>{t('text_logout')}</Typography>
         </Button>
       </div>
     </div>
